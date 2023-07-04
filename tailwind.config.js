@@ -9,10 +9,11 @@ module.exports = {
     extend: {
       colors: {
         yellow: "#D7D900",
-        darkGrey: "#1F2223",
+        textColor: "#1F2223",
         lightGreen: "#00A299",
         darkGreen: "#01544D",
         lightGrey: "#A6A6A6",
+        darkGrey: "#333333",
       },
       fontFamily: {
         open: ["var(--font-open)"],
