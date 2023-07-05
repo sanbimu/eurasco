@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import { Open_Sans, Montserrat } from "next/font/google";
+import Layout from "../components/layout";
 
 const open = Open_Sans({
   subsets: ["latin"],
@@ -13,10 +14,12 @@ const montserrat = Montserrat({
 
 export default function App({ Component, pageProps }) {
   return (
-    <main
-      className={`${open.variable} font-open ${montserrat.variable} font-mont`}
-    >
-      <Component {...pageProps} />
-    </main>
+    <Layout>
+      <main
+        className={`${open.variable} font-open ${montserrat.variable} font-mont`}
+      >
+        <Component {...pageProps} />
+      </main>
+    </Layout>
   );
 }

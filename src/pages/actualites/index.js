@@ -1,4 +1,4 @@
-export default function Home() {
+export default function News() {
   return (
     <main>
       <div className="flex flex-col">

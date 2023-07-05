@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { navLinks } from "../../navLinks";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 const HeaderMobile = ({ current }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [logoWidth, setLogoWidth] = useState(150);
   const [logoSize, setLogoSize] = useState({ width: 150, height: 90 });
 
   useEffect(() => {
@@ -35,10 +35,12 @@ const HeaderMobile = ({ current }) => {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="lg:hidden flex flex-col">
       <div
-        className={`flex flex-row justify-between w-full fixed top-0 z-[100] m-auto pr-8 py-1 ${
-          isScrolled & !isMenuOpen ? "bg-white bg-opacity-40" : ""
+        className={`flex flex-row justify-between w-full fixed top-0 z-[100] m-auto pl-2 pr-8 py-1 ${
+          isScrolled & !isMenuOpen
+            ? "bg-white bg-opacity-30 backdrop-blur-sm "
+            : ""
         }`}
       >
         <Image
@@ -58,6 +60,7 @@ const HeaderMobile = ({ current }) => {
       </div>
       {isMenuOpen && (
         <div className="fixed top-0 left-0 right-0 bottom-0 flex flex-col px-12 pt-36 gap-10 uppercase font-open text-lg text-darkGreen font-semibold bg-white bg-opacity-90">
+          <Link href="/">Acceuil</Link>
           {navLinks.map((link) => (
             <a key={link.name} href={link.path}>
               {link.name}

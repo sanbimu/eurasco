@@ -1,4 +1,4 @@
-export default function Home() {
+export default function Events() {
   return (
     <main>
       <div className="flex flex-col">

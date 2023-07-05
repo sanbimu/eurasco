@@ -1,4 +1,4 @@
-export default function Home() {
+export default function Members() {
   return (
     <main>
       <div className="flex flex-col">
