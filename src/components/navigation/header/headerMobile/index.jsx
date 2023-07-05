@@ -1,25 +1,26 @@
 import Image from "next/image";
-import Link from "next/link";
-import { useState, useEffect } from "react";
 import { navLinks } from "../../navLinks";
+import { useState, useEffect } from "react";
 
 const HeaderMobile = ({ current }) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [logoHeight, setLogoHeight] = useState(90);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [logoWidth, setLogoWidth] = useState(150);
+  const [logoSize, setLogoSize] = useState({ width: 150, height: 90 });
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const scrollThreshold = 0;
-      const minLogoHeight = 52;
+      const initialLogoSize = { width: 150, height: 90 };
+      const scrolledLogoSize = { width: 80, height: 52 };
 
       if (scrollPosition > scrollThreshold) {
         setIsScrolled(true);
-        setLogoHeight(minLogoHeight);
+        setLogoSize(scrolledLogoSize);
       } else {
         setIsScrolled(false);
-        setLogoHeight(90);
+        setLogoSize(initialLogoSize);
       }
     };
 
@@ -37,15 +38,14 @@ const HeaderMobile = ({ current }) => {
     <div className="flex flex-col">
       <div
         className={`flex flex-row justify-between w-full fixed top-0 z-[100] m-auto pr-8 py-1 ${
-          isScrolled ? "bg-white bg-opacity-40" : ""
+          isScrolled & !isMenuOpen ? "bg-white bg-opacity-40" : ""
         }`}
       >
         <Image
           src="/icons/logo.svg"
           alt="Eurasco Logo"
-          width={150}
-          height={90}
-          className={`h-[${logoHeight}px]`}
+          width={logoSize.width}
+          height={logoSize.height}
         />
         <button
           className="flex flex-col justify-center gap-1"
@@ -57,7 +57,7 @@ const HeaderMobile = ({ current }) => {
         </button>
       </div>
       {isMenuOpen && (
-        <div className="absolute flex flex-col w-full m-auto px-12 pt-36 h-screen gap-10 uppercase font-open text-lg text-darkGreen font-semibold bg-white bg-opacity-60">
+        <div className="fixed top-0 left-0 right-0 bottom-0 flex flex-col px-12 pt-36 gap-10 uppercase font-open text-lg text-darkGreen font-semibold bg-white bg-opacity-90">
           {navLinks.map((link) => (
             <a key={link.name} href={link.path}>
               {link.name}
