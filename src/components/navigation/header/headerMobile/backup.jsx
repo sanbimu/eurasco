@@ -1,18 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { navLinks } from "../../navLinks";
 
 const HeaderMobile = ({ current }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [logoHeight, setLogoHeight] = useState(90);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const scrollThreshold = 0;
       const minLogoHeight = 52;
+      const scrollThreshold = 0;
 
       if (scrollPosition > scrollThreshold) {
         setIsScrolled(true);
@@ -29,10 +27,6 @@ const HeaderMobile = ({ current }) => {
     };
   }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
     <div className="flex flex-col">
       <div
@@ -47,24 +41,19 @@ const HeaderMobile = ({ current }) => {
           height={90}
           className={`h-[${logoHeight}px]`}
         />
-        <button
-          className="flex flex-col justify-center gap-1"
-          onClick={toggleMenu}
-        >
+        <button className="flex flex-col justify-center gap-1">
           <div className="w-[30px] h-[2px] bg-darkGreen"></div>
           <div className="w-[30px] h-[2px] bg-darkGreen"></div>
           <div className="w-[30px] h-[2px] bg-darkGreen"></div>
         </button>
       </div>
-      {isMenuOpen && (
-        <div className="absolute flex flex-col w-full m-auto px-12 pt-36 h-screen gap-10 uppercase font-open text-lg text-darkGreen font-semibold bg-white bg-opacity-60">
-          {navLinks.map((link) => (
-            <a key={link.name} href={link.path}>
-              {link.name}
-            </a>
-          ))}
-        </div>
-      )}
+      {/* <div className="flex flex-col w-full m-auto px-12 pt-36 h-screen gap-10 uppercase font-open text-lg text-darkGreen font-semibold">
+        <Link href="/">Acceuil</Link>
+        <Link href="/evenements">Nos événements</Link>
+        <Link href="/actualites">Nos actualités</Link>
+        <Link href="/membres">Nos membres</Link>
+        <Link href="/contact">Contact</Link>
+      </div> */}
     </div>
   );
 };
