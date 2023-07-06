@@ -36,55 +36,35 @@ const HeaderDesktop = ({ current }) => {
     <div className="hidden lg:flex">
       <div
         className={`flex justify-between w-full fixed top-0 z-[100] pt-6 px-[10%] ${
-          isScrolled ? "bg-white bg-opacity-30 backdrop-blur-sm pt-0 " : ""
+          isScrolled ? "bg-darkGreen bg-opacity-60 backdrop-blur-sm pt-0 " : ""
         }`}
       >
         <Link href="/">
           <Image
-            src="/icons/logo.svg"
+            src={isScrolled ? "/icons/logoWhite.svg" : "/icons/logo.svg"}
             alt="Eurasco Logo"
             width={logoSize.width}
             height={logoSize.height}
           />
         </Link>
-        <div className="flex gap-11 uppercase font-open text-white items-center text-sm">
-          <Link
-            href="/evenements"
-            className={
-              currentRoute === "/evenements" ? "text-yellow" : "text-white"
-            }
-          >
-            NOS ÉVÉNEMENTS
-          </Link>
-
-          <Link
-            href="/actualites"
-            className={
-              currentRoute === "/actualites" ? "text-yellow" : "text-white"
-            }
-          >
-            NOS ACTUALITÉS
-          </Link>
-
-          <Link
-            href="/membres"
-            className={
-              currentRoute === "/membres" ? "text-yellow" : "text-white"
-            }
-          >
-            NOS MEMBRES
-          </Link>
-
-          <Link
-            href="/contact"
-            className={
-              currentRoute === "/contact"
-                ? "text-yellow py-2 px-5 rounded-[32px] border border-white justify-center items-center inline-flex"
-                : "text-white py-2 px-5 rounded-[32px] border border-white justify-center items-center inline-flex"
-            }
-          >
-            CONTACT
-          </Link>
+        <div className="flex gap-12 uppercase font-open text-white items-center text-sm">
+          {navLinks.map((link, index) => {
+            const isActive = router.pathname === link.path;
+            const isLast = index === navLinks.length - 1;
+            return (
+              <Link
+                key={link.name}
+                href={link.path}
+                className={`${isActive ? "text-yellow" : "text-white"} ${
+                  isLast
+                    ? "py-2 px-5 rounded-[32px] border border-white justify-center items-center inline-flex"
+                    : ""
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>

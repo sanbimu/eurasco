@@ -39,33 +39,41 @@ const HeaderMobile = ({ current }) => {
       <div
         className={`flex flex-row justify-between w-full fixed top-0 z-[100] m-auto pl-2 pr-8 py-1 ${
           isScrolled & !isMenuOpen
-            ? "bg-white bg-opacity-30 backdrop-blur-sm "
+            ? "bg-darkGreen bg-opacity-60 backdrop-blur-sm "
             : ""
         }`}
       >
-        <Image
-          src="/icons/logo.svg"
-          alt="Eurasco Logo"
-          width={logoSize.width}
-          height={logoSize.height}
-        />
+        <Link href="/">
+          <Image
+            src={
+              isScrolled || isMenuOpen
+                ? "/icons/logoWhite.svg"
+                : "/icons/logo.svg"
+            }
+            alt="Eurasco Logo"
+            width={logoSize.width}
+            height={logoSize.height}
+          />
+        </Link>
         <button
           className="flex flex-col justify-center gap-1"
           onClick={toggleMenu}
         >
-          <div className="w-[30px] h-[2px] bg-darkGreen"></div>
-          <div className="w-[30px] h-[2px] bg-darkGreen"></div>
-          <div className="w-[30px] h-[2px] bg-darkGreen"></div>
+          <div className="w-[30px] h-[2px] bg-white"></div>
+          <div className="w-[30px] h-[2px] bg-white"></div>
+          <div className="w-[30px] h-[2px] bg-white"></div>
         </button>
       </div>
       {isMenuOpen && (
-        <div className="fixed top-0 left-0 right-0 bottom-0 flex flex-col px-12 pt-36 gap-10 uppercase font-open text-lg text-darkGreen font-semibold bg-white bg-opacity-90">
-          <Link href="/">Acceuil</Link>
-          {navLinks.map((link) => (
-            <a key={link.name} href={link.path}>
-              {link.name}
-            </a>
-          ))}
+        <div className="fixed top-0 left-0 right-0 bottom-0 flex flex-col px-12 pt-36 gap-10 uppercase font-open text-lg text-white bg-darkGreen bg-opacity-40 backdrop-blur-sm ">
+          <Link href="/">Accueil</Link>
+          {navLinks.map((link) => {
+            return (
+              <Link key={link.name} href={link.path}>
+                {link.name}
+              </Link>
+            );
+          })}
         </div>
       )}
     </div>
