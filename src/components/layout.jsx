@@ -1,6 +1,7 @@
 import HeaderDesktop from "./navigation/header/headerDesktop";
 import HeaderMobile from "./navigation/header/headerMobile";
-import Footer from "./navigation/footer";
+import FooterMobile from "./navigation/footer/footerMobile";
+import FooterDesktop from "./navigation/footer/footerDesktop";
 
 export default function Layout({ children }) {
   return (
@@ -8,7 +9,8 @@ export default function Layout({ children }) {
       <HeaderDesktop />
       <HeaderMobile />
       <main>{children}</main>
-      <Footer />
+      <FooterDesktop />
+      <FooterMobile />
     </>
   );
 }
