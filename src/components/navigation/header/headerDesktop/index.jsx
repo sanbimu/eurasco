@@ -33,7 +33,7 @@ const HeaderDesktop = ({ current }) => {
   }, []);
 
   return (
-    <div className="hidden lg:flex">
+    <div className="hidden md:flex">
       <div
         className={`flex justify-between w-full fixed top-0 z-[100] pt-6 px-[10%] ${
           isScrolled ? "bg-darkGreen bg-opacity-60 backdrop-blur-sm pt-0 " : ""
@@ -47,7 +47,7 @@ const HeaderDesktop = ({ current }) => {
             height={logoSize.height}
           />
         </Link>
-        <div className="flex gap-12 uppercase font-open text-white items-center text-sm">
+        <div className="flex lg:gap-12 uppercase font-open text-white items-center lg:text-sm md:text-xs md:gap-4">
           {navLinks.map((link, index) => {
             const isActive = router.pathname === link.path;
             const isLast = index === navLinks.length - 1;
@@ -57,7 +57,7 @@ const HeaderDesktop = ({ current }) => {
                 href={link.path}
                 className={`${isActive ? "text-yellow" : "text-white"} ${
                   isLast
-                    ? "py-2 px-5 rounded-[32px] border border-white justify-center items-center inline-flex"
+                    ? "lg:py-2 lg:px-5 md:py-1 md:px-3 rounded-[32px] border border-white justify-center items-center inline-flex"
                     : ""
                 }`}
               >

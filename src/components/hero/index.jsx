@@ -1,11 +1,15 @@
 export const Hero = () => {
   return (
     <>
-      <div className="md:hidden flex h-screen">
+      <div className="md:hidden flex">
         <img src="/images/home.jpg" alt="Home"></img>
       </div>
-      <div className="hidden lg:flex h-screen">
-        <img src="/images/homebig.jpg" alt="Home"></img>
+      <div className="hidden md:flex">
+        <img
+          src="/images/homebig.jpg"
+          alt="Home"
+          className="md:object-contain"
+        ></img>
       </div>
     </>
   );

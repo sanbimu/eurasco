@@ -4,7 +4,7 @@ import Socials from "../socials";
 
 const FooterMobile = ({ current }) => {
   return (
-    <div className="flex flex-col lg:hidden w-full bottom-0 bg-darkGreen mt-[140px] pt-8 m-auto px-6">
+    <div className="flex flex-col lg:hidden w-full bottom-0 bg-darkGreen mt-[140px] pt-8 m-auto md:px-40 px-6">
       <Image
         src="/icons/logoWhite.svg"
         alt="Eurasco Logo"
@@ -52,6 +52,7 @@ const FooterMobile = ({ current }) => {
           </button>
         </form>
       </div>
+
       <div className="flex justify-center">
         <p className="pt-8 pb-10 font-open text-white text-sm ">
           © 2023 Eurasco made with love by Listri

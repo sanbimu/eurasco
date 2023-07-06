@@ -35,7 +35,7 @@ const HeaderMobile = ({ current }) => {
   };
 
   return (
-    <div className="lg:hidden flex flex-col">
+    <div className="md:hidden flex flex-col">
       <div
         className={`flex flex-row justify-between w-full fixed top-0 z-[100] m-auto pl-2 pr-8 py-1 ${
           isScrolled & !isMenuOpen
