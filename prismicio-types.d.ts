@@ -67,7 +67,7 @@ type HomeDocumentDataSlicesSlice = HeroSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type HomeDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
+  prismic.PrismicDocumentWithUID<Simplify<HomeDocumentData>, "home", Lang>;
 export type AllDocumentTypes = HomeDocument;
 /**
  * Primary content in Hero → Primary

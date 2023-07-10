@@ -15,10 +15,10 @@ export default function Home() {
   );
 }
 
-// export async function getStaticProps({ params, previewData }) {
+// export async function getStaticProps({ previewData }) {
 //   const client = createClient({ previewData });
 
-//   const page = await client.getByUID("page", params.uid);
+//   const document = await client.getSingle("home");
 
 //   return {
 //     props: { page },

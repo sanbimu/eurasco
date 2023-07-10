@@ -3,10 +3,10 @@ export const Hero = () => {
     <>
       <div className="flex md:bg-heroDesktop md:bg-right-top bg-heroMobile h-screen">
         <div className="flex flex-col self-center font-open px-[13px] text-white">
-          <h2 className="uppercase font-semibold tracking-[10px] text-sm text-yellow">
+          <h2 className="uppercase font-semibold tracking-[10px] text-sm md:text-base text-yellow">
             A PROFESSION OF HOPE
           </h2>
-          <h1 className="uppercase font-mont font-bold leading-[70px] text-5xl">
+          <h1 className="uppercase font-mont font-bold leading-[70px] text-5xl lg:text-6xl">
             THE PURE NATURALLY HEALING
           </h1>
           <p className="text-lg leading-8 py-6">
