@@ -20,6 +20,10 @@ module.exports = {
         open: ["var(--font-open)"],
         mont: ["var(--font-montserrat)"],
       },
+      backgroundImage: {
+        heroDesktop: "url('/images/homebig.jpg')",
+        heroMobile: "url('/images/home.jpg')",
+      },
     },
   },
   plugins: [],

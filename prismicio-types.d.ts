@@ -5,80 +5,173 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
   [KeyType in keyof T]: T[KeyType];
 };
-/** Content for Acceuil documents */
-interface AcceuilDocumentData {
+/** Content for Home documents */
+interface HomeDocumentData {
   /**
-   * Title field in *Acceuil*
+   * Slice Zone field in *Home*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
-   * - **API ID Path**: acceuil.title
+   * - **API ID Path**: home.slices[]
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
    *
    */
-  title: prismic.RichTextField;
+  slices: prismic.SliceZone<HomeDocumentDataSlicesSlice>;
   /**
-   * Subtitle field in *Acceuil*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: acceuil.subtitle
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  subtitle: prismic.RichTextField;
-  /**
-   * Description field in *Acceuil*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: acceuil.description
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  description: prismic.RichTextField;
-  /**
-   * Button field in *Acceuil*
+   * Meta Description field in *Home*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: acceuil.button
-   * - **Tab**: Main
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: home.meta_description
+   * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  button: prismic.KeyTextField;
+  meta_description: prismic.KeyTextField;
   /**
-   * BackgroundImage field in *Acceuil*
+   * Meta Image field in *Home*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: acceuil.backgroundimage
-   * - **Tab**: Main
+   * - **API ID Path**: home.meta_image
+   * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/core-concepts/image
    *
    */
-  backgroundimage: prismic.ImageField<never>;
+  meta_image: prismic.ImageField<never>;
+  /**
+   * Meta Title field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: home.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  meta_title: prismic.KeyTextField;
 }
 /**
- * Acceuil document from Prismic
+ * Slice for *Home → Slice Zone*
  *
- * - **API ID**: `acceuil`
+ */
+type HomeDocumentDataSlicesSlice = HeroSlice;
+/**
+ * Home document from Prismic
+ *
+ * - **API ID**: `home`
  * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type AcceuilDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<AcceuilDocumentData>,
-    "acceuil",
-    Lang
-  >;
-export type AllDocumentTypes = AcceuilDocument;
+export type HomeDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
+export type AllDocumentTypes = HomeDocument;
+/**
+ * Primary content in Hero → Primary
+ *
+ */
+interface HeroSliceDefaultPrimary {
+  /**
+   * Title field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.title
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  title: prismic.RichTextField;
+  /**
+   * Subtitle field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  subtitle: prismic.RichTextField;
+  /**
+   * Description field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.description
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  description: prismic.RichTextField;
+  /**
+   * Button field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.button
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  button: prismic.KeyTextField;
+  /**
+   * Button Link field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.buttonLink
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  buttonLink: prismic.KeyTextField;
+  /**
+   * Image Mobile field in *Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.imageMobile
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  imageMobile: prismic.ImageField<never>;
+  /**
+   * Image Desktop field in *Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.imageDesktop
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  imageDesktop: prismic.ImageField<never>;
+}
+/**
+ * Default variation for Hero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *Hero*
+ *
+ */
+type HeroSliceVariation = HeroSliceDefault;
+/**
+ * Hero Shared Slice
+ *
+ * - **API ID**: `hero`
+ * - **Description**: `Hero`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -87,6 +180,15 @@ declare module "@prismicio/client" {
     ): prismic.Client<AllDocumentTypes>;
   }
   namespace Content {
-    export type { AcceuilDocumentData, AcceuilDocument, AllDocumentTypes };
+    export type {
+      HomeDocumentData,
+      HomeDocumentDataSlicesSlice,
+      HomeDocument,
+      AllDocumentTypes,
+      HeroSliceDefaultPrimary,
+      HeroSliceDefault,
+      HeroSliceVariation,
+      HeroSlice,
+    };
   }
 }
