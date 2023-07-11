@@ -23,6 +23,7 @@ module.exports = {
       backgroundImage: {
         heroDesktop: "url('/images/homebig.jpg')",
         heroMobile: "url('/images/home.jpg')",
+        contact: "url('/images/contact.jpg')",
       },
     },
   },
