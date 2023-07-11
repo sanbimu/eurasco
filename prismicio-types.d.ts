@@ -77,33 +77,23 @@ interface HeroSliceDefaultPrimary {
   /**
    * Title field in *Hero → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: hero.primary.title
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  title: prismic.RichTextField;
+  title: prismic.KeyTextField;
   /**
    * Subtitle field in *Hero → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: hero.primary.subtitle
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  subtitle: prismic.RichTextField;
-  /**
-   * Description field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.description
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  description: prismic.RichTextField;
+  subtitle: prismic.KeyTextField;
   /**
    * Button field in *Hero → Primary*
    *
@@ -115,35 +105,15 @@ interface HeroSliceDefaultPrimary {
    */
   button: prismic.KeyTextField;
   /**
-   * Button Link field in *Hero → Primary*
+   * Description field in *Hero → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.buttonLink
+   * - **API ID Path**: hero.primary.description
    * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  buttonLink: prismic.KeyTextField;
-  /**
-   * Image Mobile field in *Hero → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.imageMobile
-   * - **Documentation**: https://prismic.io/docs/core-concepts/image
-   *
-   */
-  imageMobile: prismic.ImageField<never>;
-  /**
-   * Image Desktop field in *Hero → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.imageDesktop
-   * - **Documentation**: https://prismic.io/docs/core-concepts/image
-   *
-   */
-  imageDesktop: prismic.ImageField<never>;
+  description: prismic.KeyTextField;
 }
 /**
  * Default variation for Hero Slice

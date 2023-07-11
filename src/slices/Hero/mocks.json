@@ -4,90 +4,24 @@
 		"variation": "default",
 		"primary": {
 			"title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "THE PURE NATURALLY HEALING",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
+				"__TYPE__": "FieldContent",
+				"value": "rabbit",
+				"type": "Text"
 			},
 			"subtitle": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": " A PROFESSION OF HOPE",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
+				"__TYPE__": "FieldContent",
+				"value": "characteristic",
+				"type": "Text"
 			},
 			"description": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading1",
-						"content": {
-							"text": "Growing community by inspiring healthy is our commitment with            farmers, the abundant living on the field",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
+				"__TYPE__": "FieldContent",
+				"value": "slave",
+				"type": "Text"
 			},
 			"button": {
 				"__TYPE__": "FieldContent",
 				"type": "Text",
 				"value": "Learn More"
-			},
-			"imageMobile": {
-				"__TYPE__": "ImageContent",
-				"url": "https://images.unsplash.com/photo-1591287083773-9a52ba8184a4?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxN3x8ZnJ1aXR8ZW58MHx8fHwxNjg4OTM4NzEzfDA&ixlib=rb-4.0.3&q=85",
-				"origin": {
-					"id": "mrFdBdTlElk",
-					"url": "https://images.unsplash.com/photo-1591287083773-9a52ba8184a4?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxN3x8ZnJ1aXR8ZW58MHx8fHwxNjg4OTM4NzEzfDA&ixlib=rb-4.0.3&q=85",
-					"width": 5304,
-					"height": 7952
-				},
-				"width": 5304,
-				"height": 7952,
-				"edit": {
-					"background": "transparent",
-					"zoom": 1,
-					"crop": {
-						"x": 0,
-						"y": 0
-					}
-				},
-				"thumbnails": {}
-			},
-			"imageDesktop": {
-				"__TYPE__": "ImageContent",
-				"url": "https://images.unsplash.com/photo-1457296898342-cdd24585d095?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyMnx8ZnJ1aXR8ZW58MHx8fHwxNjg4OTM4NzEzfDA&ixlib=rb-4.0.3&q=85",
-				"origin": {
-					"id": "0DtoVEDaJbs",
-					"url": "https://images.unsplash.com/photo-1457296898342-cdd24585d095?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyMnx8ZnJ1aXR8ZW58MHx8fHwxNjg4OTM4NzEzfDA&ixlib=rb-4.0.3&q=85",
-					"width": 3600,
-					"height": 2700
-				},
-				"width": 3600,
-				"height": 2700,
-				"edit": {
-					"background": "transparent",
-					"zoom": 1,
-					"crop": {
-						"x": 0,
-						"y": 0
-					}
-				},
-				"thumbnails": {}
 			}
 		},
 		"items": []

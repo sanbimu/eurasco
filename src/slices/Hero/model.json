@@ -13,55 +13,20 @@
       "imageUrl": "",
       "primary": {
         "title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Title",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
+          "type": "Text",
+          "config": { "label": "Title", "placeholder": "" }
         },
         "subtitle": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Subtitle",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "paragraph,preformatted,heading1,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "description": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Description",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
+          "type": "Text",
+          "config": { "label": "Subtitle", "placeholder": "" }
         },
         "button": {
           "type": "Text",
           "config": { "label": "Button", "placeholder": "" }
         },
-        "buttonLink": {
+        "description": {
           "type": "Text",
-          "config": { "label": "Button Link", "placeholder": "" }
-        },
-        "imageMobile": {
-          "type": "Image",
-          "config": {
-            "label": "Image Mobile",
-            "constraint": {},
-            "thumbnails": []
-          }
-        },
-        "imageDesktop": {
-          "type": "Image",
-          "config": {
-            "label": "Image Desktop",
-            "constraint": {},
-            "thumbnails": []
-          }
+          "config": { "label": "Description", "placeholder": "" }
         }
       },
       "items": {}

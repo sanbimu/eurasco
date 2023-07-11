@@ -17,30 +17,30 @@ export const repositoryName = config.repositoryName;
 // TODO: Update the routes array to match your project's route structure.
 const routes = [
   {
-    type: "page",
+    type: "home",
     uid: "home",
     path: "/",
   },
-  {
-    type: "page",
-    uid: "evenements",
-    path: "/evenements",
-  },
-  {
-    type: "page",
-    uid: "actualites",
-    path: "/actualites",
-  },
-  {
-    type: "page",
-    uid: "membres",
-    path: "/membres",
-  },
-  {
-    type: "page",
-    uid: "contact",
-    path: "/contact",
-  },
+  // {
+  //   type: "page",
+  //   uid: "evenements",
+  //   path: "/evenements",
+  // },
+  // {
+  //   type: "page",
+  //   uid: "actualites",
+  //   path: "/actualites",
+  // },
+  // {
+  //   type: "page",
+  //   uid: "membres",
+  //   path: "/membres",
+  // },
+  // {
+  //   type: "page",
+  //   uid: "contact",
+  //   path: "/contact",
+  // },
 ];
 
 /**
