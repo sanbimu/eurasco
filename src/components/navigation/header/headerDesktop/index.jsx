@@ -35,8 +35,10 @@ const HeaderDesktop = ({ current }) => {
   return (
     <div className="hidden md:flex z-[100]">
       <div
-        className={`flex justify-between w-full fixed top-0 z-[100] pt-6 px-[10%] ${
-          isScrolled ? "bg-darkGreen bg-opacity-60 backdrop-blur-sm pt-0" : ""
+        className={`flex justify-between w-full fixed top-0 z-[100] px-[10%] ${
+          isScrolled
+            ? "bg-darkGreen bg-opacity-60 backdrop-blur-sm pt-1"
+            : "pt-6"
         }`}
       >
         <Link href="/">

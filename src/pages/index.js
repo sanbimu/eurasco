@@ -4,6 +4,7 @@ import HeroSlice from "@/slices/Hero";
 import { About } from "@/components/about";
 import { Title } from "@/components/shared/title";
 import { ContactCard } from "@/components/shared/contactCard";
+import Image from "next/image";
 
 export default function Home({ document }) {
   return (
@@ -25,6 +26,13 @@ export default function Home({ document }) {
           title="rencontrez"
           subtitle="nos membres"
           text="We have a team of professionals, dedicated to providing excellent service."
+        />
+        <Image
+          src="/images/contactDesktop.jpg"
+          width={1920}
+          height={600}
+          alt="Image Contact"
+          className="hidden md:flex md:pb-14 md:pt-14"
         />
         <ContactCard />
       </div>

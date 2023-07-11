@@ -134,6 +134,16 @@ interface HeroSliceDefaultPrimary {
    *
    */
   imageMobile: prismic.ImageField<never>;
+  /**
+   * Image Medium field in *Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.imageMedium
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  imageMedium: prismic.ImageField<never>;
 }
 /**
  * Default variation for Hero Slice

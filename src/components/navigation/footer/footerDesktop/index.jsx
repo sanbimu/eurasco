@@ -4,7 +4,7 @@ import Socials from "../socials";
 
 const FooterDesktop = ({ current }) => {
   return (
-    <div className="hidden lg:flex w-full bottom-0 bg-darkGreen mt-[140px] pt-8 m-auto px-6">
+    <div className="hidden lg:flex w-full bottom-0 bg-darkGreen pt-8 m-auto px-6">
       <div className="flex flex-col pl-44 pr-48">
         <div className="flex flex-row">
           <div className="flex flex-col w-[50%]">
