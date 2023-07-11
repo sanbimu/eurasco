@@ -1,9 +1,6 @@
 import * as prismic from "@prismicio/client";
 import { createClient } from "../prismicio";
-import { SliceZone } from "@prismicio/react";
 import HeroSlice from "@/slices/Hero";
-import { Hero } from "@/components/hero";
-import { components } from "@/slices";
 
 export default function Home({ document }) {
   return (

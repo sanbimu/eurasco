@@ -36,7 +36,7 @@ const HeaderDesktop = ({ current }) => {
     <div className="hidden md:flex">
       <div
         className={`flex justify-between w-full fixed top-0 z-[100] pt-6 px-[10%] ${
-          isScrolled ? "bg-darkGreen bg-opacity-60 backdrop-blur-sm pt-1" : ""
+          isScrolled ? "bg-darkGreen bg-opacity-60 backdrop-blur-sm pt-0" : ""
         }`}
       >
         <Link href="/">
@@ -47,7 +47,7 @@ const HeaderDesktop = ({ current }) => {
             height={logoSize.height}
           />
         </Link>
-        <div className="flex lg:gap-12 uppercase font-open text-white items-center lg:text-sm md:text-xs md:gap-4">
+        <div className="flex lg:gap-14 uppercase font-open text-white items-center lg:text-sm md:text-xs md:gap-4">
           {navLinks.map((link, index) => {
             const isActive = router.pathname === link.path;
             const isLast = index === navLinks.length - 1;

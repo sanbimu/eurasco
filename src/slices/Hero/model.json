@@ -27,6 +27,22 @@
         "description": {
           "type": "Text",
           "config": { "label": "Description", "placeholder": "" }
+        },
+        "imageDesktop": {
+          "type": "Image",
+          "config": {
+            "label": "Image Desktop",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "imageMobile": {
+          "type": "Image",
+          "config": {
+            "label": "Image Mobile",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {}

@@ -114,6 +114,26 @@ interface HeroSliceDefaultPrimary {
    *
    */
   description: prismic.KeyTextField;
+  /**
+   * Image Desktop field in *Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.imageDesktop
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  imageDesktop: prismic.ImageField<never>;
+  /**
+   * Image Mobile field in *Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.imageMobile
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  imageMobile: prismic.ImageField<never>;
 }
 /**
  * Default variation for Hero Slice
