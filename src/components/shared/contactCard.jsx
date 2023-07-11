@@ -21,7 +21,7 @@ export const ContactCard = () => {
           We will be the leading company in the national market with each of our
           products.
         </p>
-        <button className="uppercase text-white font-open font-semibold text-[20px] lg:text-sm tracking-[1px] bg-lightGreen rounded-[10px] py-4 md:py-2 w-full md:w-[250px] lg:w-[170px]">
+        <button className="uppercase text-white font-open font-semibold text-[20px] md:text-sm tracking-[1px] bg-lightGreen rounded-[10px] py-4 md:py-2 w-full md:w-[200px] lg:w-[170px]">
           send message
         </button>
       </div>
