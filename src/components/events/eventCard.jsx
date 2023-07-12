@@ -3,7 +3,7 @@ import Image from "next/image";
 export const EventCard = () => {
   return (
     <div className="flex flex-col px-[25px] h-[232px]">
-      <div className="relative">
+      <div className="relative rounded-[10px] shadow-card ">
         <Image
           src="/images/eventMobile.jpg"
           width={393}
@@ -11,7 +11,7 @@ export const EventCard = () => {
           alt="Event Image"
           className="flex rounded-[10px]"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50 rounded-[10px]"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-50 rounded-[10px] shadow-card"></div>
       </div>
 
       <div className="flex flex-col px-[25px] items-start pt-8 absolute">
