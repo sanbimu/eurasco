@@ -1,11 +1,12 @@
 import * as prismic from "@prismicio/client";
 import React from "react";
+import Image from "next/image";
 import { createClient } from "../prismicio";
 import HeroSlice from "@/slices/Hero";
-import { About } from "@/components/about";
+import { About } from "@/components/about/about";
 import { Title } from "@/components/shared/title";
 import { ContactCard } from "@/components/shared/contactCard";
-import Image from "next/image";
+import { EventCard } from "@/components/events/eventCard";
 
 export default function Home({ document }) {
   return (
@@ -18,6 +19,11 @@ export default function Home({ document }) {
           subtitle="événements à venir"
           text="We have a wide variety of services so that our clients have good options."
         />
+        <div className="flex flex-col gap-4">
+          <EventCard />
+          <EventCard />
+        </div>
+
         <Title
           title="news"
           subtitle="DERNIèRES ACTUALITéS"

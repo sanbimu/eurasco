@@ -16,21 +16,21 @@ const HeroSlice = ({ slice }) => {
     <>
       <div className="flex h-screen w-full">
         <Image
-          src="/images/homeMobile.jpg"
+          src={slice.primary.imageMobile.url}
           width={394}
           height={850}
           alt="Hero Image"
           className="flex md:hidden relative "
         />
         <Image
-          src="/images/homeMedium.jpg"
+          src={slice.primary.imageMedium.url}
           width={1133}
           height={1472}
           alt="Hero Image"
           className="hidden md:flex md:relative lg:hidden "
         />
         <Image
-          src="/images/homeDesktop.jpg"
+          src={slice.primary.imageDesktop.url}
           width={1920}
           height={850}
           alt="Hero Image"
