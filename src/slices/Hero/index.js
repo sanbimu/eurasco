@@ -1,4 +1,5 @@
-import { PrismicRichText, PrismicNextImage } from "@prismicio/react";
+import React from "react";
+import { PrismicNextImage } from "@prismicio/react";
 import Image from "next/image";
 
 /**
@@ -7,6 +8,10 @@ import Image from "next/image";
  * @param {HeroProps}
  */
 const HeroSlice = ({ slice }) => {
+  function scrollToAbout() {
+    const aboutSection = document.getElementById("about");
+    aboutSection.scrollIntoView({ behavior: "smooth" });
+  }
   return (
     <>
       <div className="flex h-screen w-full">
@@ -41,9 +46,13 @@ const HeroSlice = ({ slice }) => {
           <p className="text-lg leading-8 py-6 md:pr-48 lg:pr-[400px]">
             {slice.primary.description}
           </p>
-          <button className="uppercase border-2 border-lightGreen rounded-[3px] px-8 py-2 self-start font-semibold tracking-[2px] text-[15px]">
+          <button
+            className="uppercase border-2 border-lightGreen rounded-[3px] px-8 py-2 self-start font-semibold tracking-[2px] text-[15px]"
+            onClick={scrollToAbout}
+          >
             {slice.primary.button}
           </button>
+          <div id="about"></div>
         </div>
       </div>
     </>

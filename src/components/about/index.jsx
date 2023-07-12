@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export const About = () => {
   return (
-    <div className="flex lg:pb-40">
-      <div className="flex flex-col lg:flex lg:flex-row">
-        <div className="flex flex-col pt-14 font-open px-[25px] md:px-[70px] lg:pr-[660px] text-black">
+    <div className="flex lg:pb-40 md:px-[70px] lg:px-[150px]">
+      <div className="flex flex-col lg:flex lg:flex-row justify-between">
+        <div className="flex flex-col pt-14 font-open px-[25px] md:px-0 lg:w-[50%] text-black">
           <h2 className="uppercase font-bold leading-[70px] text-6xl font-mont text-yellow">
             A propos
           </h2>
@@ -52,15 +52,15 @@ export const About = () => {
             </div>
           </div>
         </div>
-        <div className="hidden lg:flex absolute">
+        <div className="hidden lg:flex relative ">
           <Image
             src="/images/aboutDesktop.jpg"
             width={579}
             height={759}
             alt="About Image"
-            className="relative left-[880px] top-[-80px] rounded-[10px] h-[630px] w-auto"
+            className="rounded-[10px] h-[630px] w-auto mt-[-70px]"
           />
-          <div className="relative left-[430px] bottom-[-270px] h-[250px] w-[267px] bg-lightGreen rounded-[10px] p-[10px]">
+          <div className=" h-[250px] w-[267px] bg-lightGreen rounded-[10px] p-[10px] absolute left-[25px] top-[280px]">
             <div className="border border-dashed border-white py-3 px-3">
               <Image
                 src="/icons/medal.svg"

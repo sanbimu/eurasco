@@ -1,4 +1,5 @@
 import * as prismic from "@prismicio/client";
+import React from "react";
 import { createClient } from "../prismicio";
 import HeroSlice from "@/slices/Hero";
 import { About } from "@/components/about";
@@ -9,7 +10,7 @@ import Image from "next/image";
 export default function Home({ document }) {
   return (
     <main>
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full">
         <HeroSlice slice={document.data.slices[0]} />
         <About />
         <Title
