@@ -8,8 +8,22 @@ import { Title } from "@/components/shared/title";
 import { ContactCard } from "@/components/shared/contactCard";
 import { EventCard } from "@/components/events/eventCard";
 import { CardAll } from "@/components/shared/cardAll";
+import { useRouter } from "next/router";
+import { NewsCard } from "@/components/news/newsCard";
 
 export default function Home({ document }) {
+  const router = useRouter();
+
+  const handleEvents = () => {
+    router.push("/evenements");
+  };
+  const handleNews = () => {
+    router.push("/actualites");
+  };
+  const handleMembers = () => {
+    router.push("/membres");
+  };
+
   return (
     <main>
       <div className="flex flex-col w-full">
@@ -23,7 +37,11 @@ export default function Home({ document }) {
         <div className="flex flex-col gap-4">
           <EventCard />
           <EventCard />
-          <CardAll title="Tous nos événements" buttonText="voir tout" />
+          <CardAll
+            title="Tous nos événements"
+            buttonText="voir tout"
+            buttonLogic={handleEvents}
+          />
         </div>
         <Title
           title="news"
@@ -31,7 +49,13 @@ export default function Home({ document }) {
           text="We have a wide variety of services so that our clients have good options."
         />
         <div className="flex flex-col gap-4">
-          <CardAll title="Toutes nos actualités" buttonText="voir tout" />
+          <NewsCard />
+          <NewsCard />
+          <CardAll
+            title="Toutes nos actualités"
+            buttonText="voir tout"
+            buttonLogic={handleNews}
+          />
         </div>
         <Title
           title="rencontrez"
@@ -39,7 +63,11 @@ export default function Home({ document }) {
           text="We have a team of professionals, dedicated to providing excellent service."
         />
         <div className="flex flex-col gap-4">
-          <CardAll title="Tous nos membres" buttonText="voir tout" />
+          <CardAll
+            title="Tous nos membres"
+            buttonText="voir tout"
+            buttonLogic={handleMembers}
+          />
         </div>
         <Image
           src="/images/contactDesktop.jpg"
