@@ -5,3 +5,7 @@
 body {
   overscroll-behavior: none;
 }
+
+.custom_Gradient {
+  background: linear-gradient(180deg, #00534c 50%, transparent 50%);
+}

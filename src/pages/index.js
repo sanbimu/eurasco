@@ -23,21 +23,33 @@ export default function Home({ document }) {
           subtitle="événements à venir"
           text="We have a wide variety of services so that our clients have good options."
         />
-        <div className="flex flex-col md:flex-row md:gap-8 md:flex-wrap md:px-10 gap-4 overflow-auto">
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <CardAll
-            title="Tous nos événements"
-            buttonText="voir tout"
-            linkTo={"/evenements"}
-          />
+        <div className="flex flex-col lg:flex-row md:gap-0 md:px-10 lg:mx-auto gap-4 overflow-auto lg:pb-20 lg:gap-6 lg:pt-2  ">
+          <div className="flex flex-col md:flex-row lg:flex-col md:gap-10 lg:gap-6 gap-4 overflow-auto">
+            <EventCard />
+            <EventCard />
+          </div>
+          <div className="flex md:hidden lg:flex">
+            <CardAll
+              title="Tous nos événements"
+              buttonText="voir tout"
+              linkTo={"/evenements"}
+            />
+          </div>
+          <div className="hidden md:flex lg:hidden mx-auto mt-8 mb-14">
+            <Button
+              buttonText={"tous nos événements"}
+              linkTo={"/evenements"}
+            ></Button>
+          </div>
         </div>
         <Title
           title="news"
           subtitle="DERNIèRES ACTUALITéS"
           text="We have a wide variety of services so that our clients have good options."
         />
+        <div>
+          <div className="hidden lg:flex w-full h-[440px] custom_Gradient"></div>
+        </div>
         <div className="flex flex-col md:flex-row md:gap-0 md:flex-wrap md:px-6 gap-4 overflow-auto">
           <NewsCard />
           <NewsCard />
@@ -48,7 +60,7 @@ export default function Home({ document }) {
               linkTo={"/actualites"}
             />
           </div>
-          <div className="hidden md:flex mx-auto mt-10 mb-14">
+          <div className="hidden md:flex mx-auto mt-12 mb-14">
             <Button
               buttonText={"toutes nos actualités"}
               linkTo={"/actualites"}
