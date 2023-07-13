@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const MemberCard = () => {
   return (
-    <div className="flex flex-col relative mx-[25px] h-[560px] justify-center rounded-[10px] overflow-hidden">
+    <div className="flex flex-col relative mx-[25px] md:mx-auto h-[560px] md:w-[343px] justify-center rounded-[10px] overflow-hidden">
       <Image
         src="/images/memberMobile.jpg"
         width={343}
@@ -22,7 +22,7 @@ export const MemberCard = () => {
         />
       </div>
       <div className="absolute bottom-0 right-0 w-[230px] h-[150px] bg-gradient-to-br from-emerald rounded-tl-[10px]">
-        <Link className="flex flex-col p-6" href="/membres">
+        <div className="flex flex-col p-6">
           <h2 className="font-open font-bold text-[30px] leading-6 text-white">
             AGROMEK
           </h2>
@@ -35,7 +35,7 @@ export const MemberCard = () => {
           >
             Lire plus →
           </Link>
-        </Link>
+        </div>
       </div>
     </div>
   );

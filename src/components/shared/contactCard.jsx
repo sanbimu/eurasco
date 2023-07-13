@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const ContactCard = () => {
   return (
-    <div className="flex flex-col h-[281px] md:items-center md:h-[20vh] lg:h-[30vh]">
+    <div className="flex flex-col h-[281px] md:items-center md:h-[18vh] lg:h-[30vh]">
       <Image
         src="/images/contactMobile.jpg"
         width={393}

@@ -3,14 +3,14 @@ import Button from "../shared/button";
 
 export const NewsCard = () => {
   return (
-    <div className="flex flex-col mx-[25px] h-[560px]">
-      <div className="relative rounded-[10px] shadow-card ">
+    <div className="flex flex-col mx-[25px] md:mx-auto md:h-[560px] md:w-[343px]">
+      <div className="relative rounded-[10px]">
         <Image
           src="/images/newsMobile.jpg"
           width={343}
           height={560}
           alt="News Image"
-          className="flex rounded-[10px]"
+          className="flex rounded-[10px] w-full"
         />
         <div className="absolute inset-0 bg-black bg-opacity-25 rounded-[10px] shadow-card"></div>
       </div>

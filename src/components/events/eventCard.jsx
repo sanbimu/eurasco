@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const EventCard = () => {
   return (
-    <div className="flex flex-col mx-[25px] h-[232px]">
+    <div className="flex flex-col mx-[25px] md:mx-auto h-[232px] md:w-[350px]">
       <div className="relative rounded-[10px] shadow-card ">
         <Image
           src="/images/eventMobile.jpg"
@@ -15,14 +15,14 @@ export const EventCard = () => {
         <div className="absolute inset-0 bg-black bg-opacity-50 rounded-[10px] shadow-card"></div>
       </div>
 
-      <div className="flex flex-col px-[25px] items-start pt-8 absolute">
+      <div className="flex flex-col px-[25px] w-[350px] items-start pt-8 absolute">
         <p className="font-mont text-lightGrey font-bold text-[25px] leading-9 pb-4">
           01
         </p>
         <h1 className="font-mont text-white font-bold text-xl leading-6 pb-2">
           Événement 1
         </h1>
-        <p className="font-open text-white italic text-[15px] leading-[22px] pb-4">
+        <p className="font-open text-white italic text-[15px] leading-[22px] pb-4 ">
           Salad ahead is picking low moisture vegetables.
         </p>
         <Link
