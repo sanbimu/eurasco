@@ -66,10 +66,12 @@ const HeaderMobile = ({ current }) => {
       </div>
       {isMenuOpen && (
         <div className="fixed z-[90] top-0 left-0 right-0 bottom-0 flex flex-col px-12 pt-36 gap-10 uppercase font-open text-lg text-white font-semibold tracking-wider bg-darkGreen bg-opacity-60 backdrop-blur-sm ">
-          <Link href="/">Accueil</Link>
+          <Link href="/" onClick={toggleMenu}>
+            Accueil
+          </Link>
           {navLinks.map((link) => {
             return (
-              <Link key={link.name} href={link.path}>
+              <Link key={link.name} href={link.path} onClick={toggleMenu}>
                 {link.name}
               </Link>
             );

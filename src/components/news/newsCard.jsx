@@ -1,12 +1,7 @@
 import Image from "next/image";
 import Button from "../shared/button";
-import { useRouter } from "next/router";
 
 export const NewsCard = () => {
-  const router = useRouter();
-  const handleNews = () => {
-    router.push("/actualites");
-  };
   return (
     <div className="flex flex-col px-[25px] h-[560px]">
       <div className="relative rounded-[10px] shadow-card ">
@@ -28,7 +23,7 @@ export const NewsCard = () => {
           Organic livestock raised for meat, eggs, and dairy products must be
           raised in living conditions.
         </p>
-        <Button text="voir" onClick={handleNews}></Button>
+        <Button buttonText="voir" linkTo={"/evenements"}></Button>
       </div>
     </div>
   );

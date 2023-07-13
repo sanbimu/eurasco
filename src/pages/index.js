@@ -8,22 +8,9 @@ import { Title } from "@/components/shared/title";
 import { ContactCard } from "@/components/shared/contactCard";
 import { EventCard } from "@/components/events/eventCard";
 import { CardAll } from "@/components/shared/cardAll";
-import { useRouter } from "next/router";
 import { NewsCard } from "@/components/news/newsCard";
 
 export default function Home({ document }) {
-  const router = useRouter();
-
-  const handleEvents = () => {
-    router.push("/evenements");
-  };
-  const handleNews = () => {
-    router.push("/actualites");
-  };
-  const handleMembers = () => {
-    router.push("/membres");
-  };
-
   return (
     <main>
       <div className="flex flex-col w-full">
@@ -40,7 +27,7 @@ export default function Home({ document }) {
           <CardAll
             title="Tous nos événements"
             buttonText="voir tout"
-            buttonLogic={handleEvents}
+            linkTo={"/evenements"}
           />
         </div>
         <Title
@@ -54,7 +41,7 @@ export default function Home({ document }) {
           <CardAll
             title="Toutes nos actualités"
             buttonText="voir tout"
-            buttonLogic={handleNews}
+            linkTo={"/actualites"}
           />
         </div>
         <Title
@@ -66,7 +53,7 @@ export default function Home({ document }) {
           <CardAll
             title="Tous nos membres"
             buttonText="voir tout"
-            buttonLogic={handleMembers}
+            linkTo={"/membres"}
           />
         </div>
         <Image

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Button from "./button";
 
-export const CardAll = ({ title, buttonText, buttonLogic }) => {
+export const CardAll = ({ title, buttonText, linkTo }) => {
   return (
     <div className="flex flex-col px-[25px] pb-20">
       <div className="h-[232px] bg-white relative shadow-card rounded-[10px]">
@@ -16,7 +16,7 @@ export const CardAll = ({ title, buttonText, buttonLogic }) => {
           <h1 className="font-mont font-bold text-[38px] leading-[42px] text-black pb-12">
             {title}
           </h1>
-          <Button text={buttonText} className="pb-1" onClick={buttonLogic} />
+          <Button buttonText={buttonText} className="pb-1" linkTo={linkTo} />
         </div>
       </div>
     </div>

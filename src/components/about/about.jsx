@@ -52,7 +52,7 @@ export const About = () => {
             </div>
           </div>
         </div>
-        <div className="hidden lg:flex relative ">
+        <div className="hidden lg:flex relative">
           <Image
             src="/images/aboutDesktop.jpg"
             width={579}

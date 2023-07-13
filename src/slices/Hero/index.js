@@ -34,7 +34,7 @@ const HeroSlice = ({ slice }) => {
           width={1920}
           height={850}
           alt="Hero Image"
-          className="hidden lg:flex lg:relative "
+          className="hidden lg:flex lg:relative w-full object-cover"
         />
         <div className="flex flex-col absolute -z-50 self-center font-open px-[13px] md:pl-12 lg:pl-36 lg:pr-72 text-white">
           <h2 className="uppercase font-semibold tracking-[10px] text-sm lg:text-base lg:leading-6 lg:pb-3 text-yellow">
