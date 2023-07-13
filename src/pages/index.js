@@ -9,6 +9,7 @@ import { ContactCard } from "@/components/shared/contactCard";
 import { EventCard } from "@/components/events/eventCard";
 import { CardAll } from "@/components/shared/cardAll";
 import { NewsCard } from "@/components/news/newsCard";
+import { MemberCard } from "@/components/members/members";
 
 export default function Home({ document }) {
   return (
@@ -50,6 +51,7 @@ export default function Home({ document }) {
           text="We have a team of professionals, dedicated to providing excellent service."
         />
         <div className="flex flex-col gap-4">
+          <MemberCard />
           <CardAll
             title="Tous nos membres"
             buttonText="voir tout"

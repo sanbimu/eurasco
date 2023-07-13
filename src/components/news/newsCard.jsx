@@ -3,7 +3,7 @@ import Button from "../shared/button";
 
 export const NewsCard = () => {
   return (
-    <div className="flex flex-col px-[25px] h-[560px]">
+    <div className="flex flex-col mx-[25px] h-[560px]">
       <div className="relative rounded-[10px] shadow-card ">
         <Image
           src="/images/newsMobile.jpg"

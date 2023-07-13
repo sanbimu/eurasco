@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const EventCard = () => {
   return (
-    <div className="flex flex-col px-[25px] h-[232px]">
+    <div className="flex flex-col mx-[25px] h-[232px]">
       <div className="relative rounded-[10px] shadow-card ">
         <Image
           src="/images/eventMobile.jpg"
@@ -24,9 +25,12 @@ export const EventCard = () => {
         <p className="font-open text-white italic text-[15px] leading-[22px] pb-4">
           Salad ahead is picking low moisture vegetables.
         </p>
-        <button className="font-open text-lightGreen italic text-[15px] leading-[22px] ">
+        <Link
+          className="font-open text-lightGreen italic text-[15px] leading-[22px]"
+          href="/evenements"
+        >
           Lire plus →
-        </button>
+        </Link>
       </div>
     </div>
   );

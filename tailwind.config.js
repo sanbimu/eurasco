@@ -15,6 +15,7 @@ module.exports = {
         darkGreen: "#01544D",
         lightGrey: "#A6A6A6",
         darkGrey: "#333333",
+        emerald: "#00534C",
       },
       fontFamily: {
         open: ["var(--font-open)"],
