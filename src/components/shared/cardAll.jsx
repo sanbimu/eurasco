@@ -3,7 +3,7 @@ import Button from "./button";
 
 export const CardAll = ({ title, buttonText, linkTo }) => {
   return (
-    <div className="flex flex-col mx-[25px] md:mx-auto md:w-[350px] lg:w-[35vw] lg:h-[516px] pb-20 lg:pb-0 ">
+    <div className="flex flex-col mx-[25px] md:mx-auto md:w-[350px] lg:w-[35vw] lg:h-[516px] lg:pb-0 ">
       <div className="h-[232px] lg:h-[516px] bg-white relative shadow-card rounded-[10px]">
         <Image
           src="/images/cardAll.png"

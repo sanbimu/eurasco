@@ -29,7 +29,7 @@ export default function Home({ document }) {
             <EventCard />
             <EventCard />
           </div>
-          <div className="flex md:hidden lg:flex">
+          <div className="flex md:hidden lg:flex pb-20 lg:pb-10">
             <CardAll
               title="Tous nos événements"
               buttonText="voir tout"
@@ -48,7 +48,6 @@ export default function Home({ document }) {
           subtitle="DERNIèRES ACTUALITéS"
           text="We have a wide variety of services so that our clients have good options."
         />
-
         <div className="hidden lg:flex flex-col gap-10 mb-14 w-full h-[440px] custom_Gradient items-center">
           <div className="flex flex-row gap-6 mx-auto mt-14">
             <NewsCardDesktop />
@@ -62,7 +61,7 @@ export default function Home({ document }) {
         <div className="flex flex-col md:flex-row md:gap-0 md:flex-wrap md:px-6 gap-4 overflow-auto">
           <NewsCard />
           <NewsCard />
-          <div className="flex md:hidden">
+          <div className="flex md:hidden pb-20">
             <CardAll
               title="Toutes nos actualités"
               buttonText="voir tout"
@@ -87,7 +86,7 @@ export default function Home({ document }) {
           <div className="hidden lg:flex px-2">
             <MemberCard />
           </div>
-          <div className="flex md:hidden">
+          <div className="flex md:hidden pb-20">
             <CardAll
               title="Tous nos membres"
               buttonText="voir tout"
