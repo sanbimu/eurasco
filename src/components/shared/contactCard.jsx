@@ -1,15 +1,23 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export const ContactCard = () => {
+  const router = useRouter();
+  const isHomePage = router.pathname === "/";
+
   return (
     <div className="flex flex-col h-[281px] md:items-center md:h-[18vh] lg:h-[30vh]">
-      <Image
-        src="/images/contactMobile.jpg"
-        width={393}
-        height={281}
-        alt="Hero Image"
-        className="flex md:hidden"
-      />
+      {isHomePage ? (
+        <Image
+          src="/images/contactMobile.jpg"
+          width={393}
+          height={281}
+          alt="Hero Image"
+          className="flex md:hidden"
+        />
+      ) : (
+        ""
+      )}
       <div className="flex flex-col px-[25px] items-center absolute">
         <h1 className="font-mont font-bold text-[40px] lg:text-[60px] leading-[42px] text-yellow uppercase text-center">
           Contact

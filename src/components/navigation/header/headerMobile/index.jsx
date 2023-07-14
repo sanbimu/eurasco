@@ -2,6 +2,7 @@ import Image from "next/image";
 import { navLinks } from "../../navLinks";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const HeaderMobile = ({ current }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,6 +35,9 @@ const HeaderMobile = ({ current }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const router = useRouter();
+  const isContactPage = router.pathname === "/contact";
+
   return (
     <div className="md:hidden flex flex-col z-[100]">
       <div
@@ -59,9 +63,21 @@ const HeaderMobile = ({ current }) => {
           className="flex flex-col justify-center gap-1"
           onClick={toggleMenu}
         >
-          <div className="w-[30px] h-[2px] bg-white"></div>
-          <div className="w-[30px] h-[2px] bg-white"></div>
-          <div className="w-[30px] h-[2px] bg-white"></div>
+          <div
+            className={`w-[30px] h-[2px] ${
+              isContactPage && !isScrolled ? "bg-darkGreen" : "bg-white"
+            }`}
+          ></div>
+          <div
+            className={`w-[30px] h-[2px] ${
+              isContactPage && !isScrolled ? "bg-darkGreen" : "bg-white"
+            }`}
+          ></div>
+          <div
+            className={`w-[30px] h-[2px] ${
+              isContactPage && !isScrolled ? "bg-darkGreen" : "bg-white"
+            }`}
+          ></div>
         </button>
       </div>
       {isMenuOpen && (
@@ -70,8 +86,14 @@ const HeaderMobile = ({ current }) => {
             Accueil
           </Link>
           {navLinks.map((link) => {
+            const isActive = router.pathname === link.path;
             return (
-              <Link key={link.name} href={link.path} onClick={toggleMenu}>
+              <Link
+                key={link.name}
+                href={link.path}
+                onClick={toggleMenu}
+                className={`${isActive ? "text-yellow" : "text-white"}`}
+              >
                 {link.name}
               </Link>
             );

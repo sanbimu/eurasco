@@ -26,7 +26,9 @@ export default function Members() {
             <MemberCard />
             <MemberCard />
           </div>
-          <ContactCard />
+          <div className="mt-10 mb-4">
+            <ContactCard />
+          </div>
         </div>
       </div>
     </main>

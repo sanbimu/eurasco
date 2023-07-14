@@ -22,7 +22,9 @@ export default function Events() {
             <EventCard />
             <EventCard />
           </div>
-          <ContactCard />
+          <div className="mt-10 mb-4">
+            <ContactCard />
+          </div>
         </div>
       </div>
     </main>
