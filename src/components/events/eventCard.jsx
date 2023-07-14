@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const EventCard = () => {
   return (
-    <div className="flex flex-col mx-[25px] md:mx-auto h-[232px] md:w-[40vw] lg:w-[35vw] lg:h-[246px]">
+    <div className="flex flex-col mx-[25px] md:mx-auto h-[232px] md:w-auto lg:w-[35vw] lg:h-[246px]">
       <div className="relative rounded-[10px] shadow-card">
         <Image
           src="/images/eventMobile.jpg"

@@ -12,7 +12,7 @@ export const NewsCard = () => {
           alt="News Image"
           className="flex rounded-[10px] w-full"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-25 rounded-[10px] shadow-card"></div>
+        <div className="absolute inset-0 gradient_News rounded-[10px] shadow-card"></div>
       </div>
 
       <div className="flex flex-col px-[35px] md:w-[343px] items-start absolute mt-[360px]">

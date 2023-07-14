@@ -39,7 +39,7 @@ const HeaderMobile = ({ current }) => {
   const isContactPage = router.pathname === "/contact";
 
   return (
-    <div className="md:hidden flex flex-col z-[100]">
+    <div className="lg:hidden flex flex-col z-[100]">
       <div
         className={`flex flex-row justify-between w-full fixed top-0 z-[100] m-auto pl-2 pr-8 py-1 ${
           isScrolled & !isMenuOpen
@@ -81,7 +81,7 @@ const HeaderMobile = ({ current }) => {
         </button>
       </div>
       {isMenuOpen && (
-        <div className="fixed z-[90] top-0 left-0 right-0 bottom-0 flex flex-col px-12 pt-36 gap-10 uppercase font-open text-lg text-white font-semibold tracking-wider bg-darkGreen bg-opacity-60 backdrop-blur-sm ">
+        <div className="fixed z-[90] top-0 left-0 right-0 bottom-0 flex flex-col px-12 pt-36 gap-10 uppercase font-open text-lg text-white font-semibold tracking-wider bg-darkGreen bg-opacity-70 backdrop-blur-md">
           <Link href="/" onClick={toggleMenu}>
             Accueil
           </Link>

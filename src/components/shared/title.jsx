@@ -1,6 +1,6 @@
 export const Title = ({ title, subtitle, text }) => {
   return (
-    <div className="flex flex-col px-[25px] pb-8 items-center">
+    <div className="flex flex-col pb-8 items-center">
       <div className="relative z-[60]">
         <h1 className="font-mont font-bold text-[40px] lg:text-[60px] leading-[42px] text-yellow uppercase text-center">
           {title}

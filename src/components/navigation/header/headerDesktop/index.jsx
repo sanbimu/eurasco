@@ -33,7 +33,7 @@ const HeaderDesktop = ({ current }) => {
   }, []);
 
   return (
-    <div className="hidden md:flex z-[100]">
+    <div className="hidden lg:flex z-[100]">
       <div
         className={`flex justify-between w-full fixed top-0 z-[100] px-[10%] ${
           isScrolled

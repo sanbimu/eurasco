@@ -9,3 +9,7 @@ body {
 .custom_Gradient {
   background: linear-gradient(180deg, #00534c 50%, transparent 50%);
 }
+
+.gradient_News {
+  background: linear-gradient(360deg, #00000099 0%, #00000022 70%);
+}

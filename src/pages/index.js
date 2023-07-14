@@ -25,7 +25,7 @@ export default function Home({ document }) {
           text="We have a wide variety of services so that our clients have good options."
         />
         <div className="flex flex-col lg:flex-row md:gap-0 md:px-10 lg:mx-auto gap-4 overflow-auto lg:pb-20 lg:gap-6 lg:pt-2  ">
-          <div className="flex flex-col md:flex-row lg:flex-col md:gap-10 lg:gap-6 gap-4 overflow-auto">
+          <div className="flex flex-col md:flex-row lg:flex-col md:gap-6 lg:gap-6 gap-4 overflow-auto">
             <EventCard />
             <EventCard />
           </div>
