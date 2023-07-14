@@ -11,6 +11,7 @@ import { CardAll } from "@/components/shared/cardAll";
 import { NewsCard } from "@/components/news/newsCard";
 import { MemberCard } from "@/components/members/memberCard";
 import Button from "@/components/shared/button";
+import { NewsCardDesktop } from "@/components/news/newsCardDesktop";
 
 export default function Home({ document }) {
   return (
@@ -47,8 +48,16 @@ export default function Home({ document }) {
           subtitle="DERNIèRES ACTUALITéS"
           text="We have a wide variety of services so that our clients have good options."
         />
-        <div>
-          <div className="hidden lg:flex w-full h-[440px] custom_Gradient"></div>
+
+        <div className="hidden lg:flex flex-col gap-10 mb-14 w-full h-[440px] custom_Gradient items-center">
+          <div className="flex flex-row gap-6 mx-auto mt-14">
+            <NewsCardDesktop />
+            <NewsCardDesktop />
+          </div>
+          <Button
+            buttonText={"toutes nos actualités"}
+            linkTo={"/actualites"}
+          ></Button>
         </div>
         <div className="flex flex-col md:flex-row md:gap-0 md:flex-wrap md:px-6 gap-4 overflow-auto">
           <NewsCard />
@@ -60,7 +69,7 @@ export default function Home({ document }) {
               linkTo={"/actualites"}
             />
           </div>
-          <div className="hidden md:flex mx-auto mt-12 mb-14">
+          <div className="hidden md:flex lg:hidden mx-auto mt-12 mb-14">
             <Button
               buttonText={"toutes nos actualités"}
               linkTo={"/actualites"}
@@ -72,9 +81,12 @@ export default function Home({ document }) {
           subtitle="nos membres"
           text="We have a team of professionals, dedicated to providing excellent service."
         />
-        <div className="flex flex-col md:flex-row md:gap-0 md:flex-wrap md:px-6 gap-4 overflow-auto">
+        <div className="flex flex-col gap-4 overflow-auto md:flex-row md:gap-0 md:flex-wrap md:px-6 lg:gap-3 lg:mx-[1vw]">
           <MemberCard />
           <MemberCard />
+          <div className="hidden lg:flex px-2">
+            <MemberCard />
+          </div>
           <div className="flex md:hidden">
             <CardAll
               title="Tous nos membres"
