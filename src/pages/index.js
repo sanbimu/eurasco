@@ -80,7 +80,7 @@ export default function Home({ document }) {
           subtitle="nos membres"
           text="We have a team of professionals, dedicated to providing excellent service."
         />
-        <div className="flex flex-col gap-4 overflow-auto md:flex-row md:gap-0 md:flex-wrap md:px-6 lg:gap-3 lg:mx-[1vw]">
+        <div className="flex flex-col gap-4 overflow-auto md:flex-row md:gap-0 md:flex-wrap md:px-6 lg:gap-3 lg:mx-[10%]">
           <MemberCard />
           <MemberCard />
           <div className="hidden lg:flex px-2">

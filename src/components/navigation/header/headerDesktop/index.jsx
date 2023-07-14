@@ -8,7 +8,7 @@ const HeaderDesktop = ({ current }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [logoSize, setLogoSize] = useState({ width: 160, height: 100 });
   const router = useRouter();
-  const currentRoute = router.pathname;
+  const isContactPage = router.pathname === "/contact";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,7 +57,13 @@ const HeaderDesktop = ({ current }) => {
               <Link
                 key={link.name}
                 href={link.path}
-                className={`${isActive ? "text-yellow" : "text-white"} ${
+                className={`${
+                  isActive
+                    ? "text-yellow"
+                    : isContactPage && !isScrolled
+                    ? "text-darkGreen"
+                    : "text-white"
+                } ${
                   isLast
                     ? "lg:py-2 lg:px-5 md:py-1 md:px-3 rounded-[32px] border border-white justify-center items-center inline-flex"
                     : ""
