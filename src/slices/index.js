@@ -3,5 +3,6 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  about_eurasco: dynamic(() => import("./AboutEurasco")),
   hero: dynamic(() => import("./Hero")),
 };

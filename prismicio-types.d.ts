@@ -56,7 +56,7 @@ interface HomeDocumentData {
  * Slice for *Home → Slice Zone*
  *
  */
-type HomeDocumentDataSlicesSlice = HeroSlice;
+type HomeDocumentDataSlicesSlice = HeroSlice | AboutEurascoSlice;
 /**
  * Home document from Prismic
  *
@@ -69,6 +69,72 @@ type HomeDocumentDataSlicesSlice = HeroSlice;
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<HomeDocumentData>, "home", Lang>;
 export type AllDocumentTypes = HomeDocument;
+/**
+ * Primary content in AboutEurasco → Primary
+ *
+ */
+interface AboutEurascoSliceDefaultPrimary {
+  /**
+   * title field in *AboutEurasco → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_eurasco.primary.title
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  title: prismic.RichTextField;
+  /**
+   * subtitle field in *AboutEurasco → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_eurasco.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  subtitle: prismic.RichTextField;
+  /**
+   * description field in *AboutEurasco → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_eurasco.primary.description
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  description: prismic.RichTextField;
+}
+/**
+ * Default variation for AboutEurasco Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type AboutEurascoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AboutEurascoSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *AboutEurasco*
+ *
+ */
+type AboutEurascoSliceVariation = AboutEurascoSliceDefault;
+/**
+ * AboutEurasco Shared Slice
+ *
+ * - **API ID**: `about_eurasco`
+ * - **Description**: `AboutEurasco`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type AboutEurascoSlice = prismic.SharedSlice<
+  "about_eurasco",
+  AboutEurascoSliceVariation
+>;
 /**
  * Primary content in Hero → Primary
  *
@@ -185,6 +251,10 @@ declare module "@prismicio/client" {
       HomeDocumentDataSlicesSlice,
       HomeDocument,
       AllDocumentTypes,
+      AboutEurascoSliceDefaultPrimary,
+      AboutEurascoSliceDefault,
+      AboutEurascoSliceVariation,
+      AboutEurascoSlice,
       HeroSliceDefaultPrimary,
       HeroSliceDefault,
       HeroSliceVariation,
