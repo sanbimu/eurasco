@@ -15,11 +15,12 @@ import { NewsCardDesktop } from "@/components/news/newsCardDesktop";
 import AboutEurasco from "@/slices/AboutEurasco";
 
 export default function Home({ document }) {
+  console.log("data", document.data);
   return (
     <main>
       <div className='flex flex-col w-full'>
         <HeroSlice slice={document.data.slices[0]} />
-        <AboutEurasco slice={document.data.slices[0]} />
+        <AboutEurasco slice={document.data.slices[1]} />
         <About />
         <Title
           title='events'
