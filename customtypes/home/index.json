@@ -13,7 +13,8 @@
         "config": {
           "choices": {
             "hero": { "type": "SharedSlice" },
-            "about_eurasco": { "type": "SharedSlice" }
+            "about_eurasco": { "type": "SharedSlice" },
+            "section_title": { "type": "SharedSlice" }
           }
         }
       }

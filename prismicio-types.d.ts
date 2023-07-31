@@ -56,7 +56,10 @@ interface HomeDocumentData {
  * Slice for *Home → Slice Zone*
  *
  */
-type HomeDocumentDataSlicesSlice = HeroSlice | AboutEurascoSlice;
+type HomeDocumentDataSlicesSlice =
+  | HeroSlice
+  | AboutEurascoSlice
+  | SectionTitleSlice;
 /**
  * Home document from Prismic
  *
@@ -75,35 +78,145 @@ export type AllDocumentTypes = HomeDocument;
  */
 interface AboutEurascoSliceDefaultPrimary {
   /**
-   * title field in *AboutEurasco → Primary*
+   * Title field in *AboutEurasco → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: about_eurasco.primary.title
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  title: prismic.RichTextField;
+  title: prismic.KeyTextField;
   /**
-   * subtitle field in *AboutEurasco → Primary*
+   * Subtitle field in *AboutEurasco → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: about_eurasco.primary.subtitle
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  subtitle: prismic.RichTextField;
+  subtitle: prismic.KeyTextField;
   /**
-   * description field in *AboutEurasco → Primary*
+   * Description Paragraph One field in *AboutEurasco → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: about_eurasco.primary.description
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   * - **API ID Path**: about_eurasco.primary.descriptionParagraphOne
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  description: prismic.RichTextField;
+  descriptionParagraphOne: prismic.KeyTextField;
+  /**
+   * Description Paragraph Two field in *AboutEurasco → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_eurasco.primary.descriptionParagraphTwo
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  descriptionParagraphTwo: prismic.KeyTextField;
+  /**
+   * Icon One field in *AboutEurasco → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_eurasco.primary.iconOne
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  iconOne: prismic.ImageField<never>;
+  /**
+   * Title Icon One field in *AboutEurasco → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_eurasco.primary.titleIconOne
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  titleIconOne: prismic.KeyTextField;
+  /**
+   * Text Icon One field in *AboutEurasco → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_eurasco.primary.textIconOne
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  textIconOne: prismic.KeyTextField;
+  /**
+   * Icon Two field in *AboutEurasco → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_eurasco.primary.iconTwo
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  iconTwo: prismic.ImageField<never>;
+  /**
+   * Title Icon Two field in *AboutEurasco → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_eurasco.primary.titleIconTwo
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  titleIconTwo: prismic.KeyTextField;
+  /**
+   * Text Icon Two field in *AboutEurasco → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_eurasco.primary.textIconTwo
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  textIconTwo: prismic.KeyTextField;
+  /**
+   * Image Desktop Version field in *AboutEurasco → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_eurasco.primary.imageDesktop
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  imageDesktop: prismic.ImageField<never>;
+  /**
+   * Icon Green Frame field in *AboutEurasco → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_eurasco.primary.iconGreenFrame
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  iconGreenFrame: prismic.ImageField<never>;
+  /**
+   * Title Green Frame field in *AboutEurasco → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_eurasco.primary.titleGreenFrame
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  titleGreenFrame: prismic.KeyTextField;
+  /**
+   * Text Green Frame field in *AboutEurasco → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_eurasco.primary.textGreenFrame
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  textGreenFrame: prismic.KeyTextField;
 }
 /**
  * Default variation for AboutEurasco Slice
@@ -238,6 +351,72 @@ type HeroSliceVariation = HeroSliceDefault;
  *
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+/**
+ * Primary content in SectionTitle → Primary
+ *
+ */
+interface SectionTitleSliceDefaultPrimary {
+  /**
+   * Title field in *SectionTitle → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_title.primary.title
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  title: prismic.KeyTextField;
+  /**
+   * Subtitle field in *SectionTitle → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_title.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  subtitle: prismic.KeyTextField;
+  /**
+   * Text field in *SectionTitle → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section_title.primary.text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  text: prismic.KeyTextField;
+}
+/**
+ * Default variation for SectionTitle Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SectionTitleSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SectionTitleSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *SectionTitle*
+ *
+ */
+type SectionTitleSliceVariation = SectionTitleSliceDefault;
+/**
+ * SectionTitle Shared Slice
+ *
+ * - **API ID**: `section_title`
+ * - **Description**: `SectionTitle`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SectionTitleSlice = prismic.SharedSlice<
+  "section_title",
+  SectionTitleSliceVariation
+>;
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -259,6 +438,10 @@ declare module "@prismicio/client" {
       HeroSliceDefault,
       HeroSliceVariation,
       HeroSlice,
+      SectionTitleSliceDefaultPrimary,
+      SectionTitleSliceDefault,
+      SectionTitleSliceVariation,
+      SectionTitleSlice,
     };
   }
 }

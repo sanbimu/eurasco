@@ -33,23 +33,23 @@ const HeaderDesktop = ({ current }) => {
   }, []);
 
   return (
-    <div className='hidden lg:flex z-[100]'>
+    <div className="hidden lg:flex z-[100] w-screen">
       <div
-        className={`flex justify-between w-full fixed top-0 z-[100] px-[10%] ${
+        className={`flex justify-between w-screen fixed top-0 z-[100] px-[10%] ${
           isScrolled
             ? "bg-darkGreen bg-opacity-80 backdrop-blur-md pt-1"
             : "pt-6"
         }`}
       >
-        <Link href='/'>
+        <Link href="/">
           <Image
             src={isScrolled ? "/icons/logoWhite.svg" : "/icons/logo.svg"}
-            alt='Eurasco Logo'
+            alt="Eurasco Logo"
             width={logoSize.width}
             height={logoSize.height}
           />
         </Link>
-        <div className='flex lg:gap-14 uppercase font-open text-white items-center lg:text-sm md:text-xs md:gap-4'>
+        <div className="flex lg:gap-14 uppercase font-open text-white items-center lg:text-sm md:text-xs md:gap-4">
           {navLinks.map((link, index) => {
             const isActive = router.pathname === link.path;
             const isLast = index === navLinks.length - 1;
