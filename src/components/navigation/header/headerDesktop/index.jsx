@@ -65,7 +65,13 @@ const HeaderDesktop = ({ current }) => {
                     : "text-white"
                 } ${
                   isLast
-                    ? "lg:py-2 lg:px-5 md:py-1 md:px-3 rounded-[32px] border border-white justify-center items-center inline-flex"
+                    ? isContactPage
+                      ? "border-yellow"
+                      : "border-white"
+                    : ""
+                } ${
+                  isLast
+                    ? "lg:py-2 lg:px-5 md:py-1 md:px-3 rounded-[32px] border justify-center items-center inline-flex"
                     : ""
                 }`}
               >
