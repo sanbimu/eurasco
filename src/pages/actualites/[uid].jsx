@@ -1,45 +1,44 @@
 import * as prismic from "@prismicio/client";
 import { createClient } from "../../prismicio";
 import Image from "next/image";
+import { PrismicRichText } from "@prismicio/react";
 
 export default function Blog({ page }) {
-  console.log("mes infos", page);
+  console.log("PageInfo", page);
 
   return (
     <>
-      <div className='min-h-[75vh]  flex justify-center items-center '>
-        <div className='font-mont text-white text-5xl uppercase font-bold pb-8 z-50 '>
-          {page.data.title}
+      <div className="min-h-[75vh] flex flex-col mx-4 justify-center items-center ">
+        <div className="flex flex-col items-start z-20">
+          <div className="font-mont text-white text-5xl uppercase font-bold pb-8">
+            {page.data.title}
+          </div>
+          <div className="font-open text-white">{page.data.description}</div>
         </div>
-        <Image
-          src={page.data.image.url}
-          width={394}
-          height={850}
-          alt='Event Image'
-          className='min-h-[75vh] absolute object-cover '
-        />
-        <div className='bg-black h-[75vh] w-full z-40 absolute opacity-50 ' />
-      </div>
-      {/* <div className="flex relative">
         <Image
           src={page.data.image.url}
           width={394}
           height={850}
           alt="Event Image"
-          className="min-h-[75vh] object-cover"
+          className="min-h-[75vh] absolute object-cover "
         />
-        <div className="flex absolute inset-0 h-full w-full bg-black bg-opacity-50"></div>
-        <div className="absolute top-[35%] mx-4">
-          <div className="font-mont text-white text-5xl uppercase font-bold pb-8 ">
-            {page.data.title}
-          </div>
-          <div className="font-open text-white leading-6">
-            {page.data.description}
-          </div>
-        </div>
+        <div className="bg-black h-[75vh] w-full z-10 absolute opacity-50 " />
       </div>
-
-      <div className="mt-20 mb-20">Test</div> */}
+      <div className="mb-20">
+        <h2 className="font-mont text-black font-bold text-4xl my-12 mx-6">
+          {page.data.slices[0].items[0].subtitle}
+        </h2>
+        <div className="mx-6 font-open leading-[25px]">
+          <PrismicRichText field={page.data.slices[0].items[0].paragraph} />
+        </div>
+        <Image
+          src={page.data.slices[0].items[0].image.url}
+          width={400}
+          height={400}
+          alt="Blog Image"
+          className="w-[390px] h-[390px] object-cover mt-20"
+        />
+      </div>
     </>
   );
 }
