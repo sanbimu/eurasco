@@ -23,7 +23,7 @@
 								{
 									"type": "paragraph",
 									"content": {
-										"text": "In consequat ad ex deserunt incididunt nulla adipisicing aliqua id nisi cupidatat officia ad veniam ipsum."
+										"text": "Proident occaecat ex mollit est pariatur. Reprehenderit voluptate ipsum culpa consectetur fugiat deserunt ex."
 									}
 								}
 							]
@@ -32,7 +32,6 @@
 					[
 						"image",
 						{
-							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
 								"url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
@@ -50,6 +49,9 @@
 								},
 								"background": "transparent"
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					]

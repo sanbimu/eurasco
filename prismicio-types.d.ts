@@ -19,6 +19,17 @@ interface BlogDocumentData {
    */
   title: prismic.KeyTextField;
   /**
+   * Description field in *Blog*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  description: prismic.KeyTextField;
+  /**
    * Image field in *Blog*
    *
    * - **Field Type**: Image

@@ -7,14 +7,26 @@ export default function Blog({ page }) {
 
   return (
     <>
-      <Image
-        src={page.data.image.url}
-        width={394}
-        height={850}
-        alt="Hero Image"
-        className=" "
-      />
-      <div>{page.data.title}</div>
+      <div className="flex relative">
+        <Image
+          src={page.data.image.url}
+          width={394}
+          height={850}
+          alt="Event Image"
+          className="min-h-[75vh] object-cover"
+        />
+        <div className="flex absolute inset-0 h-full w-full bg-black bg-opacity-50"></div>
+        <div className="absolute top-[35%] mx-4">
+          <div className="font-mont text-white text-5xl uppercase font-bold pb-8 ">
+            {page.data.title}
+          </div>
+          <div className="font-open text-white leading-6">
+            {page.data.description}
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-20 mb-20">Test</div>
     </>
   );
 }

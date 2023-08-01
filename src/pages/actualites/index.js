@@ -27,8 +27,8 @@ export default function News({ cartesBlog }) {
               <NewsCard
                 key={index}
                 title={carteBlog.data.title}
-                // image={carteBlog.data.image.url}
-                // text={carteBlog.data.text[0].text}
+                image={carteBlog.data.image.url}
+                description={carteBlog.data.description}
                 linkToCard={`/actualites/${carteBlog.uid}`}
               />
             ))}
