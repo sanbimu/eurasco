@@ -7,7 +7,20 @@ export default function Blog({ page }) {
 
   return (
     <>
-      <div className="flex relative">
+      <div className='min-h-[75vh]  flex justify-center items-center '>
+        <div className='font-mont text-white text-5xl uppercase font-bold pb-8 z-50 '>
+          {page.data.title}
+        </div>
+        <Image
+          src={page.data.image.url}
+          width={394}
+          height={850}
+          alt='Event Image'
+          className='min-h-[75vh] absolute object-cover '
+        />
+        <div className='bg-black h-[75vh] w-full z-40 absolute opacity-50 ' />
+      </div>
+      {/* <div className="flex relative">
         <Image
           src={page.data.image.url}
           width={394}
@@ -26,7 +39,7 @@ export default function Blog({ page }) {
         </div>
       </div>
 
-      <div className="mt-20 mb-20">Test</div>
+      <div className="mt-20 mb-20">Test</div> */}
     </>
   );
 }
