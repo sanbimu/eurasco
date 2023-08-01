@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Button from "../shared/button";
 
-export const NewsCard = () => {
+export const NewsCard = ({ title }) => {
   return (
     <div className="lg:hidden flex flex-col mx-[25px] md:mx-auto md:h-[560px] md:w-[343px]">
       <div className="relative rounded-[10px]">
@@ -17,7 +17,7 @@ export const NewsCard = () => {
 
       <div className="flex flex-col px-[35px] md:w-[343px] items-start absolute mt-[360px]">
         <h1 className="font-mont text-white font-bold text-xl leading-6 pb-3 ">
-          ACTUALITÉ 1
+          {title}
         </h1>
         <p className="font-open text-white text-[15px] leading-[25px] pb-5">
           Organic livestock raised for meat, eggs, and dairy products must be

@@ -5,6 +5,91 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
   [KeyType in keyof T]: T[KeyType];
 };
+/** Content for Blog documents */
+interface BlogDocumentData {
+  /**
+   * Title field in *Blog*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  title: prismic.KeyTextField;
+  /**
+   * Image field in *Blog*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  image: prismic.ImageField<never>;
+  /**
+   * Slice Zone field in *Blog*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices: prismic.SliceZone<BlogDocumentDataSlicesSlice>;
+  /**
+   * Meta Description field in *Blog*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: blog.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  meta_description: prismic.KeyTextField;
+  /**
+   * Meta Image field in *Blog*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  meta_image: prismic.ImageField<never>;
+  /**
+   * Meta Title field in *Blog*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: blog.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  meta_title: prismic.KeyTextField;
+}
+/**
+ * Slice for *Blog → Slice Zone*
+ *
+ */
+type BlogDocumentDataSlicesSlice = BlogSectionSlice;
+/**
+ * Blog document from Prismic
+ *
+ * - **API ID**: `blog`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BlogDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<BlogDocumentData>, "blog", Lang>;
 /** Content for Home documents */
 interface HomeDocumentData {
   /**
@@ -71,7 +156,7 @@ type HomeDocumentDataSlicesSlice =
  */
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<HomeDocumentData>, "home", Lang>;
-export type AllDocumentTypes = HomeDocument;
+export type AllDocumentTypes = BlogDocument | HomeDocument;
 /**
  * Primary content in AboutEurasco → Primary
  *
@@ -247,6 +332,72 @@ type AboutEurascoSliceVariation = AboutEurascoSliceDefault;
 export type AboutEurascoSlice = prismic.SharedSlice<
   "about_eurasco",
   AboutEurascoSliceVariation
+>;
+/**
+ * Item in BlogSection → Items
+ *
+ */
+export interface BlogSectionSliceDefaultItem {
+  /**
+   * Subtitle field in *BlogSection → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_section.items[].subtitle
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  subtitle: prismic.KeyTextField;
+  /**
+   * Paragraph field in *BlogSection → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_section.items[].paragraph
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  paragraph: prismic.RichTextField;
+  /**
+   * Image field in *BlogSection → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_section.items[].image
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  image: prismic.ImageField<never>;
+}
+/**
+ * Default variation for BlogSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type BlogSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<BlogSectionSliceDefaultItem>
+>;
+/**
+ * Slice variation for *BlogSection*
+ *
+ */
+type BlogSectionSliceVariation = BlogSectionSliceDefault;
+/**
+ * BlogSection Shared Slice
+ *
+ * - **API ID**: `blog_section`
+ * - **Description**: `BlogSection`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type BlogSectionSlice = prismic.SharedSlice<
+  "blog_section",
+  BlogSectionSliceVariation
 >;
 /**
  * Primary content in Hero → Primary
@@ -426,6 +577,9 @@ declare module "@prismicio/client" {
   }
   namespace Content {
     export type {
+      BlogDocumentData,
+      BlogDocumentDataSlicesSlice,
+      BlogDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
       HomeDocument,
@@ -434,6 +588,10 @@ declare module "@prismicio/client" {
       AboutEurascoSliceDefault,
       AboutEurascoSliceVariation,
       AboutEurascoSlice,
+      BlogSectionSliceDefaultItem,
+      BlogSectionSliceDefault,
+      BlogSectionSliceVariation,
+      BlogSectionSlice,
       HeroSliceDefaultPrimary,
       HeroSliceDefault,
       HeroSliceVariation,

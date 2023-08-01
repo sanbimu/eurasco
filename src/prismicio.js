@@ -21,6 +21,10 @@ const routes = [
     uid: "home",
     path: "/",
   },
+  {
+    type: "blog",
+    path: "/actualites/:uid",
+  },
   // {
   //   type: "page",
   //   uid: "evenements",
