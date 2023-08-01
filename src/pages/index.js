@@ -54,8 +54,8 @@ export default function Home({ document }) {
           ></Button>
         </div>
         <div className="flex flex-col md:flex-row md:gap-0 md:flex-wrap md:px-6 gap-4 overflow-auto">
-          <NewsCard />
-          <NewsCard />
+          {/* <NewsCard />
+          <NewsCard /> */}
           <div className="flex md:hidden pb-20">
             <CardAll
               title="Toutes nos actualités"

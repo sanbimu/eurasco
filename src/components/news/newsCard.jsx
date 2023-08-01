@@ -1,9 +1,13 @@
 import Image from "next/image";
 import Button from "../shared/button";
+import Link from "next/link";
 
-export const NewsCard = ({ title }) => {
+export const NewsCard = ({ linkToCard, title }) => {
   return (
-    <div className="lg:hidden flex flex-col mx-[25px] md:mx-auto md:h-[560px] md:w-[343px]">
+    <Link
+      className="lg:hidden flex flex-col mx-[25px] md:mx-auto md:h-[560px] md:w-[343px]"
+      href={linkToCard}
+    >
       <div className="relative rounded-[10px]">
         <Image
           src="/images/newsMobile.jpg"
@@ -23,8 +27,8 @@ export const NewsCard = ({ title }) => {
           Organic livestock raised for meat, eggs, and dairy products must be
           raised in living conditions.
         </p>
-        <Button buttonText="voir" linkTo={"/evenements"}></Button>
+        {/* <Button buttonText="voir" linkTo={linkToButton}></Button> */}
       </div>
-    </div>
+    </Link>
   );
 };

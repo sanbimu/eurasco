@@ -6,10 +6,9 @@ import { CardAll } from "@/components/shared/cardAll";
 import { ContactCard } from "@/components/shared/contactCard";
 import { HeaderPages } from "@/components/shared/headerPages";
 import { Title } from "@/components/shared/title";
-import Link from "next/link";
 
 export default function News({ cartesBlog }) {
-  console.log(cartesBlog);
+  console.log("CarteBlog", cartesBlog);
   return (
     <main>
       <div className="flex flex-col md:h-auto">
@@ -25,19 +24,13 @@ export default function News({ cartesBlog }) {
             <NewsCardDesktop />
 
             {cartesBlog.map((carteBlog, index) => (
-              <Link
-                href={`/actualites/${carteBlog.uid}`}
-                key={carteBlog.uid}
-                passHref
-              >
-                <NewsCard
-                  key={index}
-                  title={carteBlog.data.title}
-                  // image={carteBlog.data.image.url}
-                  // text={carteBlog.data.text[0].text}
-                  // linkTo={`/actualites/${carteBlog.uid}`}
-                />
-              </Link>
+              <NewsCard
+                key={index}
+                title={carteBlog.data.title}
+                // image={carteBlog.data.image.url}
+                // text={carteBlog.data.text[0].text}
+                linkToCard={`/actualites/${carteBlog.uid}`}
+              />
             ))}
 
             <div className="flex md:hidden">
@@ -49,8 +42,6 @@ export default function News({ cartesBlog }) {
             </div>
             <NewsCardDesktop />
             <NewsCardDesktop />
-            <NewsCard />
-            <NewsCard />
           </div>
           <div className="mx-auto ">
             <Button buttonText="Voir plus" linkTo="/actualites" />
