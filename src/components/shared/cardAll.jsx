@@ -3,27 +3,22 @@ import Button from "./button";
 
 export const CardAll = ({ title, buttonText, linkTo }) => {
   return (
-    <div className="flex flex-col mx-6 w-full md:mx-auto md:w-[350px] lg:w-[35vw] lg:h-[516px] lg:pb-0 ">
-      <div className="h-[232px] w-full lg:h-[516px] bg-white relative shadow-card rounded-[10px] ">
-        <Image
-          src="/images/cardAll.png"
-          width={283}
-          height={191}
-          alt="Card All Image"
-          className="flex  mt-8 lg:hidden absolute right-0"
-        />
-        <Image
-          src="/images/cardAllDesktop.png"
-          width={663}
-          height={497}
-          alt="Card All Image"
-          className="lg:flex hidden mt-10 "
-        />
-        <div className="flex flex-col px-4 items-start justify-center absolute inset-0">
+    <div className="flex flex-col mx-6 w-full lg:w-[35vw] lg:h-[516px] lg:pb-0 ">
+      <div className="h-[232px] w-full lg:h-[516px] bg-white shadow-card rounded-[10px] relative">
+        <div className="flex flex-col px-4 lg:px-8 items-start justify-center pt-8 lg:pt-48 z-20 relative">
           <h1 className="font-mont font-bold text-[38px] lg:text-[35px] lg:w-[40%] leading-[42px] text-black pb-12">
             {title}
           </h1>
           <Button buttonText={buttonText} className="pb-1" linkTo={linkTo} />
+        </div>
+        <div className="absolute top-0 left-0 h-full w-full rounded-[10px] overflow-hidden">
+          <Image
+            src="/images/cardAll.jpg"
+            alt="Card Image"
+            layout="fill"
+            objectFit="cover"
+            className="opacity-85"
+          />
         </div>
       </div>
     </div>
