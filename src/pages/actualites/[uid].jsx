@@ -5,6 +5,7 @@ import { PrismicRichText } from "@prismicio/react";
 import SectionTitle from "@/slices/SectionTitle";
 import { NewsCard } from "@/components/news/newsCard";
 import { CardAll } from "@/components/shared/cardAll";
+import { formatDate } from "@/components/utils";
 
 export default function Blog({ page, carteBlog, homePage }) {
   console.log("blogSection", page);
@@ -19,30 +20,37 @@ export default function Blog({ page, carteBlog, homePage }) {
 
   return (
     <>
+      {/* HEADER */}
       <div className="min-h-[75vh] flex flex-col w-screen justify-center">
         <div className="flex flex-col z-20">
-          <div className="font-mont text-white text-5xl uppercase font-bold mx-4 mb-8 max-h-[140px] overflow-scroll ">
+          <div className="font-mont text-white text-4xl uppercase font-bold mx-6 mb-8 ">
             {page.data.title}
           </div>
-          <div className="font-open text-white mx-4 max-h-[200px] overflow-scroll ">
+          {/* <div className="font-open text-white mx-4 max-h-[200px] overflow-scroll ">
             {page.data.description}
-          </div>
+          </div> */}
         </div>
         <Image
           src={page.data.image.url}
           width={394}
           height={850}
           alt="Event Image"
-          className="min-h-[75vh] absolute object-cover "
+          className="min-h-[75vh] absolute object-cover lg:max-h-[75vh] md:w-full"
         />
         <div className="bg-black h-[75vh] w-full z-10 absolute opacity-50 " />
       </div>
+      <div className="mb-12"></div>
+      <div className="mb-10 font-open text-sm italic mx-6">
+        Publication date: {formatDate(page.first_publication_date)}
+      </div>
+
+      {/* CONTENT */}
       {page.data.slices.map((slice, sliceIndex) => (
-        <div key={sliceIndex} className="mb-20">
-          <h2 className="font-mont text-black font-bold text-4xl my-12 mx-6">
+        <div key={sliceIndex} className="mb-12 flex flex-col gap-10 ">
+          <h2 className="font-mont text-black font-bold text-4xl mx-6 md:mx-24">
             {slice.primary.subtitle}
           </h2>
-          <div className="mx-6 font-open leading-[25px]">
+          <div className="font-open leading-[25px] mx-6 md:mx-24">
             <PrismicRichText field={slice.primary.paragraph} />
           </div>
           {slice.primary.image.url && (
@@ -51,17 +59,19 @@ export default function Blog({ page, carteBlog, homePage }) {
               width={400}
               height={400}
               alt="Blog Image"
-              className="w-[390px] h-[390px] object-cover mt-20"
+              className="w-[390px] h-[390px] object-cover md:self-center md:w-max md:mx-24 "
             />
           )}
         </div>
       ))}
+
+      {/* INFO */}
       <SectionTitle slice={homePage.data.slices[3]} />
       <div className="mb-6">
         <NewsCard
           title={carteBlog[indexToShow].data.title}
           image={carteBlog[indexToShow].data.image.url}
-          description={carteBlog[indexToShow].data.description}
+          date={formatDate(carteBlog[indexToShow].first_publication_date)}
           linkToCard={`/actualites/${carteBlog[indexToShow].uid}`}
         />
       </div>

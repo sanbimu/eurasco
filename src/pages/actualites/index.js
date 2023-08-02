@@ -1,14 +1,15 @@
 import { createClient } from "../../prismicio";
 import { NewsCard } from "@/components/news/newsCard";
 import { NewsCardDesktop } from "@/components/news/newsCardDesktop";
-import Button from "@/components/shared/button";
 import { CardAll } from "@/components/shared/cardAll";
 import { ContactCard } from "@/components/shared/contactCard";
 import { HeaderPages } from "@/components/shared/headerPages";
 import { Title } from "@/components/shared/title";
+import { formatDate } from "@/components/utils";
 
 export default function News({ cartesBlog }) {
   console.log("CarteBlog", cartesBlog);
+
   return (
     <main>
       <div className="flex flex-col md:h-auto">
@@ -28,7 +29,7 @@ export default function News({ cartesBlog }) {
                 key={index}
                 title={carteBlog.data.title}
                 image={carteBlog.data.image.url}
-                description={carteBlog.data.description}
+                date={formatDate(carteBlog.first_publication_date)}
                 linkToCard={`/actualites/${carteBlog.uid}`}
               />
             ))}
@@ -46,7 +47,7 @@ export default function News({ cartesBlog }) {
                 key={index + 2}
                 title={carteBlog.data.title}
                 image={carteBlog.data.image.url}
-                description={carteBlog.data.description}
+                date={formatDate(carteBlog.first_publication_date)}
                 linkToCard={`/actualites/${carteBlog.uid}`}
               />
             ))}
