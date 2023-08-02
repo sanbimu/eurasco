@@ -23,7 +23,7 @@ export default function News({ cartesBlog }) {
             <NewsCardDesktop />
             <NewsCardDesktop />
 
-            {cartesBlog.map((carteBlog, index) => (
+            {cartesBlog.slice(0, 2).map((carteBlog, index) => (
               <NewsCard
                 key={index}
                 title={carteBlog.data.title}
@@ -40,6 +40,17 @@ export default function News({ cartesBlog }) {
                 linkTo={"/evenements"}
               />
             </div>
+
+            {cartesBlog.slice(2).map((carteBlog, index) => (
+              <NewsCard
+                key={index + 2}
+                title={carteBlog.data.title}
+                image={carteBlog.data.image.url}
+                description={carteBlog.data.description}
+                linkToCard={`/actualites/${carteBlog.uid}`}
+              />
+            ))}
+
             <NewsCardDesktop />
             <NewsCardDesktop />
           </div>
@@ -58,7 +69,11 @@ export default function News({ cartesBlog }) {
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
-  const cartesBlog = await client.getAllByType("blog");
+  const cartesBlog = await client.getAllByType("blog", {
+    orderings: [
+      { field: "document.first_publication_date", direction: "desc" },
+    ],
+  });
 
   return {
     props: { cartesBlog },

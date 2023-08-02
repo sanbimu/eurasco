@@ -11,6 +11,12 @@ export default function Blog({ page, carteBlog, homePage }) {
   console.log("carteBlog", carteBlog);
   console.log("homePage", homePage);
 
+  const currentPageUID = page.uid;
+  const currentPageIndex = carteBlog.findIndex(
+    (blog) => blog.uid === currentPageUID
+  );
+  const indexToShow = currentPageIndex === 0 ? 1 : 0;
+
   return (
     <>
       <div className="min-h-[75vh] flex flex-col w-screen justify-center">
@@ -53,10 +59,10 @@ export default function Blog({ page, carteBlog, homePage }) {
       <SectionTitle slice={homePage.data.slices[3]} />
       <div className="mb-6">
         <NewsCard
-          title={carteBlog[0].data.title}
-          image={carteBlog[0].data.image.url}
-          description={carteBlog[0].data.description}
-          linkToCard={`/actualites/${carteBlog[0].uid}`}
+          title={carteBlog[indexToShow].data.title}
+          image={carteBlog[indexToShow].data.image.url}
+          description={carteBlog[indexToShow].data.description}
+          linkToCard={`/actualites/${carteBlog[indexToShow].uid}`}
         />
       </div>
       <div className="flex md:hidden pb-20">
@@ -86,7 +92,11 @@ export async function getStaticProps({ params, previewData }) {
 
   const page = await client.getByUID("blog", params.uid);
   const homePage = await client.getByUID("home", "home");
-  const carteBlog = await client.getAllByType("blog");
+  const carteBlog = await client.getAllByType("blog", {
+    orderings: [
+      { field: "document.first_publication_date", direction: "desc" },
+    ],
+  });
 
   return {
     props: { page, homePage, carteBlog },
