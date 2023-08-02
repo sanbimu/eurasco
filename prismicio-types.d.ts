@@ -345,36 +345,36 @@ export type AboutEurascoSlice = prismic.SharedSlice<
   AboutEurascoSliceVariation
 >;
 /**
- * Item in BlogSection → Items
+ * Primary content in BlogSection → Primary
  *
  */
-export interface BlogSectionSliceDefaultItem {
+interface BlogSectionSliceDefaultPrimary {
   /**
-   * Subtitle field in *BlogSection → Items*
+   * Subtitle field in *BlogSection → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_section.items[].subtitle
+   * - **API ID Path**: blog_section.primary.subtitle
    * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
   subtitle: prismic.KeyTextField;
   /**
-   * Paragraph field in *BlogSection → Items*
+   * Paragraph field in *BlogSection → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_section.items[].paragraph
+   * - **API ID Path**: blog_section.primary.paragraph
    * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
    *
    */
   paragraph: prismic.RichTextField;
   /**
-   * Image field in *BlogSection → Items*
+   * Image field in *BlogSection → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_section.items[].image
+   * - **API ID Path**: blog_section.primary.image
    * - **Documentation**: https://prismic.io/docs/core-concepts/image
    *
    */
@@ -390,8 +390,8 @@ export interface BlogSectionSliceDefaultItem {
  */
 export type BlogSectionSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
-  Simplify<BlogSectionSliceDefaultItem>
+  Simplify<BlogSectionSliceDefaultPrimary>,
+  never
 >;
 /**
  * Slice variation for *BlogSection*
@@ -514,6 +514,33 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 /**
+ * Default variation for Membre Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type MembreSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+/**
+ * Slice variation for *Membre*
+ *
+ */
+type MembreSliceVariation = MembreSliceDefault;
+/**
+ * Membre Shared Slice
+ *
+ * - **API ID**: `membre`
+ * - **Description**: `Membre`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type MembreSlice = prismic.SharedSlice<"membre", MembreSliceVariation>;
+/**
  * Primary content in SectionTitle → Primary
  *
  */
@@ -599,7 +626,7 @@ declare module "@prismicio/client" {
       AboutEurascoSliceDefault,
       AboutEurascoSliceVariation,
       AboutEurascoSlice,
-      BlogSectionSliceDefaultItem,
+      BlogSectionSliceDefaultPrimary,
       BlogSectionSliceDefault,
       BlogSectionSliceVariation,
       BlogSectionSlice,
@@ -607,6 +634,9 @@ declare module "@prismicio/client" {
       HeroSliceDefault,
       HeroSliceVariation,
       HeroSlice,
+      MembreSliceDefault,
+      MembreSliceVariation,
+      MembreSlice,
       SectionTitleSliceDefaultPrimary,
       SectionTitleSliceDefault,
       SectionTitleSliceVariation,

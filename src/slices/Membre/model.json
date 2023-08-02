@@ -1,0 +1,16 @@
+{
+  "id": "membre",
+  "type": "SharedSlice",
+  "name": "Membre",
+  "description": "Membre",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

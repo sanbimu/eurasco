@@ -15,15 +15,15 @@ import { NewsCardDesktop } from "@/components/news/newsCardDesktop";
 import AboutEurasco from "@/slices/AboutEurasco";
 import SectionTitle from "@/slices/SectionTitle";
 
-export default function Home({ document }) {
-  console.log("data", document.data);
+export default function Home({ homePage }) {
+  console.log("homePage", homePage.data);
   return (
     <main>
       <div className="flex flex-col w-full">
-        <HeroSlice slice={document.data.slices[0]} />
-        <AboutEurasco slice={document.data.slices[1]} />
+        <HeroSlice slice={homePage.data.slices[0]} />
+        <AboutEurasco slice={homePage.data.slices[1]} />
         <div className="mx-4">
-          <SectionTitle slice={document.data.slices[2]} />
+          <SectionTitle slice={homePage.data.slices[2]} />
           <div className="flex flex-col lg:flex-row md:gap-0 md:px-10 lg:mx-auto gap-4 overflow-auto lg:pb-20 lg:gap-6 lg:pt-2  ">
             <div className="flex flex-col md:flex-row lg:flex-col md:gap-6 lg:gap-6 gap-4 overflow-auto">
               <EventCard />
@@ -43,7 +43,7 @@ export default function Home({ document }) {
               ></Button>
             </div>
           </div>
-          <SectionTitle slice={document.data.slices[3]} />
+          <SectionTitle slice={homePage.data.slices[3]} />
           <div className="hidden lg:flex flex-col gap-10 mb-14 w-full h-[440px] custom_Gradient items-center">
             <div className="flex flex-row gap-6 mx-auto mt-14">
               <NewsCardDesktop />
@@ -71,7 +71,7 @@ export default function Home({ document }) {
               ></Button>
             </div>
           </div>
-          <SectionTitle slice={document.data.slices[4]} />
+          <SectionTitle slice={homePage.data.slices[4]} />
           <div className="flex flex-col gap-4 overflow-auto md:flex-row md:gap-0 md:flex-wrap md:px-6 lg:gap-3 lg:mx-[10%]">
             <MemberCard />
             <MemberCard />
@@ -109,9 +109,9 @@ export default function Home({ document }) {
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
-  const document = await client.getByUID("home", "home");
+  const homePage = await client.getByUID("home", "home");
 
   return {
-    props: { document },
+    props: { homePage },
   };
 }

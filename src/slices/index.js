@@ -6,5 +6,6 @@ export const components = {
   about_eurasco: dynamic(() => import("./AboutEurasco")),
   blog_section: dynamic(() => import("./BlogSection")),
   hero: dynamic(() => import("./Hero")),
+  membre: dynamic(() => import("./Membre")),
   section_title: dynamic(() => import("./SectionTitle")),
 };

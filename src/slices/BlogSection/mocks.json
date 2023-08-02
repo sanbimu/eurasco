@@ -2,60 +2,49 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"subtitle": {
+				"__TYPE__": "FieldContent",
+				"value": "depth",
+				"type": "Text"
+			},
+			"paragraph": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nostrud incididunt ipsum cupidatat exercitation voluptate dolor Lorem nisi quis exercitation dolore qui exercitation ullamco fugiat. Minim ea ad aliqua cupidatat deserunt esse nisi excepteur Lorem pariatur tempor quis eiusmod qui Lorem."
+						}
+					}
+				]
+			},
+			"image": {
+				"__TYPE__": "ImageContent",
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a",
+					"width": 4000,
+					"height": 4000
+				},
+				"url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a",
+				"width": 4000,
+				"height": 4000,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"thumbnails": {}
+			}
+		},
 		"items": [
 			{
 				"__TYPE__": "GroupItemContent",
-				"value": [
-					[
-						"subtitle",
-						{
-							"__TYPE__": "FieldContent",
-							"value": "fourth",
-							"type": "Text"
-						}
-					],
-					[
-						"paragraph",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Proident occaecat ex mollit est pariatur. Reprehenderit voluptate ipsum culpa consectetur fugiat deserunt ex."
-									}
-								}
-							]
-						}
-					],
-					[
-						"image",
-						{
-							"origin": {
-								"id": "main",
-								"url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
-								"width": 3168,
-								"height": 4752
-							},
-							"url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
-							"width": 3168,
-							"height": 4752,
-							"edit": {
-								"zoom": 1,
-								"crop": {
-									"x": 0,
-									"y": 0
-								},
-								"background": "transparent"
-							},
-							"credits": null,
-							"alt": null,
-							"__TYPE__": "ImageContent",
-							"thumbnails": {}
-						}
-					]
-				]
+				"value": []
 			}
 		]
 	}

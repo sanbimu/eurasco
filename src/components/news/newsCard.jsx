@@ -5,7 +5,7 @@ import Link from "next/link";
 export const NewsCard = ({ linkToCard, image, title, description }) => {
   return (
     <Link
-      className="lg:hidden flex flex-col mx-[25px] md:mx-auto md:h-[560px] md:w-[343px]"
+      className="lg:hidden flex flex-col mx-6 md:mx-auto md:h-[560px] md:w-[343px]"
       href={linkToCard}
     >
       <div className="relative rounded-[10px]">
@@ -20,10 +20,10 @@ export const NewsCard = ({ linkToCard, image, title, description }) => {
       </div>
 
       <div className="flex flex-col px-[35px] md:w-[343px] items-start absolute mt-[360px]">
-        <h1 className="font-mont text-white font-bold text-xl leading-6 pb-3 ">
+        <h1 className="font-mont text-white font-bold text-xl leading-6 pb-3 overflow-hidden max-h-[80px]">
           {title}
         </h1>
-        <p className="font-open text-white text-[15px] leading-[25px] pb-5">
+        <p className="font-open text-white text-[15px] leading-[25px] pb-5 overflow-hidden max-h-[56px]">
           {description}
         </p>
         <div className="font-open text-lightGreen italic text-[15px] leading-[22px]">

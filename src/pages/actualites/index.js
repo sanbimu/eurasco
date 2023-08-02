@@ -43,9 +43,9 @@ export default function News({ cartesBlog }) {
             <NewsCardDesktop />
             <NewsCardDesktop />
           </div>
-          <div className="mx-auto ">
+          {/* <div className="mx-auto ">
             <Button buttonText="Voir plus" linkTo="/actualites" />
-          </div>
+          </div> */}
           <div className="mt-10 lg:mt-20 mb-4">
             <ContactCard />
           </div>
