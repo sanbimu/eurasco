@@ -78,11 +78,11 @@ export default function Home({ homePage, cartesBlog }) {
         </div>
         <SectionTitle slice={homePage.data.slices[4]} />
         <div className="flex flex-col gap-4 overflow-auto md:flex-row md:gap-0 md:flex-wrap md:px-6 lg:gap-3 lg:mx-[10%]">
-          <MemberCard />
+          {/* <MemberCard />
           <MemberCard />
           <div className="hidden lg:flex px-2">
             <MemberCard />
-          </div>
+          </div> */}
           <div className="flex md:hidden pb-20">
             <CardAll
               title="Tous nos membres"

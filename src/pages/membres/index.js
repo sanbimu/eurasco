@@ -1,24 +1,33 @@
+import { createClient } from "../../prismicio";
 import { MemberCard } from "@/components/members/memberCard";
-import Button from "@/components/shared/button";
 import { CardAll } from "@/components/shared/cardAll";
 import { ContactCard } from "@/components/shared/contactCard";
 import { HeaderPages } from "@/components/shared/headerPages";
-import { Title } from "@/components/shared/title";
+import SectionTitle from "@/slices/SectionTitle";
 
-export default function Members() {
+export default function Members({ cartesMembres, homePage }) {
+  console.log("CarteMembre", cartesMembres);
+  console.log("homePage", homePage);
+
   return (
     <main>
       <div className="flex flex-col md:h-auto">
         <HeaderPages title="Nos membres" />
         <div className="flex flex-col mt-12">
-          <Title
-            title="rencontrez"
-            subtitle="nos membres"
-            text="We have a team of professionals, dedicated to providing excellent service."
-          />
+          <SectionTitle slice={homePage.data.slices[4]} />
+
           <div className="flex flex-col gap-4 mb-12 md:flex-wrap md:gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:mx-[50px] lg:mx-[100px] ">
-            <MemberCard />
-            <MemberCard />
+            {cartesMembres.slice(0, 2).map((carteMembre, index) => (
+              <MemberCard
+                key={index}
+                member={carteMembre.data.name}
+                country={carteMembre.data.country}
+                backgroundImage={carteMembre.data.imageHeader.url}
+                logo={carteMembre.data.logo.url}
+                linkToCard={`/membres/${carteMembre.uid}`}
+              />
+            ))}
+
             <div className="flex md:hidden">
               <CardAll
                 title="Tous nos événements"
@@ -26,14 +35,21 @@ export default function Members() {
                 linkTo={"/evenements"}
               />
             </div>
-            <MemberCard />
-            <MemberCard />
-            <MemberCard />
-            <MemberCard />
+
+            {cartesMembres.slice(2).map((carteMembre, index) => (
+              <MemberCard
+                key={index}
+                member={carteMembre.data.name}
+                country={carteMembre.data.country}
+                backgroundImage={carteMembre.data.imageHeader.url}
+                logo={carteMembre.data.logo.url}
+                linkToCard={`/membres/${carteMembre.uid}`}
+              />
+            ))}
           </div>
-          <div className="mx-auto ">
+          {/* <div className="mx-auto ">
             <Button buttonText="Voir plus" linkTo="/membres" />
-          </div>
+          </div> */}
           <div className="mt-10 lg:mt-20 mb-4">
             <ContactCard />
           </div>
@@ -41,4 +57,17 @@ export default function Members() {
       </div>
     </main>
   );
+}
+
+export async function getStaticProps({ previewData }) {
+  const client = createClient({ previewData });
+
+  const homePage = await client.getByUID("home", "home");
+  const cartesMembres = await client.getAllByType("member", {
+    orderings: [{ field: "my.member.name" }],
+  });
+
+  return {
+    props: { cartesMembres, homePage },
+  };
 }

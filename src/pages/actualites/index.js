@@ -4,22 +4,20 @@ import { NewsCardDesktop } from "@/components/news/newsCardDesktop";
 import { CardAll } from "@/components/shared/cardAll";
 import { ContactCard } from "@/components/shared/contactCard";
 import { HeaderPages } from "@/components/shared/headerPages";
-import { Title } from "@/components/shared/title";
 import { formatDate } from "@/components/utils";
+import SectionTitle from "@/slices/SectionTitle";
 
-export default function News({ cartesBlog }) {
+export default function News({ cartesBlog, homePage }) {
   console.log("CarteBlog", cartesBlog);
+  console.log("homePage", homePage);
 
   return (
     <main>
       <div className="flex flex-col md:h-auto">
         <HeaderPages title="Nos actualités" />
         <div className="flex flex-col mt-12">
-          <Title
-            title="news"
-            subtitle="DERNIèRES ACTUALITéS"
-            text="We have a wide variety of services so that our clients have good options."
-          />
+          <SectionTitle slice={homePage.data.slices[3]} />
+
           <div className="flex flex-col gap-4 mb-12 md:flex-wrap md:gap-4 md:grid md:grid-cols-2 md:mx-[50px] lg:mx-[100px] ">
             <NewsCardDesktop />
             <NewsCardDesktop />
@@ -70,6 +68,7 @@ export default function News({ cartesBlog }) {
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
+  const homePage = await client.getByUID("home", "home");
   const cartesBlog = await client.getAllByType("blog", {
     orderings: [
       { field: "document.first_publication_date", direction: "desc" },
@@ -77,6 +76,6 @@ export async function getStaticProps({ previewData }) {
   });
 
   return {
-    props: { cartesBlog },
+    props: { cartesBlog, homePage },
   };
 }

@@ -101,6 +101,80 @@ type BlogDocumentDataSlicesSlice = BlogSectionSlice;
  */
 export type BlogDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<BlogDocumentData>, "blog", Lang>;
+/** Content for Event documents */
+interface EventDocumentData {
+  /**
+   * Member field in *Event*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: event.member
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  member: prismic.ContentRelationshipField<"member">;
+  /**
+   * Slice Zone field in *Event*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: event.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices: prismic.SliceZone<EventDocumentDataSlicesSlice>;
+  /**
+   * Meta Description field in *Event*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: event.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  meta_description: prismic.KeyTextField;
+  /**
+   * Meta Image field in *Event*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: event.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  meta_image: prismic.ImageField<never>;
+  /**
+   * Meta Title field in *Event*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: event.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  meta_title: prismic.KeyTextField;
+}
+/**
+ * Slice for *Event → Slice Zone*
+ *
+ */
+type EventDocumentDataSlicesSlice = never;
+/**
+ * Event document from Prismic
+ *
+ * - **API ID**: `event`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type EventDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<EventDocumentData>, "event", Lang>;
 /** Content for Home documents */
 interface HomeDocumentData {
   /**
@@ -167,7 +241,173 @@ type HomeDocumentDataSlicesSlice =
  */
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<HomeDocumentData>, "home", Lang>;
-export type AllDocumentTypes = BlogDocument | HomeDocument;
+/** Content for Member documents */
+interface MemberDocumentData {
+  /**
+   * Logo field in *Member*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: member.logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  logo: prismic.ImageField<never>;
+  /**
+   * Name field in *Member*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: member.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  name: prismic.KeyTextField;
+  /**
+   * Description field in *Member*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: (max 300 characters)
+   * - **API ID Path**: member.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  description: prismic.RichTextField;
+  /**
+   * Country field in *Member*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: member.country
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  country: prismic.KeyTextField;
+  /**
+   * Website field in *Member*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: member.website
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  website: prismic.LinkField;
+  /**
+   * Telephone Number field in *Member*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: member.phone
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  phone: prismic.KeyTextField;
+  /**
+   * E-mail address field in *Member*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: member.email
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  email: prismic.KeyTextField;
+  /**
+   * Image Focus Desktop field in *Member*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: member.imageDesktop
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  imageDesktop: prismic.ImageField<never>;
+  /**
+   * Image Header & Card field in *Member*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: member.imageHeader
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  imageHeader: prismic.ImageField<never>;
+  /**
+   * Slice Zone field in *Member*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: member.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices: prismic.SliceZone<MemberDocumentDataSlicesSlice>;
+  /**
+   * Meta Description field in *Member*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: member.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  meta_description: prismic.KeyTextField;
+  /**
+   * Meta Image field in *Member*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: member.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  meta_image: prismic.ImageField<never>;
+  /**
+   * Meta Title field in *Member*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: member.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  meta_title: prismic.KeyTextField;
+}
+/**
+ * Slice for *Member → Slice Zone*
+ *
+ */
+type MemberDocumentDataSlicesSlice = never;
+/**
+ * Member document from Prismic
+ *
+ * - **API ID**: `member`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type MemberDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<MemberDocumentData>, "member", Lang>;
+export type AllDocumentTypes =
+  | BlogDocument
+  | EventDocument
+  | HomeDocument
+  | MemberDocument;
 /**
  * Primary content in AboutEurasco → Primary
  *
@@ -514,33 +754,6 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 /**
- * Default variation for Membre Slice
- *
- * - **API ID**: `default`
- * - **Description**: `Default`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type MembreSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Record<string, never>,
-  never
->;
-/**
- * Slice variation for *Membre*
- *
- */
-type MembreSliceVariation = MembreSliceDefault;
-/**
- * Membre Shared Slice
- *
- * - **API ID**: `membre`
- * - **Description**: `Membre`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type MembreSlice = prismic.SharedSlice<"membre", MembreSliceVariation>;
-/**
  * Primary content in SectionTitle → Primary
  *
  */
@@ -618,9 +831,15 @@ declare module "@prismicio/client" {
       BlogDocumentData,
       BlogDocumentDataSlicesSlice,
       BlogDocument,
+      EventDocumentData,
+      EventDocumentDataSlicesSlice,
+      EventDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
       HomeDocument,
+      MemberDocumentData,
+      MemberDocumentDataSlicesSlice,
+      MemberDocument,
       AllDocumentTypes,
       AboutEurascoSliceDefaultPrimary,
       AboutEurascoSliceDefault,
@@ -634,9 +853,6 @@ declare module "@prismicio/client" {
       HeroSliceDefault,
       HeroSliceVariation,
       HeroSlice,
-      MembreSliceDefault,
-      MembreSliceVariation,
-      MembreSlice,
       SectionTitleSliceDefaultPrimary,
       SectionTitleSliceDefault,
       SectionTitleSliceVariation,

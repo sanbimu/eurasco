@@ -1,41 +1,58 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export const MemberCard = () => {
+export const MemberCard = ({
+  linkToCard,
+  member,
+  country,
+  backgroundImage,
+  logo,
+}) => {
   return (
-    <div className="flex flex-col relative mx-[25px] md:mx-auto h-[560px] md:w-[343px] justify-center rounded-[10px] overflow-hidden">
-      <Image
-        src="/images/memberMobile.jpg"
-        width={343}
-        height={560}
-        alt="Member Image"
-        className="absolute shadow-card h-full"
-      />
-      <div className="flex flex-col absolute px-[25px]">
+    <Link
+      className="flex flex-col mx-6 md:mx-auto md:w-[343px] "
+      href={linkToCard}
+    >
+      <div className="relative flex flex-col rounded-[10px] h-[560px] w-full shadow-card">
+        <div className="relative flex items-center justify-center h-[560px]">
+          <Image
+            src={logo}
+            width={295}
+            height={66}
+            alt="Member logo Logo"
+            className="z-20 max-w-[295px] max-h-[200px] -mt-24"
+          />
+        </div>
+
+        <div className="flex flex-col justify-end gap-2 z-20 w-full bg-gradient-to-br from-emerald rounded-bl-[10px] px-6 pb-4 pt-6">
+          <h2 className="font-open font-bold text-[30px] leading-8 text-white">
+            {member}
+          </h2>
+          <h2 className="font-open font-light text-[30px] leading-6 text-white">
+            {country}
+          </h2>
+          <div className="font-open italic text-[15px] leading-[25px] text-white ml-auto">
+            Lire plus →
+          </div>
+        </div>
         <Image
-          src="/images/agromek.svg"
-          width={295}
-          height={66}
-          alt="Agromek Logo"
-          className="flex"
+          src={backgroundImage}
+          width={343}
+          height={560}
+          alt="Member Image"
+          className="absolute rounded-[10px] w-full min-h-[560px] object-cover"
         />
       </div>
-      <div className="absolute bottom-0 right-0 w-[230px] h-[150px] bg-gradient-to-br from-emerald rounded-tl-[10px]">
-        <div className="flex flex-col p-6">
-          <h2 className="font-open font-bold text-[30px] leading-6 text-white">
-            AGROMEK
-          </h2>
-          <h2 className="font-open font-light text-[30px] leading-6 text-white pt-2">
-            DENMARK
-          </h2>
-          <Link
-            className="font-open italic text-[15px] leading-[25px] text-white pt-4"
-            href="/membres"
-          >
-            Lire plus →
-          </Link>
-        </div>
-      </div>
-    </div>
+    </Link>
   );
 };
+
+{
+  /* <Image
+src={logo}
+width={295}
+height={66}
+alt="Member logo Logo"
+className="absolute top-1/3 left-[10%] z-20 max-w-[295px] max-h-[200px]"
+/> */
+}
