@@ -20,7 +20,7 @@ export const MemberCard = ({
             width={295}
             height={66}
             alt="Member logo Logo"
-            className="z-20 max-w-[295px] max-h-[200px] -mt-24"
+            className="z-20 max-w-[295px] max-h-[200px]"
           />
         </div>
 

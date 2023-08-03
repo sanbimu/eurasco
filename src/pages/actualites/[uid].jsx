@@ -46,7 +46,7 @@ export default function Blog({ page, carteBlog, homePage }) {
 
       {/* CONTENT */}
       {page.data.slices.map((slice, sliceIndex) => (
-        <div key={sliceIndex} className="mb-12 flex flex-col gap-10 ">
+        <div key={sliceIndex} className="mb-12 flex flex-col gap-10 font-open ">
           <h2 className="font-mont text-black font-bold text-4xl mx-6 md:mx-24">
             {slice.primary.subtitle}
           </h2>

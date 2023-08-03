@@ -25,26 +25,10 @@ const routes = [
     type: "blog",
     path: "/actualites/:uid",
   },
-  // {
-  //   type: "page",
-  //   uid: "evenements",
-  //   path: "/evenements",
-  // },
-  // {
-  //   type: "page",
-  //   uid: "actualites",
-  //   path: "/actualites",
-  // },
-  // {
-  //   type: "page",
-  //   uid: "membres",
-  //   path: "/membres",
-  // },
-  // {
-  //   type: "page",
-  //   uid: "contact",
-  //   path: "/contact",
-  // },
+  {
+    type: "member",
+    path: "/membres/:uid",
+  },
 ];
 
 /**
