@@ -50,7 +50,7 @@ export default function Blog({ page, carteBlog, homePage }) {
           <h2 className="font-mont text-black font-bold text-4xl mx-6 md:mx-24">
             {slice.primary.subtitle}
           </h2>
-          <div className="font-open leading-[25px] mx-6 md:mx-24">
+          <div className="font-open leading-[25px] mx-6 md:mx-24 text-justify">
             <PrismicRichText field={slice.primary.paragraph} />
           </div>
           {slice.primary.image.url && (
