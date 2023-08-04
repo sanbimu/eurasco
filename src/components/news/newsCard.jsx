@@ -5,7 +5,7 @@ import Link from "next/link";
 export const NewsCard = ({ linkToCard, image, title, date }) => {
   return (
     <Link
-      className="lg:hidden flex flex-col mx-6 md:mx-auto md:w-[343px]"
+      className="lg:hidden flex flex-col mx-6 md:mx-[25vw]"
       href={linkToCard}
     >
       <div className="relative flex rounded-[10px] h-[560px] w-full shadow-card bg-darkGreen">
