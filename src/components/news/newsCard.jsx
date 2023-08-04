@@ -9,7 +9,7 @@ export const NewsCard = ({ linkToCard, image, title, date }) => {
       href={linkToCard}
     >
       <div className="relative flex rounded-[10px] h-[560px] w-full shadow-card bg-darkGreen">
-        <div className="flex flex-col px-[35px] md:w-[343px] justify-end mb-8 z-20">
+        <div className="flex flex-col px-[35px] w-full md:w-[343px] justify-end mb-8 z-20">
           <h1 className="font-mont text-white font-bold text-xl leading-6 pb-1 ">
             {title}
           </h1>

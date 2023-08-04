@@ -14,22 +14,25 @@ import AboutEurasco from "@/slices/AboutEurasco";
 import SectionTitle from "@/slices/SectionTitle";
 import { formatDate } from "@/components/utils";
 
-export default function Home({
-  homePage,
-  cartesBlog,
-  cartesMembres,
-  randomMember,
-  nextRandomMember,
-}) {
+export default function Home({ homePage, cartesBlog, cartesMembres }) {
   console.log("homePage", homePage.data);
   console.log("cartesMembers", cartesMembres);
-  console.log(randomMember);
+
+  const [random, setRandom] = useState([0, 2]);
+
+  useEffect(() => {
+    const randomMember = Math.floor(Math.random() * cartesMembres.length);
+    const nextRandomMember = (randomMember + 2) % cartesMembres.length;
+    setRandom([randomMember, nextRandomMember]);
+  }, []);
 
   return (
     <main>
       <div className="flex flex-col w-full">
         <HeroSlice slice={homePage.data.slices[0]} />
         <AboutEurasco slice={homePage.data.slices[1]} />
+
+        {/* EVENTS */}
         <SectionTitle slice={homePage.data.slices[2]} />
         <div className="flex flex-col lg:flex-row md:gap-0 md:px-10 lg:mx-auto gap-4 overflow-auto lg:pb-20 lg:gap-6 lg:pt-2  ">
           <div className="flex flex-col md:flex-row lg:flex-col md:gap-6 lg:gap-6 gap-4 overflow-auto">
@@ -51,6 +54,8 @@ export default function Home({
             ></Button>
           </div>
         </div>
+
+        {/* ACTUS */}
         <SectionTitle slice={homePage.data.slices[3]} />
         <div className="hidden lg:flex flex-col gap-10 mb-14 w-full h-[440px] custom_Gradient items-center">
           <div className="flex flex-row gap-6 mx-auto mt-14">
@@ -86,20 +91,20 @@ export default function Home({
             ></Button>
           </div>
         </div>
+
+        {/* MEMBRES */}
         <SectionTitle slice={homePage.data.slices[4]} />
         <div className="flex flex-col gap-4 overflow-auto md:flex-row md:gap-0 md:flex-wrap md:px-6 lg:gap-3 lg:mx-[10%]">
-          {cartesMembres
-            .slice(randomMember, nextRandomMember + 1)
-            .map((carteMembre, index) => (
-              <MemberCard
-                key={index}
-                member={carteMembre.data.name}
-                country={carteMembre.data.country}
-                backgroundImage={carteMembre.data.imageHeader.url}
-                logo={carteMembre.data.logo.url}
-                linkToCard={`/membres/${carteMembre.uid}`}
-              />
-            ))}
+          {cartesMembres.slice(...random).map((carteMembre, index) => (
+            <MemberCard
+              key={index}
+              member={carteMembre.data.name}
+              country={carteMembre.data.country}
+              backgroundImage={carteMembre.data.imageHeader.url}
+              logo={carteMembre.data.logo.url}
+              linkToCard={`/membres/${carteMembre.uid}`}
+            />
+          ))}
           <div className="flex md:hidden pb-20">
             <CardAll
               title="Tous nos membres"
@@ -121,34 +126,28 @@ export default function Home({
           alt="Image Contact"
           className="hidden md:flex md:pb-14 :pt-14"
         />
-
         <ContactCard />
       </div>
     </main>
   );
 }
 
-export async function getServerSideProps({ previewData }) {
+export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
   const homePage = await client.getByUID("home", "home");
+  const cartesMembres = await client.getAllByType("member");
   const cartesBlog = await client.getAllByType("blog", {
     orderings: [
       { field: "document.first_publication_date", direction: "desc" },
     ],
   });
-  const cartesMembres = await client.getAllByType("member");
-
-  const randomMember = Math.floor(Math.random() * cartesMembres.length);
-  const nextRandomMember = (randomMember + 1) % cartesMembres.length;
 
   return {
     props: {
       homePage,
       cartesBlog,
       cartesMembres,
-      randomMember,
-      nextRandomMember,
     },
   };
 }
