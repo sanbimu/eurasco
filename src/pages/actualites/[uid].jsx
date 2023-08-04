@@ -23,7 +23,7 @@ export default function Blog({ page, carteBlog, homePage }) {
       {/* HEADER */}
       <div className="min-h-[75vh] flex flex-col w-screen justify-center">
         <div className="flex flex-col z-20">
-          <div className="font-mont text-white text-4xl uppercase font-bold mx-6 mb-8 ">
+          <div className="font-mont text-white text-4xl uppercase font-bold mx-6 mb-8 md:mx-12">
             {page.data.title}
           </div>
           {/* <div className="font-open text-white mx-4 max-h-[200px] overflow-scroll ">
@@ -35,12 +35,12 @@ export default function Blog({ page, carteBlog, homePage }) {
           width={394}
           height={850}
           alt="Event Image"
-          className="h-[75vh] absolute object-cover lg:max-h-[75vh] md:w-full"
+          className="h-[75vh] w-full absolute object-cover lg:max-h-[75vh]"
         />
         <div className="bg-black h-[75vh] w-full z-10 absolute opacity-50 " />
       </div>
       <div className="mb-12"></div>
-      <div className="mb-10 font-open text-sm italic mx-6">
+      <div className="mb-10 font-open text-sm italic mx-6 md:mx-24">
         Publication date: {formatDate(page.first_publication_date)}
       </div>
 
@@ -59,7 +59,7 @@ export default function Blog({ page, carteBlog, homePage }) {
               width={400}
               height={400}
               alt="Blog Image"
-              className="w-[390px] h-[390px] object-cover md:self-center md:w-max md:mx-24 "
+              className="w-full h-[390px] object-cover md:w-auto md:max-h-[450px] md:mx-24 "
             />
           )}
         </div>
@@ -75,7 +75,7 @@ export default function Blog({ page, carteBlog, homePage }) {
           linkToCard={`/actualites/${carteBlog[indexToShow].uid}`}
         />
       </div>
-      <div className="flex md:hidden pb-20">
+      <div className="flex pb-20">
         <CardAll
           title="Toutes nos actualités"
           buttonText="voir tout"
