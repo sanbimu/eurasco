@@ -37,6 +37,8 @@ const HeaderMobile = ({ current }) => {
 
   const router = useRouter();
   const isContactPage = router.pathname === "/contact";
+  const isBlogPost = router.pathname === "/actualites/[uid]";
+  const isWhiteLogo = isBlogPost || isScrolled || isMenuOpen;
 
   return (
     <div className="lg:hidden flex flex-col z-[100]">
@@ -49,11 +51,7 @@ const HeaderMobile = ({ current }) => {
       >
         <Link href="/">
           <Image
-            src={
-              isScrolled || isMenuOpen
-                ? "/icons/logoWhite.svg"
-                : "/icons/logo.svg"
-            }
+            src={isWhiteLogo ? "/icons/logoWhite.svg" : "/icons/logo.svg"}
             alt="Eurasco Logo"
             width={logoSize.width}
             height={logoSize.height}
