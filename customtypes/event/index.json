@@ -15,6 +15,67 @@
           "customtypes": ["member"]
         }
       },
+      "memberTwo": {
+        "type": "Link",
+        "config": {
+          "label": "Member Two",
+          "select": "document",
+          "customtypes": ["member"]
+        }
+      },
+      "memberThree": {
+        "type": "Link",
+        "config": { "label": "Member Three", "select": "document" }
+      },
+      "logo": {
+        "type": "Image",
+        "config": { "label": "Logo", "constraint": {}, "thumbnails": [] }
+      },
+      "image": {
+        "type": "Image",
+        "config": { "label": "Image", "constraint": {}, "thumbnails": [] }
+      },
+      "name": {
+        "type": "Text",
+        "config": { "label": "Name", "placeholder": "" }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Description",
+          "placeholder": "(max 300 characters)",
+          "allowTargetBlank": true,
+          "multi": "paragraph,em,hyperlink,list-item,o-list-item,strong"
+        }
+      },
+      "startDate": {
+        "type": "Date",
+        "config": { "label": "Start date", "placeholder": "" }
+      },
+      "endDate": {
+        "type": "Date",
+        "config": { "label": "End date", "placeholder": "" }
+      },
+      "country": {
+        "type": "Text",
+        "config": { "label": "Country", "placeholder": "" }
+      },
+      "city": {
+        "type": "Text",
+        "config": { "label": "City", "placeholder": "" }
+      },
+      "website": {
+        "type": "Link",
+        "config": { "label": "Website", "placeholder": "", "select": null }
+      },
+      "phone": {
+        "type": "Text",
+        "config": { "label": "Phone number", "placeholder": "" }
+      },
+      "mail": {
+        "type": "Text",
+        "config": { "label": "E-mail address", "placeholder": "" }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

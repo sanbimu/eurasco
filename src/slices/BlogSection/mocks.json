@@ -14,13 +14,12 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Nostrud incididunt ipsum cupidatat exercitation voluptate dolor Lorem nisi quis exercitation dolore qui exercitation ullamco fugiat. Minim ea ad aliqua cupidatat deserunt esse nisi excepteur Lorem pariatur tempor quis eiusmod qui Lorem."
+							"text": "Fugiat in dolor magna proident non occaecat sit. Elit in anim commodo mollit est esse. Qui consectetur exercitation amet."
 						}
 					}
 				]
 			},
 			"image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a",
@@ -38,6 +37,9 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},
