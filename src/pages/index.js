@@ -32,6 +32,7 @@ export default function Home({ homePage, cartesBlog }) {
               title="Tous nos événements"
               buttonText="voir tout"
               linkTo={"/evenements"}
+              marginBottom="0"
             />
           </div>
           <div className="hidden md:flex lg:hidden mx-auto mt-8 mb-14">
@@ -60,6 +61,7 @@ export default function Home({ homePage, cartesBlog }) {
               image={carteBlog.data.image.url}
               date={formatDate(carteBlog.first_publication_date)}
               linkToCard={`/actualites/${carteBlog.uid}`}
+              marginBottom="4"
             />
           ))}
           <div className="flex md:hidden pb-20">
@@ -67,6 +69,7 @@ export default function Home({ homePage, cartesBlog }) {
               title="Toutes nos actualités"
               buttonText="voir tout"
               linkTo={"/actualites"}
+              marginBottom="0"
             />
           </div>
           <div className="hidden md:flex lg:hidden mx-auto mt-12 mb-14">

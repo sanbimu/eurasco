@@ -29,6 +29,7 @@ export default function News({ cartesBlog, homePage }) {
                 image={carteBlog.data.image.url}
                 date={formatDate(carteBlog.first_publication_date)}
                 linkToCard={`/actualites/${carteBlog.uid}`}
+                marginBottom="0"
               />
             ))}
 
@@ -37,6 +38,7 @@ export default function News({ cartesBlog, homePage }) {
                 title="Tous nos événements"
                 buttonText="voir tout"
                 linkTo={"/evenements"}
+                marginBottom="0"
               />
             </div>
 

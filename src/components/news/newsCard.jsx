@@ -2,10 +2,10 @@ import Image from "next/image";
 import Button from "../shared/button";
 import Link from "next/link";
 
-export const NewsCard = ({ linkToCard, image, title, date }) => {
+export const NewsCard = ({ linkToCard, image, title, date, marginBottom }) => {
   return (
     <Link
-      className="lg:hidden flex flex-col mx-6 md:mx-[25vw]"
+      className={`lg:hidden flex flex-col mb-${marginBottom} mx-6 md:mx-[25vw]`}
       href={linkToCard}
     >
       <div className="relative flex rounded-[10px] h-[560px] w-full shadow-card bg-darkGreen">
