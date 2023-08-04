@@ -35,7 +35,7 @@ export default function Blog({ page, carteBlog, homePage }) {
           width={394}
           height={850}
           alt="Event Image"
-          className="min-h-[75vh] absolute object-cover lg:max-h-[75vh] md:w-full"
+          className="h-[75vh] absolute object-cover lg:max-h-[75vh] md:w-full"
         />
         <div className="bg-black h-[75vh] w-full z-10 absolute opacity-50 " />
       </div>

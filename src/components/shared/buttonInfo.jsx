@@ -13,7 +13,7 @@ export const ButtonInfo = ({
 }) => {
   return (
     <Link
-      className={`flex flex-row border border-darkGreen rounded-[10px] items-center px-6 py-${paddingTB} gap-8 mx-6 my-${marginTB}`}
+      className={`flex flex-row border border-darkGreen rounded-[10px] items-center px-6 py-${paddingTB} gap-8 md:gap-16 mx-6 md:mx-[25vw] my-${marginTB}`}
       href={linkTo}
       target="blank"
     >

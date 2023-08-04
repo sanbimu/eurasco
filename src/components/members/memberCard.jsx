@@ -9,10 +9,7 @@ export const MemberCard = ({
   logo,
 }) => {
   return (
-    <Link
-      className="flex flex-col mx-6 md:mx-auto md:w-[343px] "
-      href={linkToCard}
-    >
+    <Link className="flex flex-col mx-6 md:mx-[25vw]" href={linkToCard}>
       <div className="relative flex flex-col rounded-[10px] h-[560px] w-full shadow-card">
         <div className="relative flex items-center justify-center h-[560px]">
           <Image

@@ -41,7 +41,7 @@ export default function MemberPage({ memberPage, cartesMembres, homePage }) {
       <div className="mb-12"></div>
 
       {/* CONTENT */}
-      <div className="flex flex-col font-open leading-6 mx-6 md:px-0 lg:w-[50%] text-black">
+      <div className="flex flex-col font-open leading-6 mx-6 md:mx-[25vw] md:px-0 lg:w-[50%] text-black">
         <h2 className="uppercase font-bold leading-[70px] text-5xl md:text-6xl font-mont text-yellow">
           ABOUT
         </h2>
@@ -50,7 +50,7 @@ export default function MemberPage({ memberPage, cartesMembres, homePage }) {
         </h1>
         <PrismicRichText field={memberPage.data.description} />
       </div>
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-6 ">
         <ButtonInfo
           paddingTB="2"
           marginTB="8"
@@ -58,7 +58,7 @@ export default function MemberPage({ memberPage, cartesMembres, homePage }) {
           icon="/icons/website.svg"
           iconHeight="[55px]"
           fontSize="[17px]"
-          text="VOIR LE SITE WEB"
+          text="GO TO WEBSITE"
         />
         <Title title="INFO" subtitle="INFORMATIONS PRATIQUES" />
         <ButtonInfo
