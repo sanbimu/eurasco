@@ -1,5 +1,5 @@
 import * as prismic from "@prismicio/client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { createClient } from "../prismicio";
 import HeroSlice from "@/slices/Hero";
@@ -14,8 +14,17 @@ import AboutEurasco from "@/slices/AboutEurasco";
 import SectionTitle from "@/slices/SectionTitle";
 import { formatDate } from "@/components/utils";
 
-export default function Home({ homePage, cartesBlog }) {
+export default function Home({
+  homePage,
+  cartesBlog,
+  cartesMembres,
+  randomMember,
+  nextRandomMember,
+}) {
   console.log("homePage", homePage.data);
+  console.log("cartesMembers", cartesMembres);
+  console.log(randomMember);
+
   return (
     <main>
       <div className="flex flex-col w-full">
@@ -61,7 +70,6 @@ export default function Home({ homePage, cartesBlog }) {
               image={carteBlog.data.image.url}
               date={formatDate(carteBlog.first_publication_date)}
               linkToCard={`/actualites/${carteBlog.uid}`}
-              marginBottom="4"
             />
           ))}
           <div className="flex md:hidden pb-20">
@@ -69,7 +77,6 @@ export default function Home({ homePage, cartesBlog }) {
               title="Toutes nos actualités"
               buttonText="voir tout"
               linkTo={"/actualites"}
-              marginBottom="0"
             />
           </div>
           <div className="hidden md:flex lg:hidden mx-auto mt-12 mb-14">
@@ -81,11 +88,18 @@ export default function Home({ homePage, cartesBlog }) {
         </div>
         <SectionTitle slice={homePage.data.slices[4]} />
         <div className="flex flex-col gap-4 overflow-auto md:flex-row md:gap-0 md:flex-wrap md:px-6 lg:gap-3 lg:mx-[10%]">
-          {/* <MemberCard />
-          <MemberCard />
-          <div className="hidden lg:flex px-2">
-            <MemberCard />
-          </div> */}
+          {cartesMembres
+            .slice(randomMember, nextRandomMember + 1)
+            .map((carteMembre, index) => (
+              <MemberCard
+                key={index}
+                member={carteMembre.data.name}
+                country={carteMembre.data.country}
+                backgroundImage={carteMembre.data.imageHeader.url}
+                logo={carteMembre.data.logo.url}
+                linkToCard={`/membres/${carteMembre.uid}`}
+              />
+            ))}
           <div className="flex md:hidden pb-20">
             <CardAll
               title="Tous nos membres"
@@ -114,7 +128,7 @@ export default function Home({ homePage, cartesBlog }) {
   );
 }
 
-export async function getStaticProps({ previewData }) {
+export async function getServerSideProps({ previewData }) {
   const client = createClient({ previewData });
 
   const homePage = await client.getByUID("home", "home");
@@ -123,8 +137,18 @@ export async function getStaticProps({ previewData }) {
       { field: "document.first_publication_date", direction: "desc" },
     ],
   });
+  const cartesMembres = await client.getAllByType("member");
+
+  const randomMember = Math.floor(Math.random() * cartesMembres.length);
+  const nextRandomMember = (randomMember + 1) % cartesMembres.length;
 
   return {
-    props: { homePage, cartesBlog },
+    props: {
+      homePage,
+      cartesBlog,
+      cartesMembres,
+      randomMember,
+      nextRandomMember,
+    },
   };
 }
