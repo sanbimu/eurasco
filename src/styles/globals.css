@@ -14,6 +14,10 @@ body {
   background: linear-gradient(360deg, #00000099 0%, #00000022 70%);
 }
 
+.gradient_Event {
+  background: linear-gradient(360deg, #00534c 0%, #00534c22 50%);
+}
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
