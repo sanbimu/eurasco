@@ -31,9 +31,17 @@
         "type": "Image",
         "config": { "label": "Logo", "constraint": {}, "thumbnails": [] }
       },
-      "image": {
+      "imageEvent": {
         "type": "Image",
-        "config": { "label": "Image", "constraint": {}, "thumbnails": [] }
+        "config": { "label": "Event Image", "constraint": {}, "thumbnails": [] }
+      },
+      "imageHeader": {
+        "type": "Image",
+        "config": {
+          "label": "Image Header & Card",
+          "constraint": {},
+          "thumbnails": []
+        }
       },
       "name": {
         "type": "Text",

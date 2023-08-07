@@ -13,6 +13,7 @@ import { NewsCardDesktop } from "@/components/news/newsCardDesktop";
 import AboutEurasco from "@/slices/AboutEurasco";
 import SectionTitle from "@/slices/SectionTitle";
 import { formatDate } from "@/components/utils";
+import { EventNewsCard } from "@/components/shared/eventNewsCard";
 
 export default function Home({ homePage, cartesBlog, cartesMembres }) {
   console.log("homePage", homePage.data);
@@ -35,10 +36,7 @@ export default function Home({ homePage, cartesBlog, cartesMembres }) {
         {/* EVENTS */}
         <SectionTitle slice={homePage.data.slices[2]} />
         <div className="flex flex-col lg:flex-row md:gap-0 md:px-10 lg:mx-auto gap-4 overflow-auto lg:pb-20 lg:gap-6 lg:pt-2  ">
-          <div className="flex flex-col md:flex-row lg:flex-col md:gap-6 lg:gap-6 gap-4 overflow-auto">
-            <EventCard />
-            <EventCard />
-          </div>
+          <div className="flex flex-col md:flex-row lg:flex-col md:gap-6 lg:gap-6 gap-4 overflow-auto"></div>
           <div className="flex md:hidden lg:flex pb-20 lg:pb-10">
             <CardAll
               title="Tous nos événements"
@@ -58,10 +56,7 @@ export default function Home({ homePage, cartesBlog, cartesMembres }) {
         {/* ACTUS */}
         <SectionTitle slice={homePage.data.slices[3]} />
         <div className="hidden lg:flex flex-col gap-10 mb-14 w-full h-[440px] custom_Gradient items-center">
-          <div className="flex flex-row gap-6 mx-auto mt-14">
-            <NewsCardDesktop />
-            <NewsCardDesktop />
-          </div>
+          <div className="flex flex-row gap-6 mx-auto mt-14"></div>
           <Button
             buttonText={"toutes nos actualités"}
             linkTo={"/actualites"}
@@ -69,10 +64,12 @@ export default function Home({ homePage, cartesBlog, cartesMembres }) {
         </div>
         <div className="flex flex-col md:flex-row md:gap-0 md:flex-wrap md:px-6 gap-4 overflow-auto">
           {cartesBlog.slice(0, 2).map((carteBlog, index) => (
-            <NewsCard
+            <EventNewsCard
               key={index}
               title={carteBlog.data.title}
-              image={carteBlog.data.image.url}
+              sizeTitle="xl"
+              leadingTitle="6"
+              imageHeader={carteBlog.data.image.url}
               date={formatDate(carteBlog.first_publication_date)}
               linkToCard={`/actualites/${carteBlog.uid}`}
             />

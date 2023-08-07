@@ -1,44 +1,38 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export const EventCard = () => {
+export const EventCard = ({ linkToCard, imageHeader, index, title }) => {
   return (
-    <div className="flex flex-col mx-[25px] md:mx-auto h-[232px] md:w-auto lg:w-[35vw] lg:h-[246px]">
-      <div className="relative rounded-[10px] shadow-card">
+    <Link href={linkToCard} className="flex flex-col mx-6 md:mx-[25vw]">
+      <div className="flex relative rounded-[10px] shadow-card bg-darkGreen w-full h-[400px]">
+        <div className="flex flex-col w-full h-[400px] p-[25px] z-20">
+          <div className="flex flex-col flex-grow ">
+            <p className="font-mont font-bold text-[25px] text-white text-opacity-20">
+              {index}
+            </p>
+            <h1 className="flex font-mont text-white font-bold text-[25px] leading-[30px] my-auto">
+              {title}
+            </h1>
+          </div>
+          <div className="flex flex-row">
+            <div className="flex flex-col font-mont font-light text-white text-[15px] leading-[20px]">
+              <p>01/08/2023 </p>
+              <p>11/08/2023</p>
+            </div>
+            <p className="flex items-end font-open text-lightGreen italic text-[15px] leading-[22px] ml-auto">
+              Lire plus →
+            </p>
+          </div>
+        </div>
         <Image
-          src="/images/eventMobile.jpg"
+          src={imageHeader}
           width={343}
-          height={233}
-          alt="Event Image"
-          className="flex lg:hidden rounded-[10px] h-[232px]"
+          height={560}
+          alt="Events Image"
+          className="absolute rounded-[10px] w-full h-[400px] object-cover"
         />
-        <Image
-          src="/images/eventDesktop.jpg"
-          width={696}
-          height={246}
-          alt="Event Image"
-          className="hidden lg:flex rounded-[10px] h-[246px]"
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-50 rounded-[10px] shadow-card"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-30 rounded-[10px] z-10 shadow-card"></div>
       </div>
-
-      <div className="flex flex-col px-[25px] w-[330px] lg:w-[20vw] items-start pt-8 absolute">
-        <p className="font-mont text-lightGrey font-bold text-[25px] leading-9 pb-4 lg:pb-6">
-          01
-        </p>
-        <h1 className="font-mont text-white font-bold text-xl leading-6 pb-2">
-          Événement 1
-        </h1>
-        <p className="font-open text-white italic text-[15px] leading-[22px] pb-4 lg:pb-6">
-          Salad ahead is picking low moisture vegetables.
-        </p>
-        <Link
-          className="font-open text-lightGreen italic text-[15px] leading-[22px]"
-          href="/evenements"
-        >
-          Lire plus →
-        </Link>
-      </div>
-    </div>
+    </Link>
   );
 };

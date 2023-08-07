@@ -148,16 +148,27 @@ interface EventDocumentData {
    */
   logo: prismic.ImageField<never>;
   /**
-   * Image field in *Event*
+   * Event Image field in *Event*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: event.image
+   * - **API ID Path**: event.imageEvent
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/core-concepts/image
    *
    */
-  image: prismic.ImageField<never>;
+  imageEvent: prismic.ImageField<never>;
+  /**
+   * Image Header & Card field in *Event*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: event.imageHeader
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  imageHeader: prismic.ImageField<never>;
   /**
    * Name field in *Event*
    *

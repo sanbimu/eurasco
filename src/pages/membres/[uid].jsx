@@ -50,7 +50,7 @@ export default function MemberPage({ memberPage, cartesMembres, homePage }) {
         </h1>
         <PrismicRichText field={memberPage.data.description} />
       </div>
-      <div className="flex flex-col gap-6 ">
+      <div className="flex flex-col gap-6 my-6">
         <ButtonInfo
           paddingTB="2"
           marginTB="8"
@@ -64,7 +64,7 @@ export default function MemberPage({ memberPage, cartesMembres, homePage }) {
         <ButtonInfo
           paddingTB="4"
           marginTB="0"
-          linkTo={`mailto:${memberPage.data.email}}`}
+          linkTo={`mailto:${memberPage.data.email}`}
           icon="/icons/mail.svg"
           iconHeight="[40px]"
           fontSize="[15px]"
@@ -73,7 +73,7 @@ export default function MemberPage({ memberPage, cartesMembres, homePage }) {
         <ButtonInfo
           paddingTB="4"
           marginTB="0"
-          linkTo={`tel:${memberPage.data.phone}}`}
+          linkTo={`tel:${memberPage.data.phone}`}
           icon="/icons/phone.svg"
           iconHeight="[40px]"
           fontSize="[15px]"

@@ -12,9 +12,23 @@ export const repositoryName = config.repositoryName;
  *
  * {@link https://prismic.io/docs/route-resolver#route-resolver}
  *
- * @type {prismic.ClientConfig["routes"]}
  */
-// TODO: Update the routes array to match your project's route structure.
+
+export function linkResolver(doc) {
+  switch (doc.type) {
+    case "home":
+      return "/";
+    case "blog":
+      return `/actualites/${doc.uid}`;
+    case "member":
+      return `/membres/${doc.uid}`;
+    case "event":
+      return `/evenements/${doc.uid}`;
+    default:
+      return "/";
+  }
+}
+
 const routes = [
   {
     type: "home",
@@ -28,6 +42,10 @@ const routes = [
   {
     type: "member",
     path: "/membres/:uid",
+  },
+  {
+    type: "event",
+    path: "/evenements/:uid",
   },
 ];
 
