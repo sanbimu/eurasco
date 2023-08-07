@@ -4,18 +4,20 @@ import Image from "next/image";
 import { createClient } from "../prismicio";
 import HeroSlice from "@/slices/Hero";
 import { ContactCard } from "@/components/shared/contactCard";
-import { EventCard } from "@/components/events/eventCard";
 import { CardAll } from "@/components/shared/cardAll";
-import { NewsCard } from "@/components/news/newsCard";
 import { MemberCard } from "@/components/members/memberCard";
 import Button from "@/components/shared/button";
-import { NewsCardDesktop } from "@/components/news/newsCardDesktop";
 import AboutEurasco from "@/slices/AboutEurasco";
 import SectionTitle from "@/slices/SectionTitle";
-import { formatDate } from "@/components/utils";
+import { formatDate, formatDateEvents } from "@/components/utils";
 import { EventNewsCard } from "@/components/shared/eventNewsCard";
 
-export default function Home({ homePage, cartesBlog, cartesMembres }) {
+export default function Home({
+  homePage,
+  cartesBlog,
+  cartesMembres,
+  cartesEvents,
+}) {
   console.log("homePage", homePage.data);
   console.log("cartesMembers", cartesMembres);
 
@@ -36,7 +38,21 @@ export default function Home({ homePage, cartesBlog, cartesMembres }) {
         {/* EVENTS */}
         <SectionTitle slice={homePage.data.slices[2]} />
         <div className="flex flex-col lg:flex-row md:gap-0 md:px-10 lg:mx-auto gap-4 overflow-auto lg:pb-20 lg:gap-6 lg:pt-2  ">
-          <div className="flex flex-col md:flex-row lg:flex-col md:gap-6 lg:gap-6 gap-4 overflow-auto"></div>
+          <div className="flex flex-col md:flex-row lg:flex-col md:gap-6 lg:gap-6 gap-4 overflow-auto">
+            {cartesEvents.slice(0, 2).map((cartesEvents, index) => (
+              <EventNewsCard
+                key={index}
+                linkToCard={`/evenements/${cartesEvents.uid}`}
+                imageHeader={cartesEvents.data.imageHeader.url}
+                index={index + 1}
+                title={cartesEvents.data.name}
+                sizeTitle="2xl"
+                leadingTitle="8"
+                fromDate={formatDateEvents(cartesEvents.data.startDate)}
+                toDate={formatDateEvents(cartesEvents.data.endDate)}
+              />
+            ))}
+          </div>
           <div className="flex md:hidden lg:flex pb-20 lg:pb-10">
             <CardAll
               title="Tous nos événements"
@@ -139,12 +155,16 @@ export async function getStaticProps({ previewData }) {
       { field: "document.first_publication_date", direction: "desc" },
     ],
   });
+  const cartesEvents = await client.getAllByType("event", {
+    orderings: [{ field: "my.event.startDate" }],
+  });
 
   return {
     props: {
       homePage,
       cartesBlog,
       cartesMembres,
+      cartesEvents,
     },
   };
 }

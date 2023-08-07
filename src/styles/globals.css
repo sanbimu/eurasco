@@ -13,3 +13,12 @@ body {
 .gradient_News {
   background: linear-gradient(360deg, #00000099 0%, #00000022 70%);
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

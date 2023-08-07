@@ -22,7 +22,6 @@ export default function Events({ cartesEvents, homePage }) {
                 linkToCard={`/evenements/${cartesEvents.uid}`}
                 imageHeader={cartesEvents.data.imageHeader.url}
                 index={index + 1}
-                gap="1"
                 title={cartesEvents.data.name}
                 sizeTitle="2xl"
                 leadingTitle="8"
@@ -52,7 +51,3 @@ export async function getStaticProps({ previewData }) {
     props: { homePage, cartesEvents },
   };
 }
-
-//                title={cartesEvents.data.name}
-// from={cartesEvents.data.startDate}
-// to={cartesEvents.data.endDate}

@@ -7,17 +7,29 @@ import { CardAll } from "@/components/shared/cardAll";
 import { ButtonInfo } from "@/components/shared/buttonInfo";
 import { Title } from "@/components/shared/title";
 import { MemberCard } from "@/components/members/memberCard";
+import { EventNewsCard } from "@/components/shared/eventNewsCard";
+import { formatDateEvents } from "@/components/utils";
 
-export default function MemberPage({ memberPage, cartesMembres, homePage }) {
+export default function MemberPage({
+  memberPage,
+  cartesMembres,
+  homePage,
+  cartesEvents,
+}) {
   console.log("memberPage", memberPage);
   console.log("cartesMembre", cartesMembres);
   console.log("homePage", homePage);
+  console.log("cartesEvents", cartesEvents);
 
   const currentPageUID = memberPage.uid;
   const currentPageIndex = cartesMembres.findIndex(
     (member) => member.uid === currentPageUID
   );
   const nextMemberIndex = (currentPageIndex + 1) % cartesMembres.length;
+
+  const eventsOfCurrentMember = cartesEvents.filter(
+    (event) => event.data.member.uid === currentPageUID
+  );
 
   return (
     <>
@@ -85,6 +97,27 @@ export default function MemberPage({ memberPage, cartesMembres, homePage }) {
       <div className="mt-12">
         <SectionTitle slice={homePage.data.slices[2]} />
       </div>
+      <div className="flex flex-col scrollbar-hide w-full mb-12 gap-4">
+        {eventsOfCurrentMember.length === 0 ? (
+          <p className="font-mont text-center text-[17px] font-light uppercase text-opacity-80 text-darkGrey ">
+            No events to show yet
+          </p>
+        ) : (
+          eventsOfCurrentMember.map((cartesEvents, index) => (
+            <EventNewsCard
+              key={index}
+              linkToCard={`/evenements/${cartesEvents.uid}`}
+              imageHeader={cartesEvents.data.imageHeader.url}
+              index={index + 1}
+              title={cartesEvents.data.name}
+              sizeTitle="2xl"
+              leadingTitle="8"
+              fromDate={formatDateEvents(cartesEvents.data.startDate)}
+              toDate={formatDateEvents(cartesEvents.data.endDate)}
+            />
+          ))
+        )}
+      </div>
 
       {/* OTHER MEMBER CARD */}
 
@@ -126,8 +159,10 @@ export async function getStaticProps({ params, previewData }) {
   const cartesMembres = await client.getAllByType("member", {
     orderings: [{ field: "my.member.name" }],
   });
-
+  const cartesEvents = await client.getAllByType("event", {
+    orderings: [{ field: "my.event.startDate" }],
+  });
   return {
-    props: { memberPage, cartesMembres, homePage },
+    props: { memberPage, cartesMembres, homePage, cartesEvents },
   };
 }
