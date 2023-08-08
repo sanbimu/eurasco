@@ -17,9 +17,15 @@ export default function EventPage({ eventPage, homePage, members }) {
   console.log("members", members);
 
   const matchingMember = members.find((member) => {
-    console.log("member.data.url:", member.data.url);
-    console.log("eventPage.data.member.url:", eventPage.data.member.url);
-    return member.data.url === eventPage.data.member.url;
+    return member.url === eventPage.data.member.url;
+  });
+
+  const matchingMemberTwo = members.find((member) => {
+    return member.url === eventPage.data.memberTwo.url;
+  });
+
+  const matchingMemberThree = members.find((member) => {
+    return member.url === eventPage.data.memberThree.url;
   });
 
   return (
@@ -48,23 +54,49 @@ export default function EventPage({ eventPage, homePage, members }) {
       <div className="mb-12"></div>
 
       {/* CONTENT */}
-      <div className="flex flex-col font-open leading-6 mx-6 md:mx-[25vw] md:px-0 lg:w-[50%] text-black">
-        <div className="font-mont font-bold text-lg leading-6">
-          Organised by:
+      <div className="flex flex-col font-open leading-6 md:mx-[25vw] md:px-0 lg:w-[50%] text-black">
+        <div className="font-mont font-bold text-lg leading-6 mx-6 ">
+          Organised by:&nbsp;
           <Link
             href={eventPage.data.member.url}
             className="font-mont font-bold text-lg leading-6"
-          ></Link>
+          >
+            {matchingMember.data.name}
+          </Link>
+          {matchingMemberTwo && (
+            <>
+              ,&nbsp;
+              <Link
+                href={eventPage.data.member.url}
+                className="font-mont font-bold text-lg leading-6"
+              >
+                {matchingMemberTwo.data.name}
+              </Link>
+            </>
+          )}
+          {matchingMemberThree && (
+            <>
+              ,&nbsp;
+              <Link
+                href={eventPage.data.member.url}
+                className="font-mont font-bold text-lg leading-6"
+              >
+                {matchingMemberThree.data.name}
+              </Link>
+            </>
+          )}
         </div>
-        <div className="flex min-h-[25vh] w-full relative overflow-hidden my-4">
+        <div className="flex min-h-[25vh] w-[90vw] mx-auto my-2 relative overflow-hidden">
           <Image
             src={eventPage.data.logo.url}
             fill={true}
             alt="Event Image"
-            className="object-contain w-full h-full"
+            className="object-contain "
           />
         </div>
-        <PrismicRichText field={eventPage.data.description} />
+        <div className="font-open leading-[25px] mx-6 md:mx-24 text-justify">
+          <PrismicRichText field={eventPage.data.description} />{" "}
+        </div>
         <div className="flex min-h-[25vh] w-full relative overflow-hidden my-12">
           <Image
             src={eventPage.data.imageEvent.url}
