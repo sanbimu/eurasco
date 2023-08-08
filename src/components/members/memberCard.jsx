@@ -29,7 +29,7 @@ export const MemberCard = ({
             {country}
           </h2>
           <div className="font-open italic text-[15px] leading-[25px] text-white ml-auto">
-            Lire plus →
+            Read more →
           </div>
         </div>
         <Image

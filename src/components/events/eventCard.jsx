@@ -20,7 +20,7 @@ export const EventCard = ({ linkToCard, imageHeader, index, title }) => {
               <p>11/08/2023</p>
             </div>
             <p className="flex items-end font-open text-lightGreen italic text-[15px] leading-[22px] ml-auto">
-              Lire plus →
+              Read more →
             </p>
           </div>
         </div>

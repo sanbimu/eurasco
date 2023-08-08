@@ -13,7 +13,7 @@ export default function News({ cartesBlog, homePage }) {
   return (
     <main>
       <div className="flex flex-col md:h-auto">
-        <HeaderPages title="Nos actualités" />
+        <HeaderPages title="OUR LATEST NEWS" />
         <div className="flex flex-col mt-12">
           <SectionTitle slice={homePage.data.slices[3]} />
 
@@ -21,37 +21,41 @@ export default function News({ cartesBlog, homePage }) {
             {cartesBlog.slice(0, 2).map((carteBlog, index) => (
               <EventNewsCard
                 key={index}
+                textIndex="NEWS"
+                index={index + 1}
                 title={carteBlog.data.title}
                 sizeTitle="xl"
                 leadingTitle="6"
                 imageHeader={carteBlog.data.image.url}
                 date={formatDate(carteBlog.first_publication_date)}
-                linkToCard={`/actualites/${carteBlog.uid}`}
+                linkToCard={`/news/${carteBlog.uid}`}
               />
             ))}
 
             <div className="flex md:hidden">
               <CardAll
-                title="Tous nos événements"
-                buttonText="voir tout"
-                linkTo={"/evenements"}
+                title="All of our events"
+                buttonText="see all"
+                linkTo={"/events"}
               />
             </div>
 
             {cartesBlog.slice(2).map((carteBlog, index) => (
               <EventNewsCard
                 key={index + 2}
+                textIndex="NEWS"
+                index={index + 3}
                 title={carteBlog.data.title}
                 sizeTitle="xl"
                 leadingTitle="6"
                 imageHeader={carteBlog.data.image.url}
                 date={formatDate(carteBlog.first_publication_date)}
-                linkToCard={`/actualites/${carteBlog.uid}`}
+                linkToCard={`/news/${carteBlog.uid}`}
               />
             ))}
           </div>
           {/* <div className="mx-auto ">
-            <Button buttonText="Voir plus" linkTo="/actualites" />
+            <Button buttonText="Voir plus" linkTo="/news" />
           </div> */}
           <div className="mt-10 lg:mt-20 mb-4">
             <ContactCard />

@@ -37,7 +37,7 @@ const HeaderMobile = ({ current }) => {
 
   const router = useRouter();
   const isContactPage = router.pathname === "/contact";
-  const isBlogPost = router.pathname === "/actualites/[uid]";
+  const isBlogPost = router.pathname === "/news/[uid]";
   const isWhiteLogo = isBlogPost || isScrolled || isMenuOpen;
 
   return (
@@ -61,25 +61,25 @@ const HeaderMobile = ({ current }) => {
           className="flex flex-col justify-center gap-1"
           onClick={toggleMenu}
         >
-          <div
+          <span
             className={`w-[30px] h-[2px] ${
               isContactPage && !isScrolled ? "bg-darkGreen" : "bg-white"
             }`}
-          ></div>
-          <div
+          ></span>
+          <span
             className={`w-[30px] h-[2px] ${
               isContactPage && !isScrolled ? "bg-darkGreen" : "bg-white"
             }`}
-          ></div>
-          <div
+          ></span>
+          <span
             className={`w-[30px] h-[2px] ${
               isContactPage && !isScrolled ? "bg-darkGreen" : "bg-white"
             }`}
-          ></div>
+          ></span>
         </button>
       </div>
       {isMenuOpen && (
-        <div className="fixed z-[90] top-0 left-0 right-0 bottom-0 flex flex-col px-12 pt-36 gap-10 uppercase font-open text-lg text-white font-semibold tracking-wider bg-darkGreen bg-opacity-70 backdrop-blur-md">
+        <div className="fixed z-[90] top-0 left-0 right-0 bottom-0 flex flex-col px-12 pt-36 gap-10 uppercase font-open text-lg text-white font-semibold tracking-wider bg-darkGreen bg-opacity-70 backdrop-blur-md animate__animated animate__fadeInDown animate__faster	">
           <Link href="/" onClick={toggleMenu}>
             Accueil
           </Link>
@@ -102,3 +102,26 @@ const HeaderMobile = ({ current }) => {
   );
 };
 export default HeaderMobile;
+
+{
+  /* <button
+className="flex flex-col justify-center gap-1"
+onClick={toggleMenu}
+>
+<span
+  className={`w-[30px] h-[2px] ${
+    isContactPage && !isScrolled ? "bg-darkGreen" : "bg-white"
+  }`}
+></span>
+<span
+  className={`w-[30px] h-[2px] ${
+    isContactPage && !isScrolled ? "bg-darkGreen" : "bg-white"
+  }`}
+></span>
+<span
+  className={`w-[30px] h-[2px] ${
+    isContactPage && !isScrolled ? "bg-darkGreen" : "bg-white"
+  }`}
+></span>
+</button> */
+}

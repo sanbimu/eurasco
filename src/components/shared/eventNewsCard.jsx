@@ -3,6 +3,7 @@ import Link from "next/link";
 
 export const EventNewsCard = ({
   linkToCard,
+  textIndex,
   index,
   title,
   sizeTitle,
@@ -18,7 +19,7 @@ export const EventNewsCard = ({
         <div className="flex flex-col px-[35px] w-full  md:w-[343px] justify-end mb-8 z-20">
           {index && (
             <p className="font-mont font-bold text-2xl text-white text-opacity-30">
-              {` EVENT ${index}`}
+              {` ${textIndex} ${index}`}
             </p>
           )}
           <h1
@@ -37,7 +38,7 @@ export const EventNewsCard = ({
             </p>
           )}
           <div className="font-open text-lightGreen italic text-[15px] leading-[22px] ml-auto">
-            Lire plus →
+            Read more →
           </div>
         </div>
 

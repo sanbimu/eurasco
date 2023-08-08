@@ -42,7 +42,7 @@ export default function Home({
             {cartesEvents.slice(0, 2).map((cartesEvents, index) => (
               <EventNewsCard
                 key={index}
-                linkToCard={`/evenements/${cartesEvents.uid}`}
+                linkToCard={`/events/${cartesEvents.uid}`}
                 imageHeader={cartesEvents.data.imageHeader.url}
                 index={index + 1}
                 title={cartesEvents.data.name}
@@ -57,14 +57,14 @@ export default function Home({
             <CardAll
               title="Tous nos événements"
               buttonText="voir tout"
-              linkTo={"/evenements"}
+              linkTo={"/events"}
               marginBottom="0"
             />
           </div>
           <div className="hidden md:flex lg:hidden mx-auto mt-8 mb-14">
             <Button
               buttonText={"tous nos événements"}
-              linkTo={"/evenements"}
+              linkTo={"/events"}
             ></Button>
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function Home({
           <div className="flex flex-row gap-6 mx-auto mt-14"></div>
           <Button
             buttonText={"toutes nos actualités"}
-            linkTo={"/actualites"}
+            linkTo={"/news"}
           ></Button>
         </div>
         <div className="flex flex-col md:flex-row md:gap-0 md:flex-wrap md:px-6 gap-4 overflow-auto">
@@ -87,20 +87,20 @@ export default function Home({
               leadingTitle="6"
               imageHeader={carteBlog.data.image.url}
               date={formatDate(carteBlog.first_publication_date)}
-              linkToCard={`/actualites/${carteBlog.uid}`}
+              linkToCard={`/news/${carteBlog.uid}`}
             />
           ))}
           <div className="flex md:hidden pb-20">
             <CardAll
               title="Toutes nos actualités"
               buttonText="voir tout"
-              linkTo={"/actualites"}
+              linkTo={"/news"}
             />
           </div>
           <div className="hidden md:flex lg:hidden mx-auto mt-12 mb-14">
             <Button
               buttonText={"toutes nos actualités"}
-              linkTo={"/actualites"}
+              linkTo={"/news"}
             ></Button>
           </div>
         </div>
@@ -115,20 +115,20 @@ export default function Home({
               country={carteMembre.data.country}
               backgroundImage={carteMembre.data.imageHeader.url}
               logo={carteMembre.data.logo.url}
-              linkToCard={`/membres/${carteMembre.uid}`}
+              linkToCard={`/members/${carteMembre.uid}`}
             />
           ))}
           <div className="flex md:hidden pb-20">
             <CardAll
               title="Tous nos membres"
               buttonText="voir tout"
-              linkTo={"/membres"}
+              linkTo={"/members"}
             />
           </div>
           <div className="hidden md:flex mx-auto mt-10 mb-14">
             <Button
               buttonText={"tous nos membres"}
-              linkTo={"/membres"}
+              linkTo={"/members"}
             ></Button>
           </div>
         </div>

@@ -22,7 +22,7 @@ export const NewsCardDesktop = () => {
           Organic livestock raised for meat, eggs, and dairy products must be
           raised in living conditions.
         </p>
-        <Button buttonText="voir" linkTo={"/evenements"}></Button>
+        <Button buttonText="voir" linkTo={"/events"}></Button>
       </div>
     </div>
   );

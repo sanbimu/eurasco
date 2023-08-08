@@ -72,7 +72,7 @@ export default function MemberPage({
           fontSize="[17px]"
           text="GO TO WEBSITE"
         />
-        <Title title="INFO" subtitle="INFORMATIONS PRATIQUES" />
+        <Title title="INFO" subtitle="PRACTICAL INFORMATION" />
         <ButtonInfo
           paddingTB="4"
           marginTB="0"
@@ -106,7 +106,7 @@ export default function MemberPage({
           eventsOfCurrentMember.map((cartesEvents, index) => (
             <EventNewsCard
               key={index}
-              linkToCard={`/evenements/${cartesEvents.uid}`}
+              linkToCard={`/events/${cartesEvents.uid}`}
               imageHeader={cartesEvents.data.imageHeader.url}
               index={index + 1}
               title={cartesEvents.data.name}
@@ -123,7 +123,7 @@ export default function MemberPage({
 
       <SectionTitle slice={homePage.data.slices[4]} />
       <MemberCard
-        linkToCard={`/membres/${cartesMembres[nextMemberIndex].uid}`}
+        linkToCard={`/members/${cartesMembres[nextMemberIndex].uid}`}
         member={cartesMembres[nextMemberIndex].data.name}
         country={cartesMembres[nextMemberIndex].data.country}
         backgroundImage={cartesMembres[nextMemberIndex].data.imageHeader.url}
@@ -131,9 +131,9 @@ export default function MemberPage({
       />
       <div className="flex mt-6 mb-8">
         <CardAll
-          title="Tous nos membres"
-          buttonText="voir tout"
-          linkTo={"/membres"}
+          title="All of our members"
+          buttonText="see all"
+          linkTo={"/members"}
         />
       </div>
     </>

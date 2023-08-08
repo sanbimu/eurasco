@@ -20,7 +20,7 @@ export const HeaderPages = ({ title, logo }) => {
       />
       <div className="flex absolute z-50 items-center justify-center text-white h-full w-full">
         {title ? (
-          <h1 className="uppercase font-mont font-bold leading-[70px] text-5xl md:text-3xl lg:text-5xl pl-[25px]">
+          <h1 className="uppercase font-mont font-bold leading-[70px] text-5xl md:text-3xl lg:text-5xl pl-[15px] pr-[30px]">
             {title}
           </h1>
         ) : logo ? (

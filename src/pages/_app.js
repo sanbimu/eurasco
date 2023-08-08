@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "animate.css";
 import { Open_Sans, Montserrat } from "next/font/google";
 import Layout from "../components/layout";
 import { PrismicPreview } from "@prismicio/next";

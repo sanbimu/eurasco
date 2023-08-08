@@ -19,11 +19,11 @@ export function linkResolver(doc) {
     case "home":
       return "/";
     case "blog":
-      return `/actualites/${doc.uid}`;
+      return `/news/${doc.uid}`;
     case "member":
-      return `/membres/${doc.uid}`;
+      return `/members/${doc.uid}`;
     case "event":
-      return `/evenements/${doc.uid}`;
+      return `/events/${doc.uid}`;
     default:
       return "/";
   }
@@ -37,15 +37,15 @@ const routes = [
   },
   {
     type: "blog",
-    path: "/actualites/:uid",
+    path: "/news/:uid",
   },
   {
     type: "member",
-    path: "/membres/:uid",
+    path: "/members/:uid",
   },
   {
     type: "event",
-    path: "/evenements/:uid",
+    path: "/events/:uid",
   },
 ];
 

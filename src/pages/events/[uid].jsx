@@ -119,7 +119,7 @@ export default function EventPage({ eventPage, homePage, members }) {
           text="GO TO WEBSITE"
         />
         <div className="my-2"></div>
-        <Title title="INFO" subtitle="INFORMATIONS PRATIQUES" />
+        <Title title="INFO" subtitle="PRACTICAL INFORMATION" />
         <ButtonInfo
           paddingTB="4"
           marginTB="0"

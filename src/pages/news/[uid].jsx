@@ -72,14 +72,14 @@ export default function Blog({ page, carteBlog, homePage }) {
           title={carteBlog[indexToShow].data.title}
           image={carteBlog[indexToShow].data.image.url}
           date={formatDate(carteBlog[indexToShow].first_publication_date)}
-          linkToCard={`/actualites/${carteBlog[indexToShow].uid}`}
+          linkToCard={`/news/${carteBlog[indexToShow].uid}`}
         />
       </div>
       <div className="flex pb-20">
         <CardAll
-          title="Toutes nos actualités"
-          buttonText="voir tout"
-          linkTo={"/actualites"}
+          title="All our latest news"
+          buttonText="see all"
+          linkTo={"/news"}
         />
       </div>
     </>

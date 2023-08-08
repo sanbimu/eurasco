@@ -13,7 +13,7 @@ export const NewsCard = ({ linkToCard, image, title, date }) => {
             {date}
           </p>
           <div className="font-open text-lightGreen italic text-[15px] leading-[22px] ml-auto">
-            Lire plus →
+            Read more →
           </div>
         </div>
 

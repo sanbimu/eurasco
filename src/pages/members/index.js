@@ -12,7 +12,7 @@ export default function Members({ cartesMembres, homePage }) {
   return (
     <main>
       <div className="flex flex-col md:h-auto">
-        <HeaderPages title="Nos membres" />
+        <HeaderPages title="Our members" />
         <div className="flex flex-col mt-12">
           <SectionTitle slice={homePage.data.slices[4]} />
 
@@ -24,15 +24,15 @@ export default function Members({ cartesMembres, homePage }) {
                 country={carteMembre.data.country}
                 backgroundImage={carteMembre.data.imageHeader.url}
                 logo={carteMembre.data.logo.url}
-                linkToCard={`/membres/${carteMembre.uid}`}
+                linkToCard={`/members/${carteMembre.uid}`}
               />
             ))}
 
             <div className="flex md:hidden">
               <CardAll
-                title="Tous nos événements"
-                buttonText="voir tout"
-                linkTo={"/evenements"}
+                title="All of our events"
+                buttonText="see all"
+                linkTo={"/events"}
               />
             </div>
 
@@ -43,12 +43,12 @@ export default function Members({ cartesMembres, homePage }) {
                 country={carteMembre.data.country}
                 backgroundImage={carteMembre.data.imageHeader.url}
                 logo={carteMembre.data.logo.url}
-                linkToCard={`/membres/${carteMembre.uid}`}
+                linkToCard={`/members/${carteMembre.uid}`}
               />
             ))}
           </div>
           {/* <div className="mx-auto ">
-            <Button buttonText="Voir plus" linkTo="/membres" />
+            <Button buttonText="Voir plus" linkTo="/members" />
           </div> */}
           <div className="mt-10 lg:mt-20 mb-4">
             <ContactCard />

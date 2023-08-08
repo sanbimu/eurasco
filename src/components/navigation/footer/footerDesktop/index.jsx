@@ -32,10 +32,10 @@ const FooterDesktop = ({ current }) => {
               <h1 className="text-white font-bold text-xl leading-6 pb-6 ">
                 Quick links
               </h1>
-              <Link href="/">Acceuil</Link>
-              <Link href="/evenements">Nos événements</Link>
-              <Link href="/actualites">Nos actualités</Link>
-              <Link href="/membres">Nos membres</Link>
+              <Link href="/">Home</Link>
+              <Link href="/events">Our events</Link>
+              <Link href="/news">Latest news</Link>
+              <Link href="/members">Our members</Link>
               <Link href="/contact">Contact</Link>
             </div>
           </div>
