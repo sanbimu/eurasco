@@ -15,7 +15,7 @@ const AboutEurasco = ({ slice }) => {
       <div className="flex lg:pb-40 md:px-[70px] lg:px-[150px] mx-4">
         <div className="flex flex-col lg:flex lg:flex-row justify-between">
           <div className="flex flex-col pt-14 font-open px-[16px] md:px-0 lg:w-[50%] text-black">
-            <h2 className="uppercase font-bold leading-[70px] text-5xl md:text-6xl font-mont text-yellow">
+            <h2 className="uppercase font-bold  text-5xl md:text-6xl font-mont text-yellow">
               {slice.primary.title}
             </h2>
             <h1 className="uppercase font-mont font-bold leading-[42px] text-4xl">
