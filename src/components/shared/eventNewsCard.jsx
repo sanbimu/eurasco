@@ -12,13 +12,20 @@ export const EventNewsCard = ({
   fromDate,
   toDate,
   imageHeader,
+  widthFull,
 }) => {
   return (
     <Link
-      className='flex flex-col mx-2 md:mx-[25vw] snap-center flex-shrink-0 '
+      className={`flex flex-col md:mx-[25vw] snap-center flex-shrink-0 ${
+        widthFull ? " mx-4" : " mx-2"
+      }`}
       href={linkToCard}
     >
-      <div className='relative flex rounded-[10px] h-[400px] w-[80vw] shadow-card'>
+      <div
+        className={`relative flex rounded-[10px] h-[400px] shadow-card w-[80vw] ${
+          widthFull ? "w-[100%]" : "w-[80vw]"
+        }`}
+      >
         <div className='flex flex-col px-[20px] w-full  md:w-[343px] justify-end mb-5 z-20'>
           {index && (
             <p className='font-mont font-bold text-2xl text-white text-opacity-30'>
