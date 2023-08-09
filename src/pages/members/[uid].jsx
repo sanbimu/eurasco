@@ -34,105 +34,114 @@ export default function MemberPage({
   return (
     <>
       {/* HEADER */}
-      <div className="min-h-[75vh] flex flex-col w-screen justify-center">
+      <div className='min-h-[75vh] flex flex-col w-screen justify-center'>
         <Image
           src={memberPage.data.logo.url}
           width={295}
           height={66}
-          alt="Member Logo"
-          className="z-20 max-w-[295px] max-h-[200px] mx-auto"
+          alt='Member Logo'
+          className='z-20 max-w-[295px] max-h-[200px] mx-auto'
         />
         <Image
           src={memberPage.data.imageHeader.url}
           width={394}
           height={850}
-          alt="Member Image"
-          className="min-h-[75vh] absolute object-cover lg:max-h-[75vh] md:w-full"
+          alt='Member Image'
+          className='min-h-[75vh] absolute object-cover lg:max-h-[75vh] md:w-full'
         />
       </div>
-      <div className="mb-12"></div>
+      <div className='mb-12'></div>
 
       {/* CONTENT */}
-      <div className="flex flex-col font-open leading-6 mx-6 md:mx-[25vw] md:px-0 lg:w-[50%] text-black">
-        <h2 className="uppercase font-bold leading-[70px] text-5xl md:text-6xl font-mont text-yellow">
+      <div className='flex flex-col font-open leading-6 mx-6 md:mx-[25vw] md:px-0 lg:w-[50%] text-black'>
+        <h2 className='uppercase font-bold leading-[70px] text-5xl md:text-6xl font-mont text-yellow'>
           ABOUT
         </h2>
-        <h1 className="uppercase font-mont font-bold leading-10 text-4xl pb-12">
+        <h1 className='uppercase font-mont font-bold leading-10 text-4xl pb-12'>
           {memberPage.data.name}
         </h1>
         <PrismicRichText field={memberPage.data.description} />
       </div>
-      <div className="flex flex-col gap-6 my-6">
+      <div className='flex flex-col gap-6 my-6'>
         <ButtonInfo
-          paddingTB="2"
-          marginTB="8"
+          paddingTB='2'
+          marginTB='8'
           linkTo={memberPage.data.website.url}
-          icon="/icons/website.svg"
-          iconHeight="[55px]"
-          fontSize="[17px]"
-          text="GO TO WEBSITE"
+          icon='/icons/website.svg'
+          iconHeight='[55px]'
+          fontSize='[17px]'
+          text='GO TO WEBSITE'
         />
-        <Title title="INFO" subtitle="PRACTICAL INFORMATION" />
+        <Title title='INFO' subtitle='PRACTICAL INFORMATION' />
         <ButtonInfo
-          paddingTB="4"
-          marginTB="0"
+          paddingTB='4'
+          marginTB='0'
           linkTo={`mailto:${memberPage.data.email}`}
-          icon="/icons/mail.svg"
-          iconHeight="[40px]"
-          fontSize="[15px]"
+          icon='/icons/mail.svg'
+          iconHeight='[40px]'
+          fontSize='[15px]'
           text={memberPage.data.email}
         />
         <ButtonInfo
-          paddingTB="4"
-          marginTB="0"
+          paddingTB='4'
+          marginTB='0'
           linkTo={`tel:${memberPage.data.phone}`}
-          icon="/icons/phone.svg"
-          iconHeight="[40px]"
-          fontSize="[15px]"
+          icon='/icons/phone.svg'
+          iconHeight='[40px]'
+          fontSize='[15px]'
           text={memberPage.data.phone}
         />
       </div>
 
       {/* EVENTS */}
-      <div className="mt-12">
+      <div className='mt-12'>
         <SectionTitle slice={homePage.data.slices[2]} />
       </div>
-      <div className="flex flex-col scrollbar-hide w-full mb-12 gap-4">
+      <div className='flex flex-col scrollbar-hide w-full mb-12 gap-4'>
         {eventsOfCurrentMember.length === 0 ? (
-          <p className="font-mont text-center text-[17px] font-light uppercase text-opacity-80 text-darkGrey ">
+          <p className='font-mont text-center text-[17px] font-light uppercase text-opacity-80 text-darkGrey '>
             No events to show yet
           </p>
         ) : (
-          eventsOfCurrentMember.map((cartesEvents, index) => (
-            <EventNewsCard
-              key={index}
-              linkToCard={`/events/${cartesEvents.uid}`}
-              imageHeader={cartesEvents.data.imageHeader.url}
-              index={index + 1}
-              title={cartesEvents.data.name}
-              sizeTitle="2xl"
-              leadingTitle="8"
-              fromDate={formatDateEvents(cartesEvents.data.startDate)}
-              toDate={formatDateEvents(cartesEvents.data.endDate)}
-            />
-          ))
+          <div className='snap-mandatory snap-x overflow-scroll flex flex-row ml-3 '>
+            {eventsOfCurrentMember.map((cartesEvents, index) => (
+              <EventNewsCard
+                key={index}
+                linkToCard={`/events/${cartesEvents.uid}`}
+                imageHeader={cartesEvents.data.imageHeader.url}
+                index={index + 1}
+                title={cartesEvents.data.name}
+                sizeTitle='2xl'
+                leadingTitle='8'
+                fromDate={formatDateEvents(cartesEvents.data.startDate)}
+                toDate={formatDateEvents(cartesEvents.data.endDate)}
+              />
+            ))}{" "}
+          </div>
         )}
       </div>
 
       {/* OTHER MEMBER CARD */}
 
       <SectionTitle slice={homePage.data.slices[4]} />
-      <MemberCard
-        linkToCard={`/members/${cartesMembres[nextMemberIndex].uid}`}
-        member={cartesMembres[nextMemberIndex].data.name}
-        country={cartesMembres[nextMemberIndex].data.country}
-        backgroundImage={cartesMembres[nextMemberIndex].data.imageHeader.url}
-        logo={cartesMembres[nextMemberIndex].data.logo.url}
-      />
-      <div className="flex mt-6 mb-8">
+      <div className='snap-mandatory snap-x overflow-scroll flex flex-row ml-3 '>
+        {" "}
+        {cartesMembres.slice(0, 5).map((carteMembre, index) => (
+          <MemberCard
+            key={index}
+            member={carteMembre.data.name}
+            country={carteMembre.data.country}
+            backgroundImage={carteMembre.data.imageHeader.url}
+            logo={carteMembre.data.logo.url}
+            linkToCard={`/members/${carteMembre.uid}`}
+          />
+        ))}{" "}
+      </div>
+
+      <div className='flex mt-6 mb-8'>
         <CardAll
-          title="All of our members"
-          buttonText="see all"
+          title='All of our members'
+          buttonText='see all'
           linkTo={"/members"}
         />
       </div>

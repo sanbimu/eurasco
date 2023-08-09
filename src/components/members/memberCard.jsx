@@ -17,7 +17,7 @@ export const MemberCard = ({
       href={linkToCard}
     >
       <div
-        className={`relative flex flex-col rounded-[10px] h-[560px]  shadow-card ${
+        className={`relative flex flex-col rounded-[10px] h-[450px]  shadow-card ${
           widthFull ? "w-[100%]" : "w-[80vw]"
         }`}
       >
@@ -27,7 +27,7 @@ export const MemberCard = ({
             width={295}
             height={66}
             alt='Member logo Logo'
-            className='z-20 max-w-[295px] max-h-[200px]'
+            className='z-20 max-w-[295px] max-h-[150px] object-contain '
           />
         </div>
         <div className='absolute inset-0 gradient_Membres rounded-[10px] z-10 shadow-card' />
@@ -45,9 +45,9 @@ export const MemberCard = ({
         <Image
           src={backgroundImage}
           width={343}
-          height={560}
+          height={450}
           alt='Member Image'
-          className='absolute rounded-[10px] w-full min-h-[560px] object-cover'
+          className='absolute rounded-[10px] w-full min-h-[450px] object-cover'
         />
       </div>
     </Link>
