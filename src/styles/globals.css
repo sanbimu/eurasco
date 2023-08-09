@@ -30,12 +30,12 @@ body {
 .hamburger-line {
   width: 30px;
   height: 2px;
-  background-color: white;
   transition: transform 0.3s, opacity 0.3s;
+  transform-origin: center center;
 }
 
 .hamburger-line.cross-1 {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(4px, 5px);
 }
 
 .hamburger-line.cross-2 {
@@ -43,5 +43,10 @@ body {
 }
 
 .hamburger-line.cross-3 {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(0.27rem, -0.3rem);
+}
+
+.animate__fadeInDown {
+  --animate-duration: 1.8s;
+  --animation-delay: 0.6s;
 }
