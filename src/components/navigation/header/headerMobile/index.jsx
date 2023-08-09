@@ -62,19 +62,13 @@ const HeaderMobile = ({ current }) => {
           onClick={toggleMenu}
         >
           <span
-            className={`w-[30px] h-[2px] ${
-              isContactPage && !isScrolled ? "bg-darkGreen" : "bg-white"
-            }`}
+            className={`hamburger-line ${isMenuOpen ? "cross-1" : ""}`}
           ></span>
           <span
-            className={`w-[30px] h-[2px] ${
-              isContactPage && !isScrolled ? "bg-darkGreen" : "bg-white"
-            }`}
+            className={`hamburger-line ${isMenuOpen ? "cross-2" : ""}`}
           ></span>
           <span
-            className={`w-[30px] h-[2px] ${
-              isContactPage && !isScrolled ? "bg-darkGreen" : "bg-white"
-            }`}
+            className={`hamburger-line ${isMenuOpen ? "cross-3" : ""}`}
           ></span>
         </button>
       </div>

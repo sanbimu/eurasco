@@ -26,3 +26,22 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.hamburger-line {
+  width: 30px;
+  height: 2px;
+  background-color: white;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.hamburger-line.cross-1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-line.cross-2 {
+  opacity: 0;
+}
+
+.hamburger-line.cross-3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
