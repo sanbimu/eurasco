@@ -83,7 +83,9 @@ const HeaderMobile = ({ current }) => {
           <Link
             href="/"
             onClick={toggleMenu}
-            className="openMenuAnim animate__animated animate__fadeInDown"
+            className={`${
+              router.pathname === "/" ? "text-yellow" : "text-white"
+            } openMenuAnim animate__animated animate__fadeInDown`}
           >
             Accueil
           </Link>

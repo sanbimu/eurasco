@@ -22,8 +22,8 @@ export default function Home({
   console.log("cartesMembers", cartesMembres);
 
   const [random, setRandom] = useState([0, 2]);
-  const containerRef = useRef(null);
-  const [scrollIndex, setScrollIndex] = useState(0);
+  // const containerRef = useRef(null);
+  // const [scrollIndex, setScrollIndex] = useState(0);
 
   useEffect(() => {
     const randomMember = Math.floor(Math.random() * cartesMembres.length);
@@ -31,39 +31,39 @@ export default function Home({
     setRandom([randomMember, nextRandomMember]);
   }, []);
 
-  const handleScroll = () => {
-    const currentIndex = Math.round(
-      containerRef.current.scrollLeft / containerRef.current.offsetWidth
-    );
-    setScrollIndex(currentIndex);
-  };
+  // const handleScroll = () => {
+  //   const currentIndex = Math.round(
+  //     containerRef.current.scrollLeft / containerRef.current.offsetWidth
+  //   );
+  //   setScrollIndex(currentIndex);
+  // };
 
-  useEffect(() => {
-    containerRef.current.addEventListener("scroll", handleScroll);
-    return () => {
-      containerRef.current.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  // useEffect(() => {
+  //   containerRef.current.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     containerRef.current.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
-  const handleScrollLeft = () => {
-    if (scrollIndex > 0) {
-      setScrollIndex(scrollIndex - 1);
-      containerRef.current.scrollBy({
-        left: -containerRef.current.offsetWidth,
-        behavior: "smooth",
-      });
-    }
-  };
+  // const handleScrollLeft = () => {
+  //   if (scrollIndex > 0) {
+  //     setScrollIndex(scrollIndex - 1);
+  //     containerRef.current.scrollBy({
+  //       left: -containerRef.current.offsetWidth,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
 
-  const handleScrollRight = () => {
-    if (scrollIndex < cartesEvents.length - 5) {
-      setScrollIndex(scrollIndex + 1);
-      containerRef.current.scrollBy({
-        left: containerRef.current.offsetWidth,
-        behavior: "smooth",
-      });
-    }
-  };
+  // const handleScrollRight = () => {
+  //   if (scrollIndex < cartesEvents.length - 5) {
+  //     setScrollIndex(scrollIndex + 1);
+  //     containerRef.current.scrollBy({
+  //       left: containerRef.current.offsetWidth,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
 
   return (
     <main>
@@ -77,7 +77,7 @@ export default function Home({
           <div className="flex flex-col md:flex-row lg:flex-col md:gap-6 lg:gap-6 gap-4 overflow-auto">
             <div
               className="snap-mandatory snap-x overflow-scroll flex flex-row  ml-3 scrollbar-hide "
-              ref={containerRef}
+              // ref={containerRef}
             >
               {cartesEvents.slice(0, 5).map((cartesEvents, index) => (
                 <EventNewsCard
@@ -95,7 +95,7 @@ export default function Home({
               ))}
             </div>
           </div>
-          <div className="flex flex-row justify-center gap-4 pt-1">
+          {/* <div className="flex flex-row justify-center gap-4 pt-1">
             <div
               className={`flex border border-lightGreen rounded-[50px] h-[40px] w-[40px] justify-center ${
                 scrollIndex === 0 ? "cursor-not-allowed" : "cursor-pointer"
@@ -124,7 +124,7 @@ export default function Home({
                 alt="Right"
               ></Image>
             </div>
-          </div>
+          </div> */}
           <div className="flex md:hidden lg:flex pb-20 pt-1 lg:pb-10 mx-6">
             <Link
               className="text-center font-open uppercase font-semibold text-[17px] leading-[17.3px] tracking-[1px] text-lightGreen border border-lightGreen rounded-[10px] px-[25px] py-[15px] w-full"
