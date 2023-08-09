@@ -26,7 +26,7 @@ const HeroSlice = ({ slice }) => {
               {slice.primary.description}
             </p>
             <button
-              className="uppercase border-2 border-lightGreen  rounded-[3px] px-8 py-2 self-start font-semibold tracking-[2px] text-[15px]"
+              className="uppercase border-2 border-lightGreen bg-black bg-opacity-20 rounded-[3px] px-8 py-2 self-start font-semibold tracking-[2px] text-[15px]"
               onClick={() => (window.location.href = "/members")}
             >
               {slice.primary.button}
