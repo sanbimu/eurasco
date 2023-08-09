@@ -21,9 +21,9 @@ export default function Blog({ page, carteBlog, homePage }) {
   return (
     <>
       {/* HEADER */}
-      <div className="min-h-[75vh] flex flex-col w-screen justify-center">
-        <div className="flex flex-col z-20">
-          <div className="font-mont text-white text-4xl uppercase font-bold mx-6 mb-8 md:mx-12">
+      <div className='min-h-[75vh] flex flex-col w-screen justify-center'>
+        <div className='flex flex-col z-20'>
+          <div className='font-mont text-white text-4xl uppercase font-bold mx-6 md:mx-12'>
             {page.data.title}
           </div>
           {/* <div className="font-open text-white mx-4 max-h-[200px] overflow-scroll ">
@@ -34,23 +34,23 @@ export default function Blog({ page, carteBlog, homePage }) {
           src={page.data.image.url}
           width={394}
           height={850}
-          alt="Event Image"
-          className="h-[75vh] w-full absolute object-cover lg:max-h-[75vh]"
+          alt='Event Image'
+          className='h-[75vh] w-full absolute object-cover lg:max-h-[75vh]'
         />
-        <div className="bg-black h-[75vh] w-full z-10 absolute opacity-50 " />
+        <div className='bg-black h-[75vh] w-full z-10 absolute opacity-50 ' />
       </div>
-      <div className="mb-12"></div>
-      <div className="mb-10 font-open text-sm italic mx-6 md:mx-24">
+      <div className='mb-12'></div>
+      <div className='mb-10 font-open text-sm italic mx-4 md:mx-24'>
         Publication date: {formatDate(page.first_publication_date)}
       </div>
 
       {/* CONTENT */}
       {page.data.slices.map((slice, sliceIndex) => (
-        <div key={sliceIndex} className="mb-12 flex flex-col gap-10 font-open ">
-          <h2 className="font-mont text-black font-bold text-4xl mx-6 md:mx-24">
+        <div key={sliceIndex} className='mb-12 flex flex-col gap-10 font-open '>
+          <h2 className='font-mont text-black font-bold text-4xl mx-4 md:mx-24'>
             {slice.primary.subtitle}
           </h2>
-          <div className="font-open leading-[25px] mx-6 md:mx-24 text-justify">
+          <div className='font-open leading-[25px] mx-4 md:mx-24 text-justify'>
             <PrismicRichText field={slice.primary.paragraph} />
           </div>
           {slice.primary.image.url && (
@@ -58,8 +58,8 @@ export default function Blog({ page, carteBlog, homePage }) {
               src={slice.primary.image.url}
               width={400}
               height={400}
-              alt="Blog Image"
-              className="w-full h-[390px] object-cover md:w-auto md:max-h-[450px] md:mx-24 "
+              alt='Blog Image'
+              className='w-full h-[390px] object-cover md:w-auto md:max-h-[450px] md:mx-24 '
             />
           )}
         </div>
@@ -67,7 +67,7 @@ export default function Blog({ page, carteBlog, homePage }) {
 
       {/* INFO */}
       <SectionTitle slice={homePage.data.slices[3]} />
-      <div className="mb-6">
+      <div className='mb-6'>
         <NewsCard
           title={carteBlog[indexToShow].data.title}
           image={carteBlog[indexToShow].data.image.url}
@@ -75,10 +75,10 @@ export default function Blog({ page, carteBlog, homePage }) {
           linkToCard={`/news/${carteBlog[indexToShow].uid}`}
         />
       </div>
-      <div className="flex pb-20">
+      <div className='flex pb-20'>
         <CardAll
-          title="All our latest news"
-          buttonText="see all"
+          title='All our latest news'
+          buttonText='see all'
           linkTo={"/news"}
         />
       </div>
