@@ -22,7 +22,7 @@ export const EventNewsCard = ({
       href={linkToCard}
     >
       <div
-        className={`relative flex rounded-[10px] h-[400px] shadow-card w-[80vw] ${
+        className={`relative flex rounded-[10px] h-[400px] shadow-card  ${
           widthFull ? "w-[100%]" : "w-[80vw]"
         }`}
       >
