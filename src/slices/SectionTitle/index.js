@@ -9,7 +9,7 @@ const SectionTitle = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className='flex flex-col pb-6 items-center px-4'>
+      <div className='flex flex-col pb-3 items-center px-4'>
         <h1 className='font-mont font-bold text-[40px] lg:text-[60px] leading-[42px] text-yellow uppercase text-center'>
           {slice.primary.title}
         </h1>

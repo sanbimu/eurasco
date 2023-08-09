@@ -16,7 +16,7 @@ export default function Events({ cartesEvents, homePage }) {
         <div className='flex flex-col mt-12'>
           <SectionTitle slice={homePage.data.slices[2]} />
 
-          <div className='flex flex-col gap-4 mb-12 md:flex-wrap md:gap-4 md:grid md:grid-cols-2 md:mx-[100px] lg:mx-[150px] '>
+          <div className='flex flex-col gap-5 mb-12 md:flex-wrap md:gap-4 md:grid md:grid-cols-2 md:mx-[100px] lg:mx-[150px] '>
             {cartesEvents.slice(0, 2).map((cartesEvents, index) => (
               <EventNewsCard
                 key={index}

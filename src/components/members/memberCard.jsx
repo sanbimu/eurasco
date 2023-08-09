@@ -12,7 +12,7 @@ export const MemberCard = ({
   return (
     <Link
       className={`flex flex-col mx-2 md:mx-[25vw]  snap-center flex-shrink-0 ${
-        widthFull ? " mx-4" : " mx-2"
+        widthFull ? " mx-5" : " mx-2"
       }`}
       href={linkToCard}
     >
