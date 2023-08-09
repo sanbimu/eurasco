@@ -16,19 +16,19 @@ export const EventNewsCard = ({
 }) => {
   return (
     <Link
-      className={`flex flex-col md:mx-[25vw] snap-center flex-shrink-0 ${
+      className={`flex flex-col snap-center flex-shrink-0 ${
         widthFull ? " mx-5" : " mx-2"
       }`}
       href={linkToCard}
     >
       <div
         className={`relative flex rounded-[10px] h-[460px] shadow-card  ${
-          widthFull ? "w-[100%]" : "w-[80vw]"
+          widthFull ? "w-[100%]" : "w-[80vw] md:w-[40vw]"
         }`}
       >
-        <div className='flex flex-col px-[20px] w-full  md:w-[343px] justify-end mb-5 z-20'>
+        <div className="flex flex-col px-[20px] w-full  md:w-[343px] justify-end mb-5 z-20">
           {index && (
-            <p className='font-mont font-bold text-2xl text-white text-opacity-30'>
+            <p className="font-mont font-bold text-2xl text-white text-opacity-30">
               {` ${textIndex} ${index}`}
             </p>
           )}
@@ -38,16 +38,16 @@ export const EventNewsCard = ({
             {title}
           </h1>
           {date && (
-            <p className='font-open text-white italic text-[13px] leading-[25px] pb-5'>
+            <p className="font-open text-white italic text-[13px] leading-[25px] pb-5">
               {date}
             </p>
           )}
           {fromDate && toDate && (
-            <p className='font-open text-white italic text-[13px] leading-[25px] pb-5'>
+            <p className="font-open text-white italic text-[13px] leading-[25px] pb-5">
               {`${fromDate} - ${toDate}`}
             </p>
           )}
-          <div className='font-open text-lightGreen italic text-[15px] leading-[22px] ml-auto'>
+          <div className="font-open text-lightGreen italic text-[15px] leading-[22px] ml-auto">
             Read more →
           </div>
         </div>
@@ -56,10 +56,10 @@ export const EventNewsCard = ({
           src={imageHeader}
           width={343}
           height={360}
-          alt='Header Image'
-          className='absolute rounded-[10px] w-full h-[460px] object-cover'
+          alt="Header Image"
+          className="absolute rounded-[10px] w-full h-[460px] object-cover"
         />
-        <div className='absolute inset-0 gradient_News rounded-[10px] z-10 shadow-card'></div>
+        <div className="absolute inset-0 gradient_News rounded-[10px] z-10 shadow-card"></div>
       </div>
     </Link>
   );

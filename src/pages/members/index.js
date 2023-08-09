@@ -11,12 +11,12 @@ export default function Members({ cartesMembres, homePage }) {
 
   return (
     <main>
-      <div className='flex flex-col md:h-auto'>
-        <HeaderPages title='Our members' />
-        <div className='flex flex-col mt-12'>
+      <div className="flex flex-col md:h-auto">
+        <HeaderPages title="Our members" />
+        <div className="flex flex-col mt-12">
           <SectionTitle slice={homePage.data.slices[4]} />
 
-          <div className='flex flex-col gap-5 mb-12 md:flex-wrap md:gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:mx-[50px] lg:mx-[100px] '>
+          <div className="flex flex-col gap-5 mb-12 md:flex-wrap md:gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:mx-[50px] lg:mx-[100px] ">
             {cartesMembres.slice(0, 2).map((carteMembre, index) => (
               <MemberCard
                 key={index}
@@ -29,10 +29,10 @@ export default function Members({ cartesMembres, homePage }) {
               />
             ))}
 
-            <div className='flex md:hidden'>
+            <div className="flex md:hidden">
               <CardAll
-                title='All of our events'
-                buttonText='see all'
+                title="All of our events"
+                buttonText="see all"
                 linkTo={"/events"}
               />
             </div>
@@ -52,7 +52,7 @@ export default function Members({ cartesMembres, homePage }) {
           {/* <div className="mx-auto ">
             <Button buttonText="Voir plus" linkTo="/members" />
           </div> */}
-          <div className='mt-10 lg:mt-20 mb-4'>
+          <div className="mt-10 lg:mt-20 mb-4">
             <ContactCard />
           </div>
         </div>
