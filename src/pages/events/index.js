@@ -25,8 +25,8 @@ export default function Events({ cartesEvents, homePage }) {
                 textIndex='EVENT'
                 index={index + 1}
                 title={cartesEvents.data.name}
-                sizeTitle='2xl'
-                leadingTitle='8'
+                sizeTitle='xl'
+                leadingTitle='6'
                 fromDate={formatDateEvents(cartesEvents.data.startDate)}
                 toDate={formatDateEvents(cartesEvents.data.endDate)}
                 widthFull={true}
@@ -49,8 +49,8 @@ export default function Events({ cartesEvents, homePage }) {
                 textIndex='EVENT'
                 index={index + 3}
                 title={cartesEvents.data.name}
-                sizeTitle='2xl'
-                leadingTitle='8'
+                sizeTitle='xl'
+                leadingTitle='6'
                 fromDate={formatDateEvents(cartesEvents.data.startDate)}
                 toDate={formatDateEvents(cartesEvents.data.endDate)}
                 widthFull={true}

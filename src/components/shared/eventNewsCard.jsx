@@ -22,33 +22,49 @@ export const EventNewsCard = ({
       href={linkToCard}
     >
       <div
-        className={`relative flex rounded-[10px] h-[460px] shadow-card  ${
+        className={`relative flex rounded-[10px] h-[260px] shadow-card  ${
           widthFull ? "w-[100%]" : "w-[80vw] md:w-[40vw]"
         }`}
       >
-        <div className="flex flex-col px-[20px] w-full  md:w-[343px] justify-end mb-5 z-20">
+        <div className='flex flex-col px-[20px] w-full  md:w-[343px] justify-between my-4 z-20'>
           {index && (
-            <p className="font-mont font-bold text-2xl text-white text-opacity-30">
+            <p className='font-mont font-bold text-2xl text-white text-opacity-30'>
               {` ${textIndex} ${index}`}
             </p>
           )}
-          <h1
-            className={`font-mont text-white font-bold text-${sizeTitle} leading-${leadingTitle} pb-1 `}
-          >
-            {title}
-          </h1>
-          {date && (
-            <p className="font-open text-white italic text-[13px] leading-[25px] pb-5">
-              {date}
-            </p>
-          )}
-          {fromDate && toDate && (
-            <p className="font-open text-white italic text-[13px] leading-[25px] pb-5">
-              {`${fromDate} - ${toDate}`}
-            </p>
-          )}
-          <div className="font-open text-lightGreen italic text-[15px] leading-[22px] ml-auto">
-            Read more →
+          <div className='flex flex-col'>
+            <h1
+              className={`font-mont text-white text-${sizeTitle} leading-${leadingTitle} pb-2 ${
+                textIndex == "NEWS" ? "font-bold" : ""
+              }`}
+            >
+              {title}
+            </h1>
+            {date && (
+              <p
+                className={`font-open text-white italic  leading-[25px] pb-4  ${
+                  textIndex == "NEWS"
+                    ? "font-light text-[17px]"
+                    : " font-bold text-[21px]"
+                }`}
+              >
+                {date}
+              </p>
+            )}
+            {fromDate && toDate && (
+              <p
+                className={`font-open text-white italic text-[21px] leading-[25px] pb-4   ${
+                  textIndex == "NEWS"
+                    ? "font-light text-[17px]"
+                    : " font-bold text-[21px]"
+                }`}
+              >
+                {`${fromDate} - ${toDate}`}
+              </p>
+            )}
+            <div className='font-open text-lightGreen italic text-[15px] leading-[22px] ml-auto'>
+              Read more →
+            </div>{" "}
           </div>
         </div>
 
@@ -56,10 +72,10 @@ export const EventNewsCard = ({
           src={imageHeader}
           width={343}
           height={360}
-          alt="Header Image"
-          className="absolute rounded-[10px] w-full h-[460px] object-cover"
+          alt='Header Image'
+          className='absolute rounded-[10px] w-full h-[260px] object-cover'
         />
-        <div className="absolute inset-0 gradient_News rounded-[10px] z-10 shadow-card"></div>
+        <div className='absolute inset-0 gradient_News rounded-[10px] z-10 shadow-card'></div>
       </div>
     </Link>
   );

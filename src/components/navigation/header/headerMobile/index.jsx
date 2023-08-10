@@ -41,7 +41,7 @@ const HeaderMobile = ({ current }) => {
   const isWhiteLogo = isBlogPost || isScrolled || isMenuOpen;
 
   return (
-    <div className="lg:hidden flex flex-col z-[100]">
+    <div className='lg:hidden flex flex-col z-[100]'>
       <div
         className={`flex flex-row justify-between w-full fixed top-0 z-[100] m-auto pl-2 pr-8 py-1 ${
           isScrolled & !isMenuOpen
@@ -49,16 +49,16 @@ const HeaderMobile = ({ current }) => {
             : ""
         }`}
       >
-        <Link href="/">
+        <Link href='/'>
           <Image
             src={isWhiteLogo ? "/icons/logoWhite.svg" : "/icons/logo.svg"}
-            alt="Eurasco Logo"
+            alt='Eurasco Logo'
             width={logoSize.width}
             height={logoSize.height}
           />
         </Link>
         <button
-          className="flex flex-col justify-center gap-1"
+          className='flex flex-col justify-center gap-1'
           onClick={toggleMenu}
         >
           <span
@@ -79,15 +79,15 @@ const HeaderMobile = ({ current }) => {
         </button>
       </div>
       {isMenuOpen && (
-        <div className="fixed z-[90] top-0 left-0 right-0 bottom-0 flex flex-col px-12 pt-36 gap-10 uppercase font-open text-lg text-white font-semibold tracking-wider bg-darkGreen bg-opacity-70 backdrop-blur-md animate__animated animate__fadeInDown animate__faster	">
+        <div className='fixed z-[90] top-0 left-0 right-0 bottom-0 flex flex-col px-12 pt-36 gap-10 uppercase font-open text-lg text-white font-semibold tracking-wider bg-darkGreen bg-opacity-70 backdrop-blur-md animate__animated animate__fadeInDown animate__faster	'>
           <Link
-            href="/"
+            href='/'
             onClick={toggleMenu}
             className={`${
               router.pathname === "/" ? "text-yellow" : "text-white"
             } openMenuAnim animate__animated animate__fadeInDown`}
           >
-            Accueil
+            Home
           </Link>
           {navLinks.map((link) => {
             const isActive = router.pathname === link.path;

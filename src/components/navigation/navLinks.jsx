@@ -4,12 +4,12 @@ export const navLinks = [
     path: "/events",
   },
   {
-    name: "Latest news",
-    path: "/news",
-  },
-  {
     name: "Our members",
     path: "/members",
+  },
+  {
+    name: "Latest news",
+    path: "/news",
   },
   {
     name: "Contact",
