@@ -47,16 +47,16 @@ export default function EventsScrollable({
   };
 
   return (
-    <div className="flex flex-col lg:flex-row md:mx-8 md:px-18 lg:mx-auto gap-4 overflow-auto lg:pb-20 lg:gap-6 lg:pt-2  ">
-      <div className="flex flex-col md:flex-row lg:flex-col md:gap-6 lg:gap-6 gap-4 overflow-auto">
+    <div className='flex flex-col lg:flex-row md:mx-8 md:px-18 lg:mx-auto gap-4 overflow-auto lg:pb-20 lg:gap-6 lg:pt-2  '>
+      <div className='flex flex-col md:flex-row lg:flex-col md:gap-6 lg:gap-6 gap-4 overflow-auto'>
         <div
-          className="snap-mandatory snap-x overflow-scroll flex flex-row pl-8 pr-10 scrollbar-hide "
+          className='snap-mandatory snap-x overflow-scroll flex flex-row pl-8 pr-10 scrollbar-hide '
           ref={containerRef}
         >
           {children}
         </div>
       </div>
-      <div className="flex flex-row justify-center gap-12 md:gap-20 pt-1 md:pt-2">
+      <div className='flex flex-row justify-center gap-12 md:gap-20 pt-1 md:pt-2'>
         <div
           className={`flex border border-lightGreen rounded-[50px] h-[40px] w-[40px] justify-center ${
             scrollIndex === 0 ? "cursor-not-allowed" : "cursor-pointer"
@@ -64,10 +64,10 @@ export default function EventsScrollable({
           onClick={handleScrollLeft}
         >
           <Image
-            src="/icons/arrowLeft.svg"
+            src='/icons/arrowLeft.svg'
             width={25}
             height={25}
-            alt="Left"
+            alt='Left'
           ></Image>
         </div>
         <div
@@ -79,16 +79,16 @@ export default function EventsScrollable({
           onClick={handleScrollRight}
         >
           <Image
-            src="/icons/arrowRight.svg"
+            src='/icons/arrowRight.svg'
             width={25}
             height={25}
-            alt="Right"
+            alt='Right'
           ></Image>
         </div>
       </div>
-      <div className="flex pb-[70px] md:pb-4 pt-1 md:pt-2 lg:pb-10 mx-10 md:mx-28">
+      <div className='flex md:pb-4 pt-1 md:pt-2 lg:pb-10 mx-10 md:mx-28'>
         <Link
-          className="text-center font-open uppercase font-semibold text-[17px] leading-[17.3px] tracking-[1px] text-lightGreen border border-lightGreen rounded-[10px] px-[25px] py-[15px] w-full"
+          className='text-center font-open uppercase font-semibold text-[17px] leading-[17.3px] tracking-[1px] text-lightGreen border border-lightGreen rounded-[10px] px-[25px] py-[15px] w-full'
           href={buttonLink}
         >
           {buttonText}
