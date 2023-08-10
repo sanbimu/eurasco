@@ -9,6 +9,7 @@ import { Title } from "@/components/shared/title";
 import { MemberCard } from "@/components/members/memberCard";
 import { EventNewsCard } from "@/components/shared/eventNewsCard";
 import { formatDateEvents } from "@/components/utils";
+import CardsScrollable from "@/components/shared/cardsScrollable";
 
 export default function MemberPage({
   memberPage,
@@ -103,48 +104,48 @@ export default function MemberPage({
             No events to show yet
           </p>
         ) : (
-          <div className="snap-mandatory snap-x overflow-scroll flex flex-row ml-3 ">
+          <CardsScrollable
+            cartes={cartesEvents}
+            buttonLink="/events"
+            buttonText="discover all our events"
+          >
             {eventsOfCurrentMember.map((cartesEvents, index) => (
               <EventNewsCard
                 key={index}
+                textIndex="EVENT"
+                index={index + 1}
                 linkToCard={`/events/${cartesEvents.uid}`}
                 imageHeader={cartesEvents.data.imageHeader.url}
-                index={index + 1}
                 title={cartesEvents.data.name}
                 sizeTitle="2xl"
                 leadingTitle="8"
                 fromDate={formatDateEvents(cartesEvents.data.startDate)}
                 toDate={formatDateEvents(cartesEvents.data.endDate)}
               />
-            ))}{" "}
-          </div>
+            ))}
+          </CardsScrollable>
         )}
       </div>
 
       {/* OTHER MEMBER CARD */}
 
       <SectionTitle slice={homePage.data.slices[4]} />
-      <div className="snap-mandatory snap-x overflow-scroll flex flex-row ml-3 ">
-        {" "}
-        {cartesMembres.slice(0, 5).map((carteMembre, index) => (
+      <CardsScrollable
+        cartes={cartesMembres}
+        buttonLink="/members"
+        buttonText="discover our members"
+      >
+        {cartesMembres.slice(0, 5).map((cartesMembres, index) => (
           <MemberCard
             key={index}
-            member={carteMembre.data.name}
-            country={carteMembre.data.country}
-            backgroundImage={carteMembre.data.imageHeader.url}
-            logo={carteMembre.data.logo.url}
-            linkToCard={`/members/${carteMembre.uid}`}
+            member={cartesMembres.data.name}
+            country={cartesMembres.data.country}
+            backgroundImage={cartesMembres.data.imageHeader.url}
+            logo={cartesMembres.data.logo.url}
+            linkToCard={`/members/${cartesMembres.uid}`}
           />
-        ))}{" "}
-      </div>
-
-      <div className="flex mt-6 mb-8">
-        <CardAll
-          title="All of our members"
-          buttonText="see all"
-          linkTo={"/members"}
-        />
-      </div>
+        ))}
+      </CardsScrollable>
     </>
   );
 }
