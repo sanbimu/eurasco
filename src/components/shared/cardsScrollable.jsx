@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function EventsScrollable({
+export default function CardsScrollable({
   children,
   cartes,
   buttonLink,
@@ -40,7 +40,7 @@ export default function EventsScrollable({
     if (scrollIndex < cartes.length - 1) {
       setScrollIndex(scrollIndex + 1);
       containerRef.current.scrollBy({
-        left: containerRef.current.offsetWidth,
+        left: containerRef.current.offsetWidth / 2,
         behavior: "smooth",
       });
     }
@@ -72,7 +72,7 @@ export default function EventsScrollable({
         </div>
         <div
           className={`flex border border-lightGreen rounded-[50px] h-[40px] w-[40px] justify-center ${
-            scrollIndex >= cartes.length - 1
+            scrollIndex >= cartes.length - 5
               ? "cursor-not-allowed"
               : "cursor-pointer"
           }`}
