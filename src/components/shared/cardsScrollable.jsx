@@ -47,16 +47,16 @@ export default function CardsScrollable({
   };
 
   return (
-    <div className="flex flex-col lg:flex-row md:mx-8 md:px-18 lg:mx-auto gap-4 overflow-auto lg:pb-20 lg:gap-6 lg:pt-2  ">
-      <div className="flex flex-col md:flex-row lg:flex-col md:gap-6 lg:gap-6 gap-4 overflow-auto">
+    <div className="flex flex-col md:mr-8 md:px-18 lg:mr-24 gap-4 overflow-auto lg:pb-20 lg:gap-6 lg:pt-2  ">
+      <div className="flex flex-col md:gap-6 gap-4 overflow-hidden">
         <div
-          className="snap-mandatory snap-x overflow-scroll flex flex-row pl-8 pr-10 scrollbar-hide "
+          className="snap-mandatory snap-x overflow-scroll flex flex-row w-screen gap-2 pl-8 lg:pl-24 pr-10 lg:pr-24 scrollbar-hide "
           ref={containerRef}
         >
           {children}
         </div>
       </div>
-      <div className="flex flex-row justify-center gap-12 md:gap-20 pt-1 md:pt-2">
+      <div className="flex flex-row justify-center gap-12 md:gap-20 lg:gap-12 pt-1 md:pt-2 lg:ml-24">
         <div
           className={`flex border border-lightGreen rounded-[50px] h-[40px] w-[40px] justify-center ${
             scrollIndex === 0 ? "cursor-not-allowed" : "cursor-pointer"
@@ -86,7 +86,7 @@ export default function CardsScrollable({
           ></Image>
         </div>
       </div>
-      <div className="flex pb-[70px] md:pb-4 pt-1 md:pt-2 lg:pb-10 mx-10 md:mx-28">
+      <div className="flex pb-[70px] md:pb-4 pt-1 md:pt-2 lg:pb-0 mx-10 md:mx-28 lg:self-center lg:ml-52 ">
         <Link
           className="text-center font-open uppercase font-semibold text-[17px] leading-[17.3px] tracking-[1px] text-lightGreen border border-lightGreen rounded-[10px] px-[25px] py-[15px] w-full"
           href={buttonLink}

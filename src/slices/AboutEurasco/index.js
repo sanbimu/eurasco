@@ -12,7 +12,7 @@ const AboutEurasco = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="flex lg:pb-40 md:mx-28 lg:px-[150px] mx-5">
+      <div className="flex lg:pb-20 md:mx-28  mx-5">
         <div className="flex flex-col lg:flex lg:flex-row justify-between">
           <div className="flex flex-col pt-14 font-open  md:px-0 lg:w-[50%] text-black">
             <h2 className="uppercase font-bold  text-5xl md:text-6xl font-mont text-yellow">
