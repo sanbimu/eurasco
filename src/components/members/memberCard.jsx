@@ -11,17 +11,17 @@ export const MemberCard = ({
 }) => {
   return (
     <Link
-      className={`flex flex-col mx-2 snap-center flex-shrink-0 ${
-        widthFull ? " mx-5" : " mx-2"
+      className={`flex flex-col mx-2 md:h-[420px] snap-center flex-shrink-0 ${
+        widthFull ? " mx-5 md:mx-0" : " mx-2"
       }`}
       href={linkToCard}
     >
       <div
-        className={`relative flex flex-col rounded-[10px] h-[450px]  shadow-card ${
+        className={`relative flex flex-col rounded-[10px] h-[450px] md:h-[420px] shadow-card ${
           widthFull ? "w-[100%]" : "w-[80vw] md:md:w-[40vw]"
         }`}
       >
-        <div className="relative flex items-center justify-center h-[560px]">
+        <div className="relative flex items-center justify-center h-[560px] md:h-[420px]">
           <Image
             src={logo}
             width={295}
@@ -48,7 +48,7 @@ export const MemberCard = ({
           width={343}
           height={450}
           alt="Member Image"
-          className="absolute rounded-[10px] w-full min-h-[450px] object-cover"
+          className="absolute rounded-[10px] w-full min-h-[450px] md:min-h-[420px] object-cover"
         />
       </div>
     </Link>

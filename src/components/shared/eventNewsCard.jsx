@@ -16,17 +16,17 @@ export const EventNewsCard = ({
 }) => {
   return (
     <Link
-      className={`flex flex-col snap-center flex-shrink-0 ${
-        widthFull ? " mx-5" : " mx-2"
+      className={`flex flex-col md:h-[420px] snap-center flex-shrink-0 ${
+        widthFull ? " mx-5 md:mx-0" : " mx-2"
       }`}
       href={linkToCard}
     >
       <div
-        className={`relative flex rounded-[10px] h-[460px] shadow-card  ${
+        className={`relative flex rounded-[10px] h-[460px] md:h-[420px] shadow-card  ${
           widthFull ? "w-[100%]" : "w-[80vw] md:w-[40vw]"
         }`}
       >
-        <div className="flex flex-col px-[20px] w-full  md:w-[343px] justify-end mb-5 z-20">
+        <div className="flex flex-col px-[20px] w-full justify-end mb-5 z-20">
           {index && (
             <p className="font-mont font-bold text-2xl text-white text-opacity-30">
               {` ${textIndex} ${index}`}
@@ -57,7 +57,7 @@ export const EventNewsCard = ({
           width={343}
           height={360}
           alt="Header Image"
-          className="absolute rounded-[10px] w-full h-[460px] object-cover"
+          className="absolute rounded-[10px] w-full h-[460px] md:h-[420px] object-cover"
         />
         <div className="absolute inset-0 gradient_News rounded-[10px] z-10 shadow-card"></div>
       </div>
