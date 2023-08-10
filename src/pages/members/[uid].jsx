@@ -54,16 +54,18 @@ export default function MemberPage({
       <div className="mb-12"></div>
 
       {/* CONTENT */}
-      <div className="flex flex-col font-open leading-6 mx-5 md:mx-[25vw] md:px-0 lg:w-[50%] text-black">
+      <div className="flex flex-col font-open leading-6 mx-5 md:mx-24 md:px-0 lg:w-[50%] text-black">
         <h2 className="uppercase font-bold leading-[70px] text-5xl md:text-6xl font-mont text-yellow">
           ABOUT
         </h2>
         <h1 className="uppercase font-mont font-bold leading-10 text-4xl pb-12">
           {memberPage.data.name}
         </h1>
-        <PrismicRichText field={memberPage.data.description} />
+        <div className="font-open text-[15px] leading-6 md:text-xl md:leading-8">
+          <PrismicRichText field={memberPage.data.description} />
+        </div>
       </div>
-      <div className="flex flex-col gap-6 my-6">
+      <div className="flex flex-col gap-6 my-6 md:my-12">
         <ButtonInfo
           paddingTB="2"
           marginTB="8"
@@ -73,7 +75,10 @@ export default function MemberPage({
           fontSize="[17px]"
           text="GO TO WEBSITE"
         />
-        <Title title="INFO" subtitle="PRACTICAL INFORMATION" />
+        <div className="md:mt-10">
+          <Title title="INFO" subtitle="PRACTICAL INFORMATION" />
+        </div>
+
         <ButtonInfo
           paddingTB="4"
           marginTB="0"
@@ -146,6 +151,7 @@ export default function MemberPage({
           />
         ))}
       </CardsScrollable>
+      <div className="mb-12"></div>
     </>
   );
 }
