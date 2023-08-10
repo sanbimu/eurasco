@@ -16,7 +16,7 @@ export default function Members({ cartesMembres, homePage }) {
         <div className="flex flex-col mt-12">
           <SectionTitle slice={homePage.data.slices[4]} />
 
-          <div className="flex flex-col gap-5 mb-12 md:flex-wrap md:gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:mx-[50px] lg:mx-[100px] ">
+          <div className="flex flex-col gap-5 mb-12 md:flex-wrap md:gap-4 md:grid md:grid-cols-2 md:mx-[60px] lg:mx-[100px] ">
             {cartesMembres.slice(0, 2).map((carteMembre, index) => (
               <MemberCard
                 key={index}

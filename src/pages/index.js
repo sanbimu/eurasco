@@ -32,7 +32,7 @@ export default function Home({
 
   return (
     <main>
-      <div className='flex flex-col w-full'>
+      <div className="flex flex-col w-full">
         <HeroSlice slice={homePage.data.slices[0]} />
         <AboutEurasco slice={homePage.data.slices[1]} />
 
@@ -102,19 +102,19 @@ export default function Home({
         </div> */}
         <CardsScrollable
           cartes={cartesEvents}
-          buttonLink='/events'
-          buttonText='discover our events'
+          buttonLink="/events"
+          buttonText="discover our events"
         >
           {cartesEvents.slice(0, 5).map((cartesEvents, index) => (
             <EventNewsCard
               key={index}
-              textIndex='EVENT'
+              textIndex="EVENT"
               index={index + 1}
               linkToCard={`/events/${cartesEvents.uid}`}
               imageHeader={cartesEvents.data.imageHeader.url}
               title={cartesEvents.data.name}
-              sizeTitle='xl'
-              leadingTitle='6'
+              sizeTitle="xl"
+              leadingTitle="6"
               fromDate={formatDateEvents(cartesEvents.data.startDate)}
               toDate={formatDateEvents(cartesEvents.data.endDate)}
             />
@@ -125,8 +125,8 @@ export default function Home({
         <SectionTitle slice={homePage.data.slices[4]} />
         <CardsScrollable
           cartes={cartesMembres}
-          buttonLink='/members'
-          buttonText='discover our members'
+          buttonLink="/members"
+          buttonText="discover our members"
         >
           {cartesMembres.slice(0, 5).map((cartesMembre, index) => (
             <MemberCard
@@ -187,17 +187,17 @@ export default function Home({
         </div> */}
         <CardsScrollable
           cartes={cartesBlog}
-          buttonLink='/news'
-          buttonText='discover our news'
+          buttonLink="/news"
+          buttonText="discover our news"
         >
           {cartesBlog.slice(0, 5).map((cartesBlog, index) => (
             <EventNewsCard
               key={index}
-              textIndex='NEWS'
+              textIndex="NEWS"
               index={index + 1}
               title={cartesBlog.data.title}
-              sizeTitle='xl'
-              leadingTitle='6'
+              sizeTitle="xl"
+              leadingTitle="6"
               imageHeader={cartesBlog.data.image.url}
               date={formatDate(cartesBlog.first_publication_date)}
               linkToCard={`/news/${cartesBlog.uid}`}
@@ -206,11 +206,11 @@ export default function Home({
         </CardsScrollable>
 
         <Image
-          src='/images/contactDesktop.jpg'
+          src="/images/contactDesktop.jpg"
           width={1920}
           height={600}
-          alt='Image Contact'
-          className='hidden md:flex md:pb-14 :pt-14'
+          alt="Image Contact"
+          className="hidden md:flex md:pb-14 md:pt-14"
         />
         <ContactCard />
       </div>

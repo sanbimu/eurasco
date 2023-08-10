@@ -11,32 +11,32 @@ export default function Events({ cartesEvents, homePage }) {
 
   return (
     <main>
-      <div className='flex flex-col md:h-auto'>
-        <HeaderPages title='ALL OF OUR EVENTS' />
-        <div className='flex flex-col mt-12'>
+      <div className="flex flex-col md:h-auto">
+        <HeaderPages title="ALL OF OUR EVENTS" />
+        <div className="flex flex-col mt-12">
           <SectionTitle slice={homePage.data.slices[2]} />
 
-          <div className='flex flex-col gap-5 mb-12 md:flex-wrap md:gap-4 md:grid md:grid-cols-2 md:mx-[100px] lg:mx-[150px] '>
+          <div className="flex flex-col gap-5 mb-12 md:flex-wrap md:grid md:grid-cols-2 md:mx-[60px] lg:mx-[150px] ">
             {cartesEvents.slice(0, 2).map((cartesEvents, index) => (
               <EventNewsCard
                 key={index}
                 linkToCard={`/events/${cartesEvents.uid}`}
                 imageHeader={cartesEvents.data.imageHeader.url}
-                textIndex='EVENT'
+                textIndex="EVENT"
                 index={index + 1}
                 title={cartesEvents.data.name}
-                sizeTitle='xl'
-                leadingTitle='6'
+                sizeTitle="xl"
+                leadingTitle="6"
                 fromDate={formatDateEvents(cartesEvents.data.startDate)}
                 toDate={formatDateEvents(cartesEvents.data.endDate)}
                 widthFull={true}
               />
             ))}
 
-            <div className='flex md:hidden'>
+            <div className="flex md:hidden">
               <CardAll
-                title='All our members'
-                buttonText='see all'
+                title="All our members"
+                buttonText="see all"
                 linkTo={"/members"}
               />
             </div>
@@ -46,11 +46,11 @@ export default function Events({ cartesEvents, homePage }) {
                 key={index + 2}
                 linkToCard={`/events/${cartesEvents.uid}`}
                 imageHeader={cartesEvents.data.imageHeader.url}
-                textIndex='EVENT'
+                textIndex="EVENT"
                 index={index + 3}
                 title={cartesEvents.data.name}
-                sizeTitle='xl'
-                leadingTitle='6'
+                sizeTitle="xl"
+                leadingTitle="6"
                 fromDate={formatDateEvents(cartesEvents.data.startDate)}
                 toDate={formatDateEvents(cartesEvents.data.endDate)}
                 widthFull={true}
@@ -58,7 +58,7 @@ export default function Events({ cartesEvents, homePage }) {
             ))}
           </div>
 
-          <div className='mt-14 lg:mt-20 mb-4 '>
+          <div className="mt-14 lg:mt-20 mb-4 ">
             <ContactCard />
           </div>
         </div>

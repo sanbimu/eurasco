@@ -40,7 +40,7 @@ export default function Blog({ page, carteBlog, homePage }) {
         <div className="bg-black h-[75vh] w-full z-10 absolute opacity-50 " />
       </div>
       <div className="mb-12"></div>
-      <div className="mb-10 font-open text-sm italic mx-5 md:mx-24">
+      <div className="mb-10 font-open text-sm italic mx-5 md:mx-24 md:text-xl">
         Publication date: {formatDate(page.first_publication_date)}
       </div>
 
@@ -50,7 +50,7 @@ export default function Blog({ page, carteBlog, homePage }) {
           <h2 className="font-mont text-black font-bold text-4xl mx-5 md:mx-24">
             {slice.primary.subtitle}
           </h2>
-          <div className="font-open leading-[25px] mx-5 md:mx-24 text-justify">
+          <div className="font-open leading-[25px] md:leading-[30px] mx-5 md:mx-24 md:text-xl text-justify">
             <PrismicRichText field={slice.primary.paragraph} />
           </div>
           {slice.primary.image.url && (
