@@ -103,17 +103,17 @@ export default function EventPage({ eventPage, homePage, members }) {
           />
         </div>
       </div>
-      <ButtonInfo
-        paddingTB="2"
-        marginTB="0"
-        linkTo={eventPage.data.website.url}
-        icon="/icons/website.svg"
-        iconHeight="[55px]"
-        fontSize="[17px]"
-        text="GO TO WEBSITE"
-      />
       {/* INFO & BUTTONS */}
-      <div className="flex flex-col gap-6 my-6 md:mt-12">
+      <div className="flex flex-col gap-6 my-6 ">
+        <ButtonInfo
+          paddingTB="2"
+          marginTB="0"
+          linkTo={eventPage.data.website.url}
+          icon="/icons/website.svg"
+          iconHeight="[55px]"
+          fontSize="[17px]"
+          text="GO TO WEBSITE"
+        />
         <ButtonInfo
           paddingTB="4"
           marginTB="0"

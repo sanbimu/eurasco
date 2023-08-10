@@ -51,7 +51,9 @@ const HeaderDesktop = ({ current }) => {
         </Link>
         <div className="flex lg:gap-14 uppercase font-open text-white items-center lg:text-sm md:text-xs md:gap-4">
           {navLinks.map((link, index) => {
-            const isActive = router.pathname === link.path;
+            const isActive =
+              router.pathname === link.path ||
+              router.pathname.startsWith(`${link.path}/`);
             const isLast = index === navLinks.length - 1;
             return (
               <Link

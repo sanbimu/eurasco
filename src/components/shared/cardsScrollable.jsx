@@ -9,6 +9,7 @@ export default function EventsScrollable({
   buttonText,
 }) {
   const containerRef = useRef(null);
+  console.log(containerRef);
   const [scrollIndex, setScrollIndex] = useState(0);
 
   const handleScroll = () => {

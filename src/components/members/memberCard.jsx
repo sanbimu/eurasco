@@ -17,11 +17,11 @@ export const MemberCard = ({
       href={linkToCard}
     >
       <div
-        className={`relative flex flex-col rounded-[10px] h-[450px] md:h-[420px] shadow-card ${
+        className={`relative flex flex-col rounded-[10px] h-[380px] md:h-[420px] shadow-card ${
           widthFull ? "w-[100%]" : "w-[80vw] md:md:w-[40vw]"
         }`}
       >
-        <div className="relative flex items-center justify-center h-[560px] md:h-[420px]">
+        <div className="relative flex items-center justify-center h-[380px] md:h-[420px]">
           <Image
             src={logo}
             width={295}

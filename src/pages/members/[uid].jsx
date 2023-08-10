@@ -75,21 +75,7 @@ export default function MemberPage({
           fontSize="[17px]"
           text="GO TO WEBSITE"
         />
-        <div className="md:mt-10">
-          <Title title="INFO" subtitle="PRACTICAL INFORMATION" />
-        </div>
-
-        <PrismicRichText field={memberPage.data.description} />
       </div>
-      <ButtonInfo
-        paddingTB="2"
-        marginTB="8"
-        linkTo={memberPage.data.website.url}
-        icon="/icons/website.svg"
-        iconHeight="[55px]"
-        fontSize="[17px]"
-        text="GO TO WEBSITE"
-      />
       <div className="flex flex-col gap-6">
         <Title title="INFO" subtitle="PRACTICAL INFORMATION" />
         <ButtonInfo
