@@ -6,7 +6,7 @@ export const ContactCard = () => {
   const isHomePage = router.pathname === "/";
 
   return (
-    <div className="flex flex-col h-full min-h-[279px] md:items-center md:h-[18vh] lg:h-[30vh]">
+    <div className="flex flex-col h-full min-h-[279px] md:items-center md:min-h-[18vh] lg:h-[30vh]">
       {isHomePage ? (
         <Image
           src="/images/contactMobile.jpg"

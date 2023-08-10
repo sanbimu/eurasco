@@ -11,14 +11,14 @@ export const MemberCard = ({
 }) => {
   return (
     <Link
-      className={`flex flex-col mx-2 md:mx-[25vw]  snap-center flex-shrink-0 ${
+      className={`flex flex-col mx-2 snap-center flex-shrink-0 ${
         widthFull ? " mx-5" : " mx-2"
       }`}
       href={linkToCard}
     >
       <div
         className={`relative flex flex-col rounded-[10px] h-[450px]  shadow-card ${
-          widthFull ? "w-[100%]" : "w-[80vw]"
+          widthFull ? "w-[100%]" : "w-[80vw] md:md:w-[40vw]"
         }`}
       >
         <div className="relative flex items-center justify-center h-[560px]">
@@ -31,6 +31,7 @@ export const MemberCard = ({
           />
         </div>
         <div className="absolute inset-0 gradient_Membres rounded-[10px] z-10 shadow-card" />
+
         <div className="flex flex-col justify-end gap-2 z-20 w-full  rounded-bl-[10px] px-6 pb-4 pt-6">
           <h2 className="font-open font-bold text-[30px] leading-8 text-white">
             {member}
