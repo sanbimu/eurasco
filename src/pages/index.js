@@ -11,6 +11,7 @@ import SectionTitle from "@/slices/SectionTitle";
 import { formatDate, formatDateEvents } from "@/components/utils";
 import { EventNewsCard } from "@/components/shared/eventNewsCard";
 import Link from "next/link";
+import CardsScrollable from "@/components/shared/cardsScrollable";
 
 export default function Home({
   homePage,
@@ -22,48 +23,12 @@ export default function Home({
   console.log("cartesMembers", cartesMembres);
 
   const [random, setRandom] = useState([0, 2]);
-  // const containerRef = useRef(null);
-  // const [scrollIndex, setScrollIndex] = useState(0);
 
   useEffect(() => {
     const randomMember = Math.floor(Math.random() * cartesMembres.length);
     const nextRandomMember = (randomMember + 2) % cartesMembres.length;
     setRandom([randomMember, nextRandomMember]);
   }, []);
-
-  // const handleScroll = () => {
-  //   const currentIndex = Math.round(
-  //     containerRef.current.scrollLeft / containerRef.current.offsetWidth
-  //   );
-  //   setScrollIndex(currentIndex);
-  // };
-
-  // useEffect(() => {
-  //   containerRef.current.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     containerRef.current.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
-  // const handleScrollLeft = () => {
-  //   if (scrollIndex > 0) {
-  //     setScrollIndex(scrollIndex - 1);
-  //     containerRef.current.scrollBy({
-  //       left: -containerRef.current.offsetWidth,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // };
-
-  // const handleScrollRight = () => {
-  //   if (scrollIndex < cartesEvents.length - 5) {
-  //     setScrollIndex(scrollIndex + 1);
-  //     containerRef.current.scrollBy({
-  //       left: containerRef.current.offsetWidth,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // };
 
   return (
     <main>
@@ -72,12 +37,13 @@ export default function Home({
         <AboutEurasco slice={homePage.data.slices[1]} />
 
         {/* EVENTS */}
+
         <SectionTitle slice={homePage.data.slices[2]} />
-        <div className="flex flex-col lg:flex-row md:gap-0 md:px-10 lg:mx-auto gap-4 overflow-auto lg:pb-20 lg:gap-6 lg:pt-2  ">
+        {/* <div className="flex flex-col lg:flex-row md:gap-0 md:px-10 lg:mx-auto gap-4 overflow-auto lg:pb-20 lg:gap-6 lg:pt-2  ">
           <div className="flex flex-col md:flex-row lg:flex-col md:gap-6 lg:gap-6 gap-4 overflow-auto">
             <div
               className="snap-mandatory snap-x overflow-scroll flex flex-row  pl-8 pr-10 scrollbar-hide "
-              // ref={containerRef}
+              ref={containerRef}
             >
               {cartesEvents.slice(0, 5).map((cartesEvents, index) => (
                 <EventNewsCard
@@ -95,7 +61,7 @@ export default function Home({
               ))}
             </div>
           </div>
-          {/* <div className="flex flex-row justify-center gap-4 pt-1">
+          <div className="flex flex-row justify-center gap-12 pt-1">
             <div
               className={`flex border border-lightGreen rounded-[50px] h-[40px] w-[40px] justify-center ${
                 scrollIndex === 0 ? "cursor-not-allowed" : "cursor-pointer"
@@ -124,7 +90,7 @@ export default function Home({
                 alt="Right"
               ></Image>
             </div>
-          </div> */}
+          </div>
           <div className="flex md:hidden lg:flex pb-20 pt-1 lg:pb-10 mx-10">
             <Link
               className="text-center font-open uppercase font-semibold text-[17px] leading-[17.3px] tracking-[1px] text-lightGreen border border-lightGreen rounded-[10px] px-[25px] py-[15px] w-full"
@@ -133,11 +99,31 @@ export default function Home({
               discover our events
             </Link>
           </div>
-        </div>
+        </div> */}
+        <CardsScrollable
+          cartes={cartesEvents}
+          buttonLink="/events"
+          buttonText="discover our events"
+        >
+          {cartesEvents.slice(0, 5).map((cartesEvents, index) => (
+            <EventNewsCard
+              key={index}
+              textIndex="EVENT"
+              index={index + 1}
+              linkToCard={`/events/${cartesEvents.uid}`}
+              imageHeader={cartesEvents.data.imageHeader.url}
+              title={cartesEvents.data.name}
+              sizeTitle="2xl"
+              leadingTitle="8"
+              fromDate={formatDateEvents(cartesEvents.data.startDate)}
+              toDate={formatDateEvents(cartesEvents.data.endDate)}
+            />
+          ))}
+        </CardsScrollable>
 
-        {/* ACTUS */}
+        {/* NEWS */}
         <SectionTitle slice={homePage.data.slices[3]} />
-        <div className="hidden lg:flex flex-col gap-10 mb-14 w-full h-[440px] custom_Gradient items-center">
+        {/* <div className="hidden lg:flex flex-col gap-10 mb-14 w-full h-[440px] custom_Gradient items-center">
           <div className="flex flex-row gap-6 mx-auto mt-14"></div>
           <Button
             buttonText={"toutes nos actualités"}
@@ -167,11 +153,11 @@ export default function Home({
             >
               discover our news
             </Link>
-            {/* <CardAll
+             <CardAll
               title='Toutes nos actualités'
               buttonText='voir tout'
               linkTo={"/news"}
-            /> */}
+            /> 
           </div>
           <div className="hidden md:flex lg:hidden mx-auto mt-12 mb-14">
             <Button
@@ -179,13 +165,48 @@ export default function Home({
               linkTo={"/news"}
             ></Button>
           </div>
-        </div>
+        </div> */}
+        <CardsScrollable
+          cartes={cartesBlog}
+          buttonLink="/news"
+          buttonText="discover our news"
+        >
+          {cartesBlog.slice(0, 5).map((cartesBlog, index) => (
+            <EventNewsCard
+              key={index}
+              textIndex="NEWS"
+              index={index + 1}
+              title={cartesBlog.data.title}
+              sizeTitle="xl"
+              leadingTitle="6"
+              imageHeader={cartesBlog.data.image.url}
+              date={formatDate(cartesBlog.first_publication_date)}
+              linkToCard={`/news/${cartesBlog.uid}`}
+            />
+          ))}
+        </CardsScrollable>
 
         {/* MEMBRES */}
         <SectionTitle slice={homePage.data.slices[4]} />
-        <div className="flex flex-col gap-4 overflow-auto md:flex-row md:gap-0 md:flex-wrap md:px-6 lg:gap-3 lg:mx-[10%]">
+        <CardsScrollable
+          cartes={cartesMembres}
+          buttonLink="/members"
+          buttonText="discover our members"
+        >
+          {cartesMembres.slice(0, 5).map((cartesMembre, index) => (
+            <MemberCard
+              key={index}
+              member={cartesMembre.data.name}
+              country={cartesMembre.data.country}
+              backgroundImage={cartesMembre.data.imageHeader.url}
+              logo={cartesMembre.data.logo.url}
+              linkToCard={`/members/${cartesMembre.uid}`}
+            />
+          ))}
+        </CardsScrollable>
+
+        {/* <div className="flex flex-col gap-4 overflow-auto md:flex-row md:gap-0 md:flex-wrap md:px-6 lg:gap-3 lg:mx-[10%]">
           <div className="snap-mandatory snap-x overflow-scroll flex flex-row  pl-8 pr-10  scrollbar-hide ">
-            {" "}
             {cartesMembres.slice(0, 5).map((carteMembre, index) => (
               <MemberCard
                 key={index}
@@ -198,18 +219,17 @@ export default function Home({
             ))}
           </div>
           <div className="flex md:hidden pb-20">
-            {" "}
             <Link
               className="mx-10 text-center font-open uppercase font-semibold text-[17px] leading-[17.3px] tracking-[1px] text-white border bg-lightGreen rounded-[10px] px-[25px] py-[15px] w-full"
               href="/meembers"
             >
               discover our members
             </Link>
-            {/* <CardAll
+             <CardAll
               title='Tous nos membres'
               buttonText='voir tout'
               linkTo={"/members"}
-            /> */}
+            /> 
           </div>
           <div className="hidden md:flex mx-auto mt-10 mb-14">
             <Button
@@ -217,7 +237,7 @@ export default function Home({
               linkTo={"/members"}
             ></Button>
           </div>
-        </div>
+            </div>*/}
         <Image
           src="/images/contactDesktop.jpg"
           width={1920}
