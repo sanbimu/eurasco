@@ -13,15 +13,15 @@ export const ButtonInfo = ({
 }) => {
   return (
     <Link
-      className={`flex flex-row border border-lightGreen shadow-md shadow-lightGreen/10 rounded-[10px] items-center px-6 py-${paddingTB} gap-8 md:gap-16 mx-5    my-${marginTB}`}
+      className={`flex flex-row border border-lightGreen shadow-md shadow-lightGreen/10 rounded-[10px] items-center w-full px-6 py-${paddingTB} gap-8  my-${marginTB}`}
       href={linkTo}
-      target='blank'
+      target="blank"
     >
       <Image
         src={icon}
         width={55}
         height={55}
-        alt='Logo'
+        alt="Logo"
         className={`w-[55px] h-${iconHeight}`}
       />
       <div className={`font-mont font-medium text-darkGreen text-${fontSize}`}>

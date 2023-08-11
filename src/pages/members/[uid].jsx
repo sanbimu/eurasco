@@ -56,8 +56,8 @@ export default function MemberPage({
       {/* CONTENT */}
       <div className="lg:flex lg:flex-row lg:mx-32">
         <div className="lg:w-[60%]">
-          <div className="flex flex-col font-open mx-5  md:px-0 text-black pb-6">
-            <h2 className="uppercase font-bold leading-[70px] text-5xl md:text-6xl font-mont text-yellow">
+          <div className="flex flex-col font-open mx-5 md:mx-24 md:px-0 text-black pb-6">
+            <h2 className="uppercase font-bold leading-[70px] text-5xl md:text-6xl font-mont text-yellow md:mt-4">
               ABOUT
             </h2>
             <h1 className="uppercase font-mont font-bold text-4xl pb-12 -mt-4">
@@ -67,7 +67,7 @@ export default function MemberPage({
               <PrismicRichText field={memberPage.data.description} />
             </div>
           </div>
-          <div className="flex flex-col lg:flex-row  gap-6 mt-6 md:mt-12 ">
+          <div className="flex mt-6 mx-5 md:mt-6 md:mx-48 md:mb-12">
             <ButtonInfo
               paddingTB="2"
               marginTB="8"
@@ -108,10 +108,10 @@ export default function MemberPage({
         </div>
       </div>
 
-      {/* INFOOO PRATIQUE */}
+      {/* INFO PRATIQUE */}
       <div className="flex flex-col lg:mx-32">
         <Title title="INFO" subtitle="PRACTICAL INFORMATION" />
-        <div className=" flex flex-col md:flex md:flex-row gap-6 lg:justify-center">
+        <div className=" flex flex-col md:flex lg:flex-row gap-6 lg:justify-center mx-5 md:mx-48">
           <ButtonInfo
             paddingTB="4"
             marginTB="0"
@@ -134,58 +134,60 @@ export default function MemberPage({
       </div>
 
       {/* EVENTS */}
-      <div className="">
+      <div className="flex flex-col lg:mx-24 md:mx-12 md:border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10 md:mb-12 md:mt-12">
         <SectionTitle slice={homePage.data.slices[2]} />
-      </div>
-      <div className="flex flex-col scrollbar-hide w-full gap-4">
-        {eventsOfCurrentMember.length === 0 ? (
-          <p className="font-mont text-center text-[17px] font-light uppercase text-opacity-80 text-darkGrey ">
-            No events to show yet
-          </p>
-        ) : (
-          <CardsScrollable
-            cartes={cartesEvents}
-            buttonLink="/events"
-            buttonText="discover all our events"
-          >
-            {eventsOfCurrentMember.map((cartesEvents, index) => (
-              <EventNewsCard
-                key={index}
-                textIndex="EVENT"
-                index={index + 1}
-                linkToCard={`/events/${cartesEvents.uid}`}
-                imageHeader={cartesEvents.data.imageHeader.url}
-                title={cartesEvents.data.name}
-                sizeTitle="2xl"
-                leadingTitle="8"
-                fromDate={formatDateEvents(cartesEvents.data.startDate)}
-                toDate={formatDateEvents(cartesEvents.data.endDate)}
-              />
-            ))}
-          </CardsScrollable>
-        )}
+
+        <div className="flex flex-col scrollbar-hide w-full gap-4">
+          {eventsOfCurrentMember.length === 0 ? (
+            <p className="font-mont text-center text-[17px] font-light uppercase text-opacity-80 text-darkGrey mb-8">
+              No events to show yet
+            </p>
+          ) : (
+            <CardsScrollable
+              cartes={cartesEvents}
+              buttonLink="/events"
+              buttonText="discover all our events"
+            >
+              {eventsOfCurrentMember.map((cartesEvents, index) => (
+                <EventNewsCard
+                  key={index}
+                  textIndex="EVENT"
+                  index={index + 1}
+                  linkToCard={`/events/${cartesEvents.uid}`}
+                  imageHeader={cartesEvents.data.imageHeader.url}
+                  title={cartesEvents.data.name}
+                  sizeTitle="2xl"
+                  leadingTitle="8"
+                  fromDate={formatDateEvents(cartesEvents.data.startDate)}
+                  toDate={formatDateEvents(cartesEvents.data.endDate)}
+                />
+              ))}
+            </CardsScrollable>
+          )}
+        </div>
       </div>
 
       {/* OTHER MEMBER CARD */}
 
-      <SectionTitle slice={homePage.data.slices[4]} />
-      <CardsScrollable
-        cartes={cartesMembres}
-        buttonLink="/members"
-        buttonText="discover our members"
-      >
-        {cartesMembres.slice(0, 5).map((cartesMembres, index) => (
-          <MemberCard
-            key={index}
-            member={cartesMembres.data.name}
-            country={cartesMembres.data.country}
-            backgroundImage={cartesMembres.data.imageHeader.url}
-            logo={cartesMembres.data.logo.url}
-            linkToCard={`/members/${cartesMembres.uid}`}
-          />
-        ))}
-      </CardsScrollable>
-      <div className="mb-12"></div>
+      <div className="flex flex-col lg:mx-24 md:mx-12 md:border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10 md:mb-12">
+        <SectionTitle slice={homePage.data.slices[4]} />
+        <CardsScrollable
+          cartes={cartesMembres}
+          buttonLink="/members"
+          buttonText="discover our members"
+        >
+          {cartesMembres.slice(0, 5).map((cartesMembres, index) => (
+            <MemberCard
+              key={index}
+              member={cartesMembres.data.name}
+              country={cartesMembres.data.country}
+              backgroundImage={cartesMembres.data.imageHeader.url}
+              logo={cartesMembres.data.logo.url}
+              linkToCard={`/members/${cartesMembres.uid}`}
+            />
+          ))}
+        </CardsScrollable>
+      </div>
     </>
   );
 }
