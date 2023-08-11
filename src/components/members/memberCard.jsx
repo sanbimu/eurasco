@@ -18,7 +18,7 @@ export const MemberCard = ({
     >
       <div
         className={`relative flex flex-col rounded-[10px] h-[380px] md:h-[420px] shadow-card ${
-          widthFull ? "w-[100%]" : "w-[80vw] md:md:w-[40vw]"
+          widthFull ? "w-[100%]" : "w-[80vw] md:w-[40vw] lg:w-[328px]"
         }`}
       >
         <div className="relative flex items-center justify-center h-[380px] md:h-[420px]">
@@ -32,7 +32,7 @@ export const MemberCard = ({
         </div>
         <div className="absolute inset-0 gradient_Membres rounded-[10px] z-10 shadow-card" />
 
-        <div className="flex flex-col justify-end gap-2 z-20 w-full  rounded-bl-[10px] px-6 pb-4 pt-6">
+        <div className="flex flex-col justify-end gap-2 z-20 w-full rounded-bl-[10px] px-6 pb-4 pt-6">
           <h2 className="font-open font-bold text-[30px] leading-8 text-white">
             {member}
           </h2>
