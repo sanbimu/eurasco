@@ -29,7 +29,10 @@ export default function MemberPage({
   const nextMemberIndex = (currentPageIndex + 1) % cartesMembres.length;
 
   const eventsOfCurrentMember = cartesEvents.filter(
-    (event) => event.data.member.uid === currentPageUID
+    (event) =>
+      event.data.member.uid === currentPageUID ||
+      event.data.memberTwo.uid === currentPageUID ||
+      event.data.memberThree.uid === currentPageUID
   );
 
   return (
