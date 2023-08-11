@@ -65,12 +65,14 @@ export default function CardsScrollable({
               alt="Left"
             ></Image>
           </div>
+
           <div
             className="snap-mandatory snap-x overflow-scroll flex flex-row w-screen gap-2 pl-2 md:pl-0 pr-2 md:pr-[70px] scrollbar-hide z-10  -mr-16 "
             ref={containerRef}
           >
             {children}
           </div>
+
           <div
             className={`absolute flex bg-lightGrey/80 lg:bg-buttonGrey/50 z-20 rounded-[40px] h-[40px] w-[40px] justify-center right-4 ${
               scrollIndex >= cartes.length - 5
