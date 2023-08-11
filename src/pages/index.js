@@ -37,7 +37,7 @@ export default function Home({
         <AboutEurasco slice={homePage.data.slices[1]} />
 
         {/* EVENTS */}
-        <div className="flex flex-col lg:mx-24 md:mx-12 md:border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10">
+        <div className="flex flex-col lg:mx-24 md:mx-12 md:border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10 md:mb-12">
           <SectionTitle slice={homePage.data.slices[2]} />
           <CardsScrollable
             cartes={cartesEvents}
@@ -62,48 +62,49 @@ export default function Home({
         </div>
 
         {/* MEMBRES */}
-
-        <SectionTitle slice={homePage.data.slices[4]} />
-
-        <CardsScrollable
-          cartes={cartesMembres}
-          buttonLink="/members"
-          buttonText="discover our members"
-        >
-          {cartesMembres.slice(0, 5).map((cartesMembre, index) => (
-            <MemberCard
-              key={index}
-              member={cartesMembre.data.name}
-              country={cartesMembre.data.country}
-              backgroundImage={cartesMembre.data.imageHeader.url}
-              logo={cartesMembre.data.logo.url}
-              linkToCard={`/members/${cartesMembre.uid}`}
-            />
-          ))}
-        </CardsScrollable>
+        <div className="flex flex-col lg:mx-24 md:mx-12 md:border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10 md:mb-12">
+          <SectionTitle slice={homePage.data.slices[4]} />
+          <CardsScrollable
+            cartes={cartesMembres}
+            buttonLink="/members"
+            buttonText="discover our members"
+          >
+            {cartesMembres.slice(0, 5).map((cartesMembre, index) => (
+              <MemberCard
+                key={index}
+                member={cartesMembre.data.name}
+                country={cartesMembre.data.country}
+                backgroundImage={cartesMembre.data.imageHeader.url}
+                logo={cartesMembre.data.logo.url}
+                linkToCard={`/members/${cartesMembre.uid}`}
+              />
+            ))}
+          </CardsScrollable>
+        </div>
 
         {/* NEWS */}
-        <SectionTitle slice={homePage.data.slices[3]} />
-
-        <CardsScrollable
-          cartes={cartesBlog}
-          buttonLink="/news"
-          buttonText="discover our news"
-        >
-          {cartesBlog.slice(0, 5).map((cartesBlog, index) => (
-            <EventNewsCard
-              key={index}
-              textIndex="NEWS"
-              index={index + 1}
-              title={cartesBlog.data.title}
-              sizeTitle="xl"
-              leadingTitle="6"
-              imageHeader={cartesBlog.data.image.url}
-              date={formatDate(cartesBlog.first_publication_date)}
-              linkToCard={`/news/${cartesBlog.uid}`}
-            />
-          ))}
-        </CardsScrollable>
+        <div className="flex flex-col lg:mx-24 md:mx-12 md:border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10 md:mb-12">
+          <SectionTitle slice={homePage.data.slices[3]} />
+          <CardsScrollable
+            cartes={cartesBlog}
+            buttonLink="/news"
+            buttonText="discover our news"
+          >
+            {cartesBlog.slice(0, 5).map((cartesBlog, index) => (
+              <EventNewsCard
+                key={index}
+                textIndex="NEWS"
+                index={index + 1}
+                title={cartesBlog.data.title}
+                sizeTitle="xl"
+                leadingTitle="6"
+                imageHeader={cartesBlog.data.image.url}
+                date={formatDate(cartesBlog.first_publication_date)}
+                linkToCard={`/news/${cartesBlog.uid}`}
+              />
+            ))}
+          </CardsScrollable>
+        </div>
 
         <Image
           src="/images/contactDesktop.jpg"

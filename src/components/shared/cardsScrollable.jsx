@@ -49,48 +49,49 @@ export default function CardsScrollable({
   return (
     <>
       <div className="flex flex-col md:px-18 h-full gap-4 overflow-auto relative lg:gap-6 lg:pt-2  ">
-        <div className="flex flex-col overflow-hidden ">
-          {/* <div className="hidden lg:flex absolute custom_Gradient h-[440px] w-full"></div> */}
+        <div className="flex flex-row overflow-hidden items-center relative">
           <div
-            className="snap-mandatory snap-x overflow-scroll flex flex-row w-screen gap-2 pl-8 lg:pl-12 pr-10 lg:pr-24 scrollbar-hide "
+            className={`absolute flex bg-lightGrey/80 lg:bg-buttonGrey/50  z-20 rounded-[40px] h-[40px] w-[40px] justify-center left-4 hover:bg-lightGreen ${
+              scrollIndex === 0
+                ? "cursor-not-allowed hover:bg-lightGrey"
+                : "cursor-pointer hover:bg-lightGreen"
+            }`}
+            onClick={handleScrollLeft}
+          >
+            <Image
+              src="/icons/arrowLeftWhite.svg"
+              width={25}
+              height={25}
+              alt="Left"
+            ></Image>
+          </div>
+          <div
+            className="snap-mandatory snap-x overflow-scroll flex flex-row w-screen gap-2 pl-2 md:pl-0 pr-2 md:pr-[70px] scrollbar-hide z-10  -mr-16 "
             ref={containerRef}
           >
             {children}
           </div>
+          <div
+            className={`absolute flex bg-lightGrey/80 lg:bg-buttonGrey/50 z-20 rounded-[40px] h-[40px] w-[40px] justify-center right-4 ${
+              scrollIndex >= cartes.length - 5
+                ? "cursor-not-allowed hover:bg-lightGrey"
+                : "cursor-pointer hover:bg-lightGreen"
+            }`}
+            onClick={handleScrollRight}
+          >
+            <Image
+              src="/icons/arrowRightWhite.svg"
+              width={25}
+              height={25}
+              alt="Right"
+            ></Image>
+          </div>
         </div>
       </div>
 
-      <div className="flex flex-row justify-center gap-12 md:gap-20 lg:gap-12 pt-4 ">
-        <div
-          className={`flex border border-lightGreen rounded-[50px] h-[40px] w-[40px] justify-center ${
-            scrollIndex === 0 ? "cursor-not-allowed" : "cursor-pointer"
-          }`}
-          onClick={handleScrollLeft}
-        >
-          <Image
-            src="/icons/arrowLeft.svg"
-            width={25}
-            height={25}
-            alt="Left"
-          ></Image>
-        </div>
-        <div
-          className={`flex border border-lightGreen rounded-[50px] h-[40px] w-[40px] justify-center ${
-            scrollIndex >= cartes.length - 5
-              ? "cursor-not-allowed"
-              : "cursor-pointer"
-          }`}
-          onClick={handleScrollRight}
-        >
-          <Image
-            src="/icons/arrowRight.svg"
-            width={25}
-            height={25}
-            alt="Right"
-          ></Image>
-        </div>
-      </div>
-      <div className="flex pb-[70px] pt-4 md:pt-5 md:pb-4 lg:pb-10 mx-10 md:mx-48 lg:self-center ">
+      {/* <div className="flex flex-row justify-center gap-12 md:gap-20 lg:gap-12 pt-4 ">
+      </div> */}
+      <div className="flex pt-8 md:pt-5 md:pb-4 lg:pb-10 mx-10 md:mx-48 lg:self-center ">
         <Link
           className="text-center font-open uppercase font-semibold text-[17px] leading-[17.3px] tracking-[1px] text-lightGreen border border-lightGreen rounded-[10px] px-[25px] py-[15px] w-full"
           href={buttonLink}
