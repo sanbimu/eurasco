@@ -35,94 +35,94 @@ export default function MemberPage({
   return (
     <>
       {/* HEADER */}
-      <div className='min-h-[75vh] flex flex-col w-screen justify-center'>
+      <div className="min-h-[75vh] flex flex-col w-screen justify-center">
         <Image
           src={memberPage.data.logo.url}
           width={295}
           height={66}
-          alt='Member Logo'
-          className='z-20 max-w-[295px] max-h-[200px] mx-auto'
+          alt="Member Logo"
+          className="z-20 max-w-[295px] max-h-[200px] mx-auto"
         />
         <Image
           src={memberPage.data.imageHeader.url}
           width={394}
           height={850}
-          alt='Member Image'
-          className='min-h-[75vh] absolute object-cover lg:max-h-[75vh] w-full'
+          alt="Member Image"
+          className="min-h-[75vh] absolute object-cover lg:max-h-[75vh] w-full"
         />
       </div>
-      <div className='mb-4'></div>
+      <div className="mb-4"></div>
 
       {/* CONTENT */}
-      <div className='flex flex-col font-open mx-5 md:mx-24 md:px-0 lg:w-[50%] text-black pb-6'>
-        <h2 className='uppercase font-bold leading-[70px] text-5xl md:text-6xl font-mont text-yellow'>
+      <div className="flex flex-col font-open mx-5 md:mx-24 md:px-0 lg:w-[50%] text-black pb-6">
+        <h2 className="uppercase font-bold leading-[70px] text-5xl md:text-6xl font-mont text-yellow">
           ABOUT
         </h2>
-        <h1 className='uppercase font-mont font-bold text-4xl pb-12 -mt-4'>
+        <h1 className="uppercase font-mont font-bold text-4xl pb-12 -mt-4">
           {memberPage.data.name}
         </h1>
-        <div className='font-open text-[15px] leading-6 md:text-xl md:leading-8'>
+        <div className="font-open text-[15px] leading-6 md:text-xl md:leading-8">
           <PrismicRichText field={memberPage.data.description} />
         </div>
       </div>
-      <div className='flex flex-col gap-6 mt-6 md:my-12'>
+      <div className="flex flex-col gap-6 mt-6 md:my-12">
         <ButtonInfo
-          paddingTB='2'
-          marginTB='8'
+          paddingTB="2"
+          marginTB="8"
           linkTo={memberPage.data.website.url}
-          icon='/icons/website.svg'
-          iconHeight='[55px]'
-          fontSize='[17px]'
-          text='GO TO WEBSITE'
+          icon="/icons/website.svg"
+          iconHeight="[55px]"
+          fontSize="[17px]"
+          text="GO TO WEBSITE"
         />
       </div>
-      <div className='flex flex-col gap-6'>
-        <Title title='INFO' subtitle='PRACTICAL INFORMATION' />
+      <div className="flex flex-col gap-6">
+        <Title title="INFO" subtitle="PRACTICAL INFORMATION" />
         <ButtonInfo
-          paddingTB='4'
-          marginTB='0'
+          paddingTB="4"
+          marginTB="0"
           linkTo={`mailto:${memberPage.data.email}`}
-          icon='/icons/mail.svg'
-          iconHeight='[40px]'
-          fontSize='[15px]'
+          icon="/icons/mail.svg"
+          iconHeight="[40px]"
+          fontSize="[15px]"
           text={memberPage.data.email}
         />
         <ButtonInfo
-          paddingTB='4'
-          marginTB='0'
+          paddingTB="4"
+          marginTB="0"
           linkTo={`tel:${memberPage.data.phone}`}
-          icon='/icons/phone.svg'
-          iconHeight='[40px]'
-          fontSize='[15px]'
+          icon="/icons/phone.svg"
+          iconHeight="[40px]"
+          fontSize="[15px]"
           text={memberPage.data.phone}
         />
       </div>
 
       {/* EVENTS */}
-      <div className=''>
+      <div className="">
         <SectionTitle slice={homePage.data.slices[2]} />
       </div>
-      <div className='flex flex-col scrollbar-hide w-full gap-4'>
+      <div className="flex flex-col scrollbar-hide w-full gap-4">
         {eventsOfCurrentMember.length === 0 ? (
-          <p className='font-mont text-center text-[17px] font-light uppercase text-opacity-80 text-darkGrey '>
+          <p className="font-mont text-center text-[17px] font-light uppercase text-opacity-80 text-darkGrey ">
             No events to show yet
           </p>
         ) : (
           <CardsScrollable
             cartes={cartesEvents}
-            buttonLink='/events'
-            buttonText='discover all our events'
+            buttonLink="/events"
+            buttonText="discover all our events"
           >
             {eventsOfCurrentMember.map((cartesEvents, index) => (
               <EventNewsCard
                 key={index}
-                textIndex='EVENT'
+                textIndex="EVENT"
                 index={index + 1}
                 linkToCard={`/events/${cartesEvents.uid}`}
                 imageHeader={cartesEvents.data.imageHeader.url}
                 title={cartesEvents.data.name}
-                sizeTitle='2xl'
-                leadingTitle='8'
+                sizeTitle="2xl"
+                leadingTitle="8"
                 fromDate={formatDateEvents(cartesEvents.data.startDate)}
                 toDate={formatDateEvents(cartesEvents.data.endDate)}
               />
@@ -136,8 +136,8 @@ export default function MemberPage({
       <SectionTitle slice={homePage.data.slices[4]} />
       <CardsScrollable
         cartes={cartesMembres}
-        buttonLink='/members'
-        buttonText='discover our members'
+        buttonLink="/members"
+        buttonText="discover our members"
       >
         {cartesMembres.slice(0, 5).map((cartesMembres, index) => (
           <MemberCard
@@ -150,7 +150,7 @@ export default function MemberPage({
           />
         ))}
       </CardsScrollable>
-      <div className='mb-12'></div>
+      <div className="mb-12"></div>
     </>
   );
 }
