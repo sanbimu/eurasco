@@ -54,48 +54,83 @@ export default function MemberPage({
       <div className='mb-4'></div>
 
       {/* CONTENT */}
-      <div className='flex flex-col font-open mx-5 md:mx-24 md:px-0 lg:w-[50%] text-black pb-6'>
-        <h2 className='uppercase font-bold leading-[70px] text-5xl md:text-6xl font-mont text-yellow'>
-          ABOUT
-        </h2>
-        <h1 className='uppercase font-mont font-bold text-4xl pb-12 -mt-4'>
-          {memberPage.data.name}
-        </h1>
-        <div className='font-open text-[15px] leading-6 md:text-xl md:leading-8'>
-          <PrismicRichText field={memberPage.data.description} />
+      <div className='lg:flex lg:flex-row lg:mx-32'>
+        <div className='lg:w-[60%]'>
+          <div className='flex flex-col font-open mx-5  md:px-0 text-black pb-6'>
+            <h2 className='uppercase font-bold leading-[70px] text-5xl md:text-6xl font-mont text-yellow'>
+              ABOUT
+            </h2>
+            <h1 className='uppercase font-mont font-bold text-4xl pb-12 -mt-4'>
+              {memberPage.data.name}
+            </h1>
+            <div className='font-open text-[15px] leading-6 md:text-xl md:leading-8'>
+              <PrismicRichText field={memberPage.data.description} />
+            </div>
+          </div>
+          <div className='flex flex-col lg:flex-row  gap-6 mt-6 md:mt-12 '>
+            <ButtonInfo
+              paddingTB='2'
+              marginTB='8'
+              linkTo={memberPage.data.website.url}
+              icon='/icons/website.svg'
+              iconHeight='[55px]'
+              fontSize='[17px]'
+              text='GO TO WEBSITE'
+            />
+          </div>
+        </div>
+
+        <div className='hidden lg:flex z-50 relative '>
+          <Image
+            src={memberPage.data.imageHeader.url}
+            width={579}
+            height={630}
+            alt='About Image'
+            className='rounded-[10px]  w-auto mt-[-70px]'
+          />
+          <div className=' h-fit w-[267px] bg-lightGreen rounded-[10px] p-[10px] absolute left-[25px] bottom-[25px]'>
+            <div className='border border-dashed border-white py-3 px-3'>
+              {/* <Image
+                  src={slice.primary.iconGreenFrame.url}
+                  width={50}
+                  height={50}
+                  alt="Medal"
+                  className="pt-1"
+                /> */}
+              <p className='font-mont text-[18px] text-white font-bold leading-6 py-4'>
+                {/* {slice.primary.titleGreenFrame} */} dchsdvdcf
+              </p>
+              <p className='font-open text-[14px] text-white leading-6 '>
+                {/* {slice.primary.textGreenFrame} */} aehdje
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-      <div className='flex flex-col gap-6 mt-6 md:my-12'>
-        <ButtonInfo
-          paddingTB='2'
-          marginTB='8'
-          linkTo={memberPage.data.website.url}
-          icon='/icons/website.svg'
-          iconHeight='[55px]'
-          fontSize='[17px]'
-          text='GO TO WEBSITE'
-        />
-      </div>
-      <div className='flex flex-col gap-6'>
+
+      {/* INFOOO PRATIQUE */}
+      <div className='flex flex-col lg:mx-32'>
         <Title title='INFO' subtitle='PRACTICAL INFORMATION' />
-        <ButtonInfo
-          paddingTB='4'
-          marginTB='0'
-          linkTo={`mailto:${memberPage.data.email}`}
-          icon='/icons/mail.svg'
-          iconHeight='[40px]'
-          fontSize='[15px]'
-          text={memberPage.data.email}
-        />
-        <ButtonInfo
-          paddingTB='4'
-          marginTB='0'
-          linkTo={`tel:${memberPage.data.phone}`}
-          icon='/icons/phone.svg'
-          iconHeight='[40px]'
-          fontSize='[15px]'
-          text={memberPage.data.phone}
-        />
+        <div className=' flex flex-col md:flex md:flex-row gap-6 lg:justify-center'>
+          <ButtonInfo
+            paddingTB='4'
+            marginTB='0'
+            linkTo={`mailto:${memberPage.data.email}`}
+            icon='/icons/mail.svg'
+            iconHeight='[40px]'
+            fontSize='[157px]'
+            text={memberPage.data.email}
+          />
+          <ButtonInfo
+            paddingTB='4'
+            marginTB='0'
+            linkTo={`tel:${memberPage.data.phone}`}
+            icon='/icons/phone.svg'
+            iconHeight='[40px]'
+            fontSize='[17px]'
+            text={memberPage.data.phone}
+          />
+        </div>
       </div>
 
       {/* EVENTS */}

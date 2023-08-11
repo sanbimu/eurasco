@@ -8,7 +8,7 @@ export const ContactCard = () => {
         width={393}
         height={281}
         alt='Hero Image'
-        className='flex md:hidden w-full'
+        className='flex md:hidden  w-full'
       />
 
       <div className='flex flex-col px-[25px] items-center absolute'>
@@ -23,7 +23,7 @@ export const ContactCard = () => {
           you
         </p>
         <button
-          className='uppercase text-white font-open font-semibold text-[20px] md:text-sm tracking-[1px] bg-lightGreen rounded-[10px] py-4 md:py-2 w-full md:w-[200px] lg:w-[170px]'
+          className='uppercase text-white font-open font-semibold text-[20px] md:text-sm tracking-[1px] bg-lightGreen rounded-[10px] py-4 md:py-5 w-full md:w-full lg:w-full shadow-lg shadow-lightGreen/50'
           onClick={() =>
             (window.location.href = "mailto:secretarygeneral@eurasco.org")
           }
