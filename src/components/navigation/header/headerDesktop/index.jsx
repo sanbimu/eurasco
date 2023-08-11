@@ -35,7 +35,7 @@ const HeaderDesktop = ({ current }) => {
   return (
     <div className="hidden lg:flex z-[100] w-screen">
       <div
-        className={`flex justify-between w-screen fixed top-0 z-[100] px-[10%] ${
+        className={`flex justify-between w-screen fixed top-0 z-[100] px-24 ${
           isScrolled
             ? "bg-darkGreen bg-opacity-80 backdrop-blur-md pt-1"
             : "pt-6"
@@ -49,7 +49,7 @@ const HeaderDesktop = ({ current }) => {
             height={logoSize.height}
           />
         </Link>
-        <div className="flex lg:gap-14 uppercase font-open text-white items-center lg:text-sm md:text-xs md:gap-4">
+        <div className="flex gap-16 uppercase font-open text-white items-center text-[17px]">
           {navLinks.map((link, index) => {
             const isActive =
               router.pathname === link.path ||
