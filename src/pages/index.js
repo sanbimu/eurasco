@@ -111,7 +111,7 @@ export default function Home({
           width={1920}
           height={600}
           alt="Image Contact"
-          className="hidden md:flex md:pb-14 md:pt-14"
+          className="hidden md:flex md:pb-14 md:pt-14 lg:w-screen"
         />
         <ContactCard />
       </div>
