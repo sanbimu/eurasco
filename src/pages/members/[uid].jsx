@@ -147,7 +147,6 @@ export default function MemberPage({
             </p>
           ) : eventsOfCurrentMember.length > 1 ? (
             <CardsScrollable
-              cartes={cartesEvents}
               buttonLink="/events"
               buttonText="discover all our events"
             >
@@ -195,10 +194,9 @@ export default function MemberPage({
 
       {/* OTHER MEMBER CARD */}
 
-      <div className="flex flex-col lg:mx-24 md:mx-12 md:border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10 md:mb-12">
+      <div className="flex flex-col mb-12 lg:mx-24 md:mx-12 md:border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10 md:mb-12">
         <SectionTitle slice={homePage.data.slices[4]} />
         <CardsScrollable
-          cartes={cartesMembres}
           buttonLink="/members"
           buttonText="discover our members"
         >

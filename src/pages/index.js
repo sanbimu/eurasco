@@ -40,7 +40,6 @@ export default function Home({
         <div className="flex flex-col lg:mx-24 md:mx-12 md:border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10 md:mb-12">
           <SectionTitle slice={homePage.data.slices[2]} />
           <CardsScrollable
-            cartes={cartesEvents}
             buttonLink="/events"
             buttonText="discover our events"
           >
@@ -65,7 +64,6 @@ export default function Home({
         <div className="flex flex-col lg:mx-24 md:mx-12 md:border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10 md:mb-12">
           <SectionTitle slice={homePage.data.slices[4]} />
           <CardsScrollable
-            cartes={cartesMembres}
             buttonLink="/members"
             buttonText="discover our members"
           >
@@ -85,11 +83,7 @@ export default function Home({
         {/* NEWS */}
         <div className="flex flex-col lg:mx-24 md:mx-12 md:border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10 md:mb-12">
           <SectionTitle slice={homePage.data.slices[3]} />
-          <CardsScrollable
-            cartes={cartesBlog}
-            buttonLink="/news"
-            buttonText="discover our news"
-          >
+          <CardsScrollable buttonLink="/news" buttonText="discover our news">
             {cartesBlog.slice(0, 5).map((cartesBlog, index) => (
               <EventNewsCard
                 key={index}

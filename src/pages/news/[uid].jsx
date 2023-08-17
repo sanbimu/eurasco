@@ -113,11 +113,7 @@ export default function Blog({ page, carteBlog, homePage }) {
         <div className="flex flex-col lg:mx-24 md:mx-12 md:border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10 md:mb-12">
           <SectionTitle slice={homePage.data.slices[3]} />
 
-          <CardsScrollable
-            cartes={carteBlog}
-            buttonLink="/news"
-            buttonText="discover our news"
-          >
+          <CardsScrollable buttonLink="/news" buttonText="discover our news">
             {carteBlog.slice(0, 5).map((cartesBlog, index) => (
               <>
                 {cartesBlog.uid === page.uid ? (

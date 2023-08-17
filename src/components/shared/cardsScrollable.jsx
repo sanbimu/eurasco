@@ -1,48 +1,22 @@
 import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
-export default function CardsScrollable({
-  children,
-  cartes,
-  buttonLink,
-  buttonText,
-}) {
-  const containerRef = useRef(null);
-  const [scrollIndex, setScrollIndex] = useState(0);
+export default function CardsScrollable({ children, buttonLink, buttonText }) {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const containerRef = useRef(null); // Use useRef here
 
-  const handleScroll = () => {
-    const currentIndex = Math.round(
-      containerRef.current?.scrollLeft / containerRef.current.offsetWidth
-    );
-    setScrollIndex(currentIndex);
-  };
-
-  useEffect(() => {
-    containerRef.current?.addEventListener("scroll", handleScroll);
-    return () => {
-      containerRef.current?.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const handleScrollLeft = () => {
-    if (scrollIndex > 0) {
-      setScrollIndex(scrollIndex - 1);
-      containerRef.current.scrollBy({
-        left: -containerRef.current.offsetWidth,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const handleScrollRight = () => {
-    if (scrollIndex < cartes.length - 1) {
-      setScrollIndex(scrollIndex + 1);
-      containerRef.current.scrollBy({
-        left: containerRef.current.offsetWidth / 2,
-        behavior: "smooth",
-      });
+  const handleScroll = (scrollOffset) => {
+    const container = containerRef.current;
+    if (container) {
+      const childWidth = container.firstChild.clientWidth;
+      const maxScrollPosition = container.scrollWidth - container.clientWidth;
+      const newPosition = Math.min(
+        Math.max(scrollPosition + scrollOffset * childWidth, 0),
+        maxScrollPosition
+      );
+      setScrollPosition(newPosition);
+      container.scrollTo({ left: newPosition, behavior: "smooth" });
     }
   };
 
@@ -50,44 +24,41 @@ export default function CardsScrollable({
     <>
       <div className="flex flex-col md:px-18 h-full gap-4 overflow-auto relative lg:gap-6 lg:pt-2  ">
         <div className="flex flex-row overflow-hidden items-center relative">
-          <div
-            className={`absolute flex bg-lightGrey/80 lg:bg-buttonGrey/50  z-20 rounded-[40px] h-[40px] w-[40px] justify-center left-4 hover:bg-lightGreen ${
-              scrollIndex === 0
-                ? "cursor-not-allowed hover:bg-lightGrey"
-                : "cursor-pointer hover:bg-lightGreen"
-            }`}
-            onClick={handleScrollLeft}
-          >
-            <Image
-              src="/icons/arrowLeftWhite.svg"
-              width={25}
-              height={25}
-              alt="Left"
-            ></Image>
-          </div>
+          {scrollPosition > 0 && (
+            <div
+              className="absolute flex bg-lightGrey/80 z-40 rounded-full h-10 w-10 justify-center left-4 cursor-pointer hover:bg-lightGreen"
+              onClick={() => handleScroll(-1)}
+            >
+              <Image
+                src="/icons/arrowLeftWhite.svg"
+                width={20}
+                height={20}
+                alt="Left"
+              />
+            </div>
+          )}
 
           <div
-            className="snap-mandatory snap-x overflow-scroll flex flex-row w-screen gap-2 pl-2 md:pl-0 pr-2 md:pr-[70px] scrollbar-hide z-10  -mr-16 "
+            className="flex flex-row gap-2 pl-2 md:pl-0 pr-2 md:pr-[70px] overflow-x-scroll scrollbar-hide"
             ref={containerRef}
           >
             {children}
           </div>
-
-          <div
-            className={`absolute flex bg-lightGrey/80 lg:bg-buttonGrey/50 z-20 rounded-[40px] h-[40px] w-[40px] justify-center right-4 ${
-              scrollIndex >= cartes.length - 5
-                ? "cursor-not-allowed hover:bg-lightGrey/80"
-                : "cursor-pointer hover:bg-lightGreen"
-            }`}
-            onClick={handleScrollRight}
-          >
-            <Image
-              src="/icons/arrowRightWhite.svg"
-              width={25}
-              height={25}
-              alt="Right"
-            ></Image>
-          </div>
+          {scrollPosition <
+            containerRef?.current?.scrollWidth -
+              containerRef?.current?.clientWidth && (
+            <div
+              className="absolute flex bg-lightGrey/80 z-40 rounded-full h-10 w-10 justify-center right-4 cursor-pointer hover:bg-lightGreen"
+              onClick={() => handleScroll(1)}
+            >
+              <Image
+                src="/icons/arrowRightWhite.svg"
+                width={20}
+                height={20}
+                alt="Right"
+              />
+            </div>
+          )}
         </div>
       </div>
 
