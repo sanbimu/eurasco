@@ -5,6 +5,7 @@ import Link from "next/link";
 export default function CardsScrollable({ children, buttonLink, buttonText }) {
   const [scrollPosition, setScrollPosition] = useState(0);
   const containerRef = useRef(null); // Use useRef here
+  const [showButtons, setShowButtons] = useState(false);
 
   const handleScroll = (scrollOffset) => {
     const container = containerRef.current;
@@ -20,13 +21,28 @@ export default function CardsScrollable({ children, buttonLink, buttonText }) {
     }
   };
 
+  const handleResize = () => {
+    const container = containerRef.current;
+    if (container) {
+      setShowButtons(container.scrollWidth > container.clientWidth);
+    }
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
       <div className="flex flex-col md:px-18 h-full gap-4 overflow-auto relative lg:gap-6 lg:pt-2  ">
         <div className="flex flex-row overflow-hidden items-center relative">
-          {scrollPosition > 0 && (
+          {showButtons && scrollPosition > 0 && (
             <div
-              className="absolute flex bg-lightGrey/80 z-40 rounded-full h-10 w-10 justify-center left-4 cursor-pointer hover:bg-lightGreen"
+              className="absolute flex bg-lightGrey/80 z-40 rounded-full h-10 w-10 justify-center left-4 cursor-pointer hover:bg-lightGreen/80 "
               onClick={() => handleScroll(-1)}
             >
               <Image
@@ -44,21 +60,22 @@ export default function CardsScrollable({ children, buttonLink, buttonText }) {
           >
             {children}
           </div>
-          {scrollPosition <
-            containerRef?.current?.scrollWidth -
-              containerRef?.current?.clientWidth && (
-            <div
-              className="absolute flex bg-lightGrey/80 z-40 rounded-full h-10 w-10 justify-center right-4 cursor-pointer hover:bg-lightGreen"
-              onClick={() => handleScroll(1)}
-            >
-              <Image
-                src="/icons/arrowRightWhite.svg"
-                width={20}
-                height={20}
-                alt="Right"
-              />
-            </div>
-          )}
+          {showButtons &&
+            scrollPosition <
+              containerRef?.current?.scrollWidth -
+                containerRef?.current?.clientWidth && (
+              <div
+                className="absolute flex bg-lightGrey/80 z-40 rounded-full h-10 w-10 justify-center right-4 cursor-pointer hover:bg-lightGreen/80"
+                onClick={() => handleScroll(1)}
+              >
+                <Image
+                  src="/icons/arrowRightWhite.svg"
+                  width={20}
+                  height={20}
+                  alt="Right"
+                />
+              </div>
+            )}
         </div>
       </div>
 
@@ -66,7 +83,7 @@ export default function CardsScrollable({ children, buttonLink, buttonText }) {
       </div> */}
       <div className="flex pt-8 md:pt-5 md:pb-4 lg:pb-10 mx-10 md:mx-48 lg:self-center ">
         <Link
-          className="text-center font-open uppercase font-semibold text-[17px] leading-[17.3px] tracking-[1px] text-lightGreen border border-lightGreen rounded-[10px] px-[25px] py-[15px] w-full"
+          className="text-center font-open uppercase font-semibold text-[17px] leading-[17.3px] tracking-[1px] text-lightGreen border border-lightGreen rounded-[10px] px-[25px] py-[15px] w-full hover:bg-lightGreen hover:text-white"
           href={buttonLink}
         >
           {buttonText}

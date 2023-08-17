@@ -23,7 +23,7 @@ export const ContactCard = () => {
           you
         </p>
         <button
-          className="uppercase text-white font-open font-semibold text-[20px] md:text-sm tracking-[1px] bg-lightGreen rounded-[10px] py-4 md:py-5 w-full md:w-full lg:w-full shadow-lg shadow-lightGreen/50"
+          className="uppercase text-white font-open font-semibold text-[20px] md:text-sm tracking-[1px] bg-lightGreen rounded-[10px] py-4 md:py-5 w-full md:w-full lg:w-full shadow-lg shadow-lightGreen/50 lg:text-lg"
           onClick={() =>
             (window.location.href = "mailto:secretarygeneral@eurasco.org")
           }
