@@ -8,7 +8,7 @@ export default function Layout({ children }) {
     <>
       <HeaderDesktop />
       <HeaderMobile />
-      <main>{children}</main>
+      <main className="overflow-x-hidden">{children}</main>
       <FooterDesktop />
       <FooterMobile />
     </>
