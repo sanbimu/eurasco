@@ -2,13 +2,13 @@ import Image from "next/image";
 import { navLinks } from "../../navLinks";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 const HeaderDesktop = ({ current }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [logoSize, setLogoSize] = useState({ width: 160, height: 100 });
-  const router = useRouter();
-  const isContactPage = router.pathname === "/contact";
+  const currentPath =
+    typeof window !== "undefined" ? window.location.pathname : "/";
+  const isContactPage = currentPath === "/contact";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,8 +52,8 @@ const HeaderDesktop = ({ current }) => {
         <div className="flex gap-16 uppercase font-open text-white items-center text-[17px]">
           {navLinks.map((link, index) => {
             const isActive =
-              router.pathname === link.path ||
-              router.pathname.startsWith(`${link.path}/`);
+              currentPath === link.path ||
+              currentPath.startsWith(`${link.path}/`);
             const isLast = index === navLinks.length - 1;
             return (
               <Link
