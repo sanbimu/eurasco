@@ -21,10 +21,10 @@ const AboutEurasco = ({ slice }) => {
             <h1 className="uppercase font-mont font-bold leading-[42px] text-4xl">
               {slice.primary.subtitle}
             </h1>
-            <p className="text-[15px] leading-6 pt-[50px]">
+            <p className="text-[15px] lg:text-lg leading-6 pt-[50px]">
               {slice.primary.descriptionParagraphOne}
             </p>
-            <p className="text-[15px] leading-6 pt-8 pb-8 lg:pb-3">
+            <p className="text-[15px] lg:text-lg leading-6 pt-8 pb-8 lg:pb-3">
               {slice.primary.descriptionParagraphTwo}
             </p>
             <div className="flex flex-col lg:flex-row lg:items-center lg:gap-6">
@@ -39,7 +39,7 @@ const AboutEurasco = ({ slice }) => {
                   <p className="font-bold text-lg leading-6">
                     {slice.primary.titleIconOne}
                   </p>
-                  <p className="italic text-[13px] leading-6 ">
+                  <p className="italic text-[13px] lg:text-[15px] leading-6 ">
                     {slice.primary.textIconOne}
                   </p>
                 </div>
@@ -55,7 +55,7 @@ const AboutEurasco = ({ slice }) => {
                   <p className="font-bold text-lg leading-6">
                     {slice.primary.titleIconTwo}
                   </p>
-                  <p className="italic text-[13px] leading-6">
+                  <p className="italic text-[13px] lg:text-[15px]  leading-6">
                     {slice.primary.textIconTwo}
                   </p>
                 </div>
@@ -82,7 +82,7 @@ const AboutEurasco = ({ slice }) => {
                 <p className="font-mont text-[18px] text-white font-bold leading-6 py-4">
                   {slice.primary.titleGreenFrame}
                 </p>
-                <p className="font-open text-[14px] text-white leading-6 ">
+                <p className="font-open text-[14px]  text-white leading-6 ">
                   {slice.primary.textGreenFrame}
                 </p>
               </div>
