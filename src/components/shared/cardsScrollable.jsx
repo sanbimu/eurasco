@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function CardsScrollable({ children, buttonLink, buttonText }) {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const containerRef = useRef(null); // Use useRef here
+  const containerRef = useRef(null);
   const [showButtons, setShowButtons] = useState(false);
 
   const handleScroll = (scrollOffset) => {

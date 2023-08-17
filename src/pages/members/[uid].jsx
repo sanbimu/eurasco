@@ -113,7 +113,9 @@ export default function MemberPage({
 
       {/* INFO PRATIQUE */}
       <div className="flex flex-col lg:mx-32 lg:mt-12">
-        <Title title="INFO" subtitle="PRACTICAL INFORMATION" />
+        <div className="mt-[80px] md:mt-2">
+          <Title title="INFO" subtitle="PRACTICAL INFORMATION" />
+        </div>
         <div className=" flex flex-col md:flex lg:flex-row gap-6 lg:justify-center mx-5 md:mx-48 lg:my-6">
           <ButtonInfo
             paddingTB="4"

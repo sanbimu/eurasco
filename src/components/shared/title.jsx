@@ -1,6 +1,6 @@
 export const Title = ({ title, subtitle, text }) => {
   return (
-    <div className="flex flex-col pb-5 pt-[80px] md:pt-0 items-center px-4">
+    <div className="flex flex-col pb-5 items-center px-4">
       {title && (
         <h1 className="font-mont font-bold text-[40px] lg:text-[60px] leading-[42px] text-yellow uppercase text-center">
           {title}

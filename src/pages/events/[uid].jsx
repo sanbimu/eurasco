@@ -161,6 +161,9 @@ export default function EventPage({ eventPage, homePage, members }) {
       </div>
 
       {/* INFO & BUTTONS */}
+      <div className="mt-6">
+        <Title title="INFO" subtitle="PRACTICAL INFORMATION" />
+      </div>
       <div className="flex flex-col gap-6 mt-6 mb-12 mx-5 md:mx-20 lg:mx-2 lg:justify-center lg:flex-row">
         <div className="flex flex-col gap-6 lg:w-[30vw]">
           <ButtonInfo
