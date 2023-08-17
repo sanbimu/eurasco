@@ -60,17 +60,17 @@ export default function MemberPage({
       <div className="lg:flex lg:flex-row lg:mx-32">
         <div className="lg:w-[60%]">
           <div className="flex flex-col font-open mx-5 md:mx-24 md:px-0 text-black pb-6">
-            <h2 className="uppercase font-bold leading-[70px] text-5xl md:text-6xl font-mont text-yellow md:mt-4">
+            <h2 className="uppercase font-bold leading-[70px] text-5xl md:text-6xl font-mont text-yellow md:mt-4 lg:mt-12">
               ABOUT
             </h2>
             <h1 className="uppercase font-mont font-bold text-4xl pb-12 -mt-4">
               {memberPage.data.name}
             </h1>
-            <div className="font-open text-[15px] leading-6 md:text-xl md:leading-8">
+            <div className="font-open text-[15px] leading-6 md:text-xl md:leading-8 lg:text-base">
               <PrismicRichText field={memberPage.data.description} />
             </div>
           </div>
-          <div className="flex mt-6 mx-5 md:mt-6 md:mx-48 md:mb-12">
+          <div className="flex mt-6 mx-5 md:mt-6 md:mx-48 md:mb-12 lg:mx-24">
             <ButtonInfo
               paddingTB="2"
               marginTB="8"
@@ -83,7 +83,7 @@ export default function MemberPage({
           </div>
         </div>
 
-        <div className="hidden lg:flex z-50 relative ">
+        <div className="hidden lg:flex z-50 relative lg:mb-12">
           <Image
             src={memberPage.data.imageHeader.url}
             width={579}
@@ -112,9 +112,9 @@ export default function MemberPage({
       </div>
 
       {/* INFO PRATIQUE */}
-      <div className="flex flex-col lg:mx-32">
+      <div className="flex flex-col lg:mx-32 lg:mt-12">
         <Title title="INFO" subtitle="PRACTICAL INFORMATION" />
-        <div className=" flex flex-col md:flex lg:flex-row gap-6 lg:justify-center mx-5 md:mx-48">
+        <div className=" flex flex-col md:flex lg:flex-row gap-6 lg:justify-center mx-5 md:mx-48 lg:my-6">
           <ButtonInfo
             paddingTB="4"
             marginTB="0"
