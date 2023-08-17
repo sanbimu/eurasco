@@ -76,7 +76,7 @@ export default function CardsScrollable({
           <div
             className={`absolute flex bg-lightGrey/80 lg:bg-buttonGrey/50 z-20 rounded-[40px] h-[40px] w-[40px] justify-center right-4 ${
               scrollIndex >= cartes.length - 5
-                ? "cursor-not-allowed hover:bg-lightGrey"
+                ? "cursor-not-allowed hover:bg-lightGrey/80"
                 : "cursor-pointer hover:bg-lightGreen"
             }`}
             onClick={handleScrollRight}

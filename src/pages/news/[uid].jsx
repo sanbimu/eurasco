@@ -3,8 +3,6 @@ import { createClient } from "../../prismicio";
 import Image from "next/image";
 import { PrismicRichText } from "@prismicio/react";
 import SectionTitle from "@/slices/SectionTitle";
-import { NewsCard } from "@/components/news/newsCard";
-import { CardAll } from "@/components/shared/cardAll";
 import { formatDate } from "@/components/utils";
 import CardsScrollable from "@/components/shared/cardsScrollable";
 import { EventNewsCard } from "@/components/shared/eventNewsCard";
@@ -16,7 +14,6 @@ export default function Blog({ page, carteBlog, homePage }) {
 
   const updatedSlices = page.data.slices.reduce((acc, item, index) => {
     const prev = acc.at(-1);
-
     if (index > 0) {
       item.showOnRight = item.primary.image
         ? !prev.showOnRight
@@ -25,7 +22,6 @@ export default function Blog({ page, carteBlog, homePage }) {
     } else {
       item.showOnRight = false;
     }
-
     return acc.concat(item);
   }, []);
 
@@ -56,6 +52,7 @@ export default function Blog({ page, carteBlog, homePage }) {
       </div>
 
       {/* CONTENT */}
+      {/* ----DESKTOP---- */}
 
       <div className="mb-24 font-open hidden lg:flex flex-col gap-12">
         {updatedSlices.map((slice, i) => {
@@ -63,7 +60,6 @@ export default function Blog({ page, carteBlog, homePage }) {
             slice.showOnRight && slice.primary.image
               ? "flex-row-reverse"
               : "flex-row";
-
           return (
             <div className={`flex mx-24 gap-20 ${reverse}`} key={i}>
               <div className="flex flex-col gap-10 justify-center">
@@ -80,7 +76,7 @@ export default function Blog({ page, carteBlog, homePage }) {
                   className="object-contain"
                   height={700}
                   width={450}
-                  alt="blog image"
+                  alt="Blog Image"
                 />
               )}
             </div>
@@ -88,6 +84,7 @@ export default function Blog({ page, carteBlog, homePage }) {
         })}
       </div>
 
+      {/* ----MOBILE---- */}
       {page.data.slices.map((slice, sliceIndex) => (
         <div
           key={sliceIndex}
