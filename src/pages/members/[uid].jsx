@@ -10,6 +10,7 @@ import { MemberCard } from "@/components/members/memberCard";
 import { EventNewsCard } from "@/components/shared/eventNewsCard";
 import { formatDateEvents } from "@/components/utils";
 import CardsScrollable from "@/components/shared/cardsScrollable";
+import Link from "next/link";
 
 export default function MemberPage({
   memberPage,
@@ -54,9 +55,15 @@ export default function MemberPage({
           className="min-h-[75vh] absolute object-cover lg:max-h-[75vh] w-full"
         />
       </div>
-      <div className="mb-4"></div>
+      <div className="mb-6 md:mb-10"></div>
 
       {/* CONTENT */}
+      <Link
+        className="font-open text-darkGreen italic text-[15px] ml-5 md:ml-10"
+        href="/members"
+      >
+        ← Go back
+      </Link>
       <div className="lg:flex lg:flex-row lg:mx-32">
         <div className="lg:w-[60%]">
           <div className="flex flex-col font-open mx-5 md:mx-24 md:px-0 text-black pb-6">

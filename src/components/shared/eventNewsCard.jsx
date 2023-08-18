@@ -64,7 +64,7 @@ export const EventNewsCard = ({
             )}
             <div className="font-open text-lightGreen italic text-[15px] leading-[22px] ml-auto">
               Read more →
-            </div>{" "}
+            </div>
           </div>
         </div>
 

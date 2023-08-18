@@ -6,6 +6,7 @@ import SectionTitle from "@/slices/SectionTitle";
 import { formatDate } from "@/components/utils";
 import CardsScrollable from "@/components/shared/cardsScrollable";
 import { EventNewsCard } from "@/components/shared/eventNewsCard";
+import Link from "next/link";
 
 export default function Blog({ page, carteBlog, homePage }) {
   console.log("blogSection", page);
@@ -46,8 +47,14 @@ export default function Blog({ page, carteBlog, homePage }) {
         />
         <div className="bg-black h-[75vh] w-full z-10 absolute opacity-50 " />
       </div>
-      <div className="mb-12"></div>
-      <div className="mb-10 font-open text-sm italic mx-5 md:mx-24 md:text-xl lg:text-[15px]">
+      <div className="mb-6 md:mb-10"></div>
+      <Link
+        className="font-open text-darkGreen italic text-[15px] ml-5 md:ml-10"
+        href="/news"
+      >
+        ← Go back
+      </Link>
+      <div className="mb-10 font-open text-[15px] italic mx-5 md:mx-24 md:text-lg lg:text-[15px] mt-6 md:mt-8">
         Publication date: {formatDate(page.first_publication_date)}
       </div>
 

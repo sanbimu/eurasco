@@ -2,12 +2,8 @@ import * as prismic from "@prismicio/client";
 import { createClient } from "../../prismicio";
 import Image from "next/image";
 import { PrismicRichText } from "@prismicio/react";
-import SectionTitle from "@/slices/SectionTitle";
-import { CardAll } from "@/components/shared/cardAll";
 import { ButtonInfo } from "@/components/shared/buttonInfo";
 import { Title } from "@/components/shared/title";
-import { MemberCard } from "@/components/members/memberCard";
-import { EventNewsCard } from "@/components/shared/eventNewsCard";
 import { formatDateEvents } from "@/components/utils";
 import Link from "next/link";
 
@@ -51,11 +47,17 @@ export default function EventPage({ eventPage, homePage, members }) {
           </div>
         </div>
       </div>
-      <div className="mb-12"></div>
+      <div className="mb-6 md:mb-10"></div>
 
       {/* CONTENT */}
+      <Link
+        className="font-open text-darkGreen italic text-[15px] ml-5 md:ml-10"
+        href="/events"
+      >
+        ← Go back
+      </Link>
       {/* ----MOBILE---- */}
-      <div className="flex lg:hidden flex-col font-open leading-6 md:px-0 lg:w-[50%] text-black pb-6">
+      <div className="flex lg:hidden flex-col font-open leading-6 md:px-0 lg:w-[50%] text-black pb-6 mt-6 md:mt-8">
         <div className="font-mont font-bold text-lg md:text-xl leading-6 mx-5 md:mx-20 ">
           Organised by:&nbsp;
           <Link href={eventPage.data.member.url}>
