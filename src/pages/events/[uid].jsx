@@ -7,11 +7,7 @@ import { Title } from "@/components/shared/title";
 import { formatDateEvents } from "@/components/utils";
 import Link from "next/link";
 
-export default function EventPage({ eventPage, homePage, members }) {
-  console.log("eventPage", eventPage);
-  console.log("homePage", homePage);
-  console.log("members", members);
-
+export default function EventPage({ eventPage, members }) {
   const matchingMember = members.find((member) => {
     return member.url === eventPage.data.member.url;
   });

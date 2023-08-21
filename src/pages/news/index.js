@@ -7,9 +7,6 @@ import { formatDate } from "@/components/utils";
 import SectionTitle from "@/slices/SectionTitle";
 
 export default function News({ cartesBlog, homePage }) {
-  console.log("CarteBlog", cartesBlog);
-  console.log("homePage", homePage);
-
   return (
     <main>
       <div className="flex flex-col md:h-auto">

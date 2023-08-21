@@ -3,7 +3,7 @@ import { navLinks } from "../../navLinks";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-const HeaderMobile = ({ current }) => {
+const HeaderMobile = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [logoSize, setLogoSize] = useState({ width: 150, height: 90 });

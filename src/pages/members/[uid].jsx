@@ -18,11 +18,6 @@ export default function MemberPage({
   homePage,
   cartesEvents,
 }) {
-  console.log("memberPage", memberPage);
-  console.log("cartesMembre", cartesMembres);
-  console.log("homePage", homePage);
-  console.log("cartesEvents", cartesEvents);
-
   const currentPageUID = memberPage.uid;
   const currentPageIndex = cartesMembres.findIndex(
     (member) => member.uid === currentPageUID

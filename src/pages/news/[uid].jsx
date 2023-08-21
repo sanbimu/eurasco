@@ -9,10 +9,6 @@ import { EventNewsCard } from "@/components/shared/eventNewsCard";
 import Link from "next/link";
 
 export default function Blog({ page, carteBlog, homePage }) {
-  console.log("blogSection", page);
-  console.log("carteBlog", carteBlog);
-  console.log("homePage", homePage);
-
   const updatedSlices = page.data.slices.reduce((acc, item, index) => {
     const prev = acc.at(-1);
     if (index > 0) {

@@ -7,8 +7,6 @@ import { formatDateEvents } from "@/components/utils";
 import { CardAll } from "@/components/shared/cardAll";
 
 export default function Events({ cartesEvents, homePage }) {
-  console.log("cartesEvents", cartesEvents);
-
   return (
     <main>
       <div className="flex flex-col md:h-auto">

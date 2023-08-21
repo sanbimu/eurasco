@@ -6,9 +6,6 @@ import { HeaderPages } from "@/components/shared/headerPages";
 import SectionTitle from "@/slices/SectionTitle";
 
 export default function Members({ cartesMembres, homePage }) {
-  console.log("CarteMembre", cartesMembres);
-  console.log("homePage", homePage);
-
   return (
     <main>
       <div className="flex flex-col md:h-auto">

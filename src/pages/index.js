@@ -19,9 +19,6 @@ export default function Home({
   cartesMembres,
   cartesEvents,
 }) {
-  console.log("homePage", homePage.data);
-  console.log("cartesMembers", cartesMembres);
-
   // const [random, setRandom] = useState([0, 2]);
 
   // useEffect(() => {
