@@ -45,7 +45,7 @@ export default function Blog({ page, carteBlog, homePage }) {
       </div>
       <div className="mb-6 md:mb-10"></div>
       <Link
-        className="font-open text-darkGreen italic text-[15px] ml-5 md:ml-10"
+        className="font-open text-darkGreen italic text-[15px] ml-5 md:ml-10 hover:text-lightGreen"
         href="/news"
       >
         ← Go back
@@ -76,10 +76,10 @@ export default function Blog({ page, carteBlog, homePage }) {
               {slice.primary.image.url && (
                 <Image
                   src={slice.primary.image.url}
-                  className="object-contain"
-                  height={700}
-                  width={450}
+                  width={400}
+                  height={400}
                   alt="Blog Image"
+                  className="min-w-[400px] h-[400px] object-cover object-left-top"
                 />
               )}
             </div>
@@ -105,7 +105,7 @@ export default function Blog({ page, carteBlog, homePage }) {
               width={400}
               height={400}
               alt="Blog Image"
-              className="w-full h-[390px] object-cover md:w-auto md:max-h-[450px] md:mx-24 "
+              className="w-full h-[390px] object-cover object-left-top md:w-auto md:max-h-[450px] md:mx-24 "
             />
           )}
         </div>

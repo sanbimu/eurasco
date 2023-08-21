@@ -54,7 +54,7 @@ export default function MemberPage({
 
       {/* CONTENT */}
       <Link
-        className="font-open text-darkGreen italic text-[15px] ml-5 md:ml-10"
+        className="font-open text-darkGreen italic text-[15px] ml-5 md:ml-10 hover:text-lightGreen"
         href="/members"
       >
         ← Go back
