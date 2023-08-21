@@ -111,7 +111,7 @@ export default function EventPage({ eventPage, members }) {
             height={450}
             width={600}
             alt="Event Image"
-            className="max-w-full"
+            className="max-w-full object-contain"
           />
         </div>
         <div className="flex flex-col w-[45%] my-12 gap-6">
@@ -143,13 +143,13 @@ export default function EventPage({ eventPage, members }) {
               </>
             )}
           </div>
-          <div className="flex max-h-[20vh] max-w-full mx-auto my-12 justify-center z-20">
+          <div className="flex max-h-[20vh] max-w-full mx-auto my-4 justify-center z-20">
             <Image
               src={eventPage.data.logo.url}
               height={450}
               width={450}
               alt="Event Logo"
-              className="object-contain"
+              className="object-scale-down"
             />
           </div>
           <div className="font-open leading-[25px] text-justify">
