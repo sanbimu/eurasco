@@ -53,7 +53,6 @@ export default function CardsScrollable({ children, buttonLink, buttonText }) {
               />
             </div>
           )}
-
           <div
             className="flex flex-row gap-2 pl-2 md:pl-0 pr-2 md:pr-[70px] overflow-x-scroll scrollbar-hide"
             ref={containerRef}
@@ -81,7 +80,7 @@ export default function CardsScrollable({ children, buttonLink, buttonText }) {
 
       {/* <div className="flex flex-row justify-center gap-12 md:gap-20 lg:gap-12 pt-4 ">
       </div> */}
-      <div className="flex pt-8 md:pt-5 md:pb-4 lg:pb-10 mx-10 md:mx-48 lg:self-center ">
+      <div className="flex pt-8 md:pt-5 md:pb-4 lg:pb-10 mx-10 md:mx-48 lg:mx-[470px]">
         <Link
           className="text-center font-open uppercase font-semibold text-[17px] leading-[17.3px] tracking-[1px] text-lightGreen border border-lightGreen rounded-[10px] px-[25px] py-[15px] w-full hover:bg-lightGreen hover:text-white"
           href={buttonLink}

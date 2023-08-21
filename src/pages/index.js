@@ -22,13 +22,13 @@ export default function Home({
   console.log("homePage", homePage.data);
   console.log("cartesMembers", cartesMembres);
 
-  const [random, setRandom] = useState([0, 2]);
+  // const [random, setRandom] = useState([0, 2]);
 
-  useEffect(() => {
-    const randomMember = Math.floor(Math.random() * cartesMembres.length);
-    const nextRandomMember = (randomMember + 2) % cartesMembres.length;
-    setRandom([randomMember, nextRandomMember]);
-  }, []);
+  // useEffect(() => {
+  //   const randomMember = Math.floor(Math.random() * cartesMembres.length);
+  //   const nextRandomMember = (randomMember + 2) % cartesMembres.length;
+  //   setRandom([randomMember, nextRandomMember]);
+  // }, []);
 
   return (
     <main>
