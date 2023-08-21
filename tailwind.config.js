@@ -25,6 +25,9 @@ module.exports = {
       boxShadow: {
         card: "0 0 11px 0 rgba(6, 22, 58, 0.14)",
       },
+      height: {
+        mobileFullScreen: "100dvh",
+      },
     },
   },
   plugins: [],

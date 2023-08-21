@@ -14,8 +14,8 @@ const HeroSlice = ({ slice }) => {
   return (
     <>
       <div className="flex flex-col">
-        <div className="flex relative h-screen w-full">
-          <div className="flex flex-col h-screen w-full justify-center z-10 font-open text-white px-[13px] md:pl-12 md:pr-24 lg:pl-36 lg:pr-72">
+        <div className="flex relative h-mobileFullScreen w-full">
+          <div className="flex flex-col h-mobileFullScreen w-full justify-center z-10 font-open text-white px-[13px] md:pl-12 md:pr-24 lg:pl-36 lg:pr-72">
             <h2 className="uppercase font-semibold tracking-[10px] text-sm lg:text-base lg:leading-6 lg:pb-3 text-yellow">
               {slice.primary.subtitle}
             </h2>
@@ -34,7 +34,7 @@ const HeroSlice = ({ slice }) => {
           </div>
 
           <div
-            className="cursor-pointer absolute z-10 bottom-10 left-1/2 transform -translate-x-1/2 translate-y-1/2 lg:hidden "
+            className="cursor-pointer absolute z-10 bottom-10 left-1/2 transform -translate-x-1/2 translate-y-1/2 "
             onClick={scrollToAbout}
           >
             <Image
@@ -51,7 +51,7 @@ const HeroSlice = ({ slice }) => {
             width={394}
             height={850}
             alt="Hero Image"
-            className="flex md:hidden absolute h-[100vh] w-full object-cover"
+            className="flex md:hidden absolute h-mobileFullScreen w-full object-cover"
           />
           <Image
             src={slice.primary.imageMedium.url}
@@ -68,7 +68,7 @@ const HeroSlice = ({ slice }) => {
             className="hidden lg:flex absolute lg:h-screen lg:w-full lg:object-cover lg:top-0"
           />
         </div>
-        <div id="about"></div>
+        <div id="about" className=""></div>
       </div>
     </>
   );
