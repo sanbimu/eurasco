@@ -2,6 +2,7 @@ import Image from "next/image";
 import { navLinks } from "../../navLinks";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const HeaderMobile = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,10 +35,9 @@ const HeaderMobile = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const currentPath =
-    typeof window !== "undefined" ? window.location.pathname : "/";
-  const isContactPage = currentPath === "/contact";
-  const isBlogPost = currentPath === "/news/[uid]";
+  const router = useRouter();
+  const isContactPage = router.pathname === "/contact";
+  const isBlogPost = router.pathname === "/news/[uid]";
   const isWhiteLogo = isBlogPost || isScrolled || isMenuOpen;
 
   return (
@@ -84,15 +84,15 @@ const HeaderMobile = () => {
             href="/"
             onClick={toggleMenu}
             className={`${
-              currentPath === "/" ? "text-yellow" : "text-white"
+              router.pathname === "/" ? "text-yellow" : "text-white"
             } openMenuAnim animate__animated animate__fadeInDown`}
           >
             Home
           </Link>
           {navLinks.map((link) => {
             const isActive =
-              currentPath === link.path ||
-              window.location.pathname.startsWith(`${link.path}/`);
+              router.pathname === link.path ||
+              router.pathname.startsWith(`${link.path}/`);
             return (
               <Link
                 key={link.name}
