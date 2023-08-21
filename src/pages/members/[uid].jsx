@@ -204,7 +204,7 @@ export async function getStaticPaths() {
 
   return {
     paths: memberPages.map((memberPage) => prismic.asLink(memberPage)),
-    fallback: true,
+    fallback: "blocking",
   };
 }
 

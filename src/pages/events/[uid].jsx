@@ -224,7 +224,7 @@ export async function getStaticPaths() {
 
   return {
     paths: eventPages.map((eventPage) => prismic.asLink(eventPage)),
-    fallback: true,
+    fallback: "blocking",
   };
 }
 

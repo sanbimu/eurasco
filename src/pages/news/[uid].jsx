@@ -150,7 +150,7 @@ export async function getStaticPaths() {
 
   return {
     paths: pages.map((page) => prismic.asLink(page)),
-    fallback: true,
+    fallback: "blocking",
   };
 }
 
