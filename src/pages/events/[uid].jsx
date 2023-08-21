@@ -47,14 +47,14 @@ export default function EventPage({ eventPage, members }) {
 
       {/* CONTENT */}
       <Link
-        className="font-open text-darkGreen italic text-[15px] ml-5 md:ml-10"
+        className="font-open text-darkGreen italic text-[15px] ml-5 md:ml-10 hover:text-lightGreen"
         href="/events"
       >
         ← Go back
       </Link>
       {/* ----MOBILE---- */}
       <div className="flex lg:hidden flex-col font-open leading-6 md:px-0 lg:w-[50%] text-black pb-6 mt-6 md:mt-8">
-        <div className="font-mont font-bold text-lg md:text-xl leading-6 mx-5 md:mx-20 mb-6">
+        <div className="font-mont font-bold text-lg md:text-xl leading-6 mx-5 md:mx-20">
           Organised by:&nbsp;
           <Link href={eventPage.data.member.url}>
             {matchingMember.data.name}
@@ -82,14 +82,14 @@ export default function EventPage({ eventPage, members }) {
             </>
           )}
         </div>
-        {/* <div className="flex min-h-[25vh] md:min-h-[15vh] w-[90vw] md:w-[40vw] mx-auto my-2 relative overflow-hidden">
+        <div className="flex min-h-[25vh] md:min-h-[15vh] w-[90vw] md:w-[40vw] mx-auto my-6 relative overflow-hidden">
           <Image
             src={eventPage.data.logo.url}
             fill={true}
             alt="Event Logo"
             className="object-contain "
           />
-        </div> */}
+        </div>
         <div className="font-open leading-[25px] mx-5 md:mx-20 text-justify md:text-xl">
           <PrismicRichText field={eventPage.data.description} />
         </div>
@@ -104,15 +104,6 @@ export default function EventPage({ eventPage, members }) {
       </div>
 
       {/* ----DESKTOP---- */}
-      {/* <div className="hidden lg:flex max-h-[20vh] max-w-full mx-auto my-12 justify-center">
-        <Image
-          src={eventPage.data.logo.url}
-          height={450}
-          width={450}
-          alt="Event Logo"
-          className="object-contain"
-        />
-      </div> */}
       <div className="hidden lg:flex flex-row mb-12 mx-24 mt-6 border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10 justify-evenly">
         <div className="flex w-[45%] relative overflow-hidden my-12 rounded-[10px]">
           <Image
@@ -152,6 +143,15 @@ export default function EventPage({ eventPage, members }) {
               </>
             )}
           </div>
+          <div className="flex max-h-[20vh] max-w-full mx-auto my-12 justify-center z-20">
+            <Image
+              src={eventPage.data.logo.url}
+              height={450}
+              width={450}
+              alt="Event Logo"
+              className="object-contain"
+            />
+          </div>
           <div className="font-open leading-[25px] text-justify">
             <PrismicRichText field={eventPage.data.description} />
           </div>
@@ -159,18 +159,10 @@ export default function EventPage({ eventPage, members }) {
       </div>
 
       {/* INFO & BUTTONS */}
-      <div className="mt-6 hidden">
+      <div className="mt-6 ">
         <Title title="INFO" subtitle="PRACTICAL INFORMATION" />
       </div>
-      <div className="flex max-h-[20vh] max-w-full mx-auto my-12 justify-center z-20">
-        <Image
-          src={eventPage.data.logo.url}
-          height={450}
-          width={450}
-          alt="Event Logo"
-          className="object-contain"
-        />
-      </div>
+
       <div className="flex flex-col gap-6 mt-6 mb-12 mx-5 md:mx-20 lg:mx-2 lg:justify-center lg:flex-row">
         <div className="flex flex-col gap-6 lg:w-[30vw]">
           <ButtonInfo
