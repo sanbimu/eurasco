@@ -85,7 +85,7 @@ const HeaderMobile = () => {
             onClick={toggleMenu}
             className={`${
               router.pathname === "/" ? "text-yellow" : "text-white"
-            } openMenuAnim animate__animated animate__fadeInDown`}
+            } textAnimation `}
           >
             Home
           </Link>
@@ -100,7 +100,7 @@ const HeaderMobile = () => {
                 onClick={toggleMenu}
                 className={`${
                   isActive ? "text-yellow" : "text-white"
-                } openMenuAnim animate__animated animate__fadeInDown`}
+                } textAnimation `}
               >
                 {link.name}
               </Link>

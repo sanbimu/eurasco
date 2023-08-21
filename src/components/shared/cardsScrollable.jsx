@@ -47,13 +47,13 @@ export default function CardsScrollable({ children, buttonLink, buttonText }) {
         <div className="flex flex-row overflow-hidden items-center relative">
           {showButtons && scrollPosition > 0 && (
             <div
-              className="absolute flex bg-lightGrey/80 z-40 rounded-full h-10 w-10 justify-center left-4 cursor-pointer hover:bg-lightGreen/80 "
+              className="absolute flex bg-lightGrey/80 z-40 rounded-full h-[50px] w-[50px] justify-center left-4 cursor-pointer hover:bg-lightGreen/80 "
               onClick={() => handleScroll(-1)}
             >
               <Image
                 src="/icons/arrowLeftWhite.svg"
-                width={20}
-                height={20}
+                width={30}
+                height={30}
                 alt="Left"
               />
             </div>
@@ -69,13 +69,13 @@ export default function CardsScrollable({ children, buttonLink, buttonText }) {
               containerRef?.current?.scrollWidth -
                 containerRef?.current?.clientWidth && (
               <div
-                className="absolute flex bg-lightGrey/80 z-40 rounded-full h-10 w-10 justify-center right-4 cursor-pointer hover:bg-lightGreen/80"
+                className="absolute flex bg-lightGrey/80 z-40 rounded-full h-[50px] w-[50px] justify-center right-4 cursor-pointer hover:bg-lightGreen/80"
                 onClick={() => handleScroll(1)}
               >
                 <Image
                   src="/icons/arrowRightWhite.svg"
-                  width={20}
-                  height={20}
+                  width={30}
+                  height={30}
                   alt="Right"
                 />
               </div>
