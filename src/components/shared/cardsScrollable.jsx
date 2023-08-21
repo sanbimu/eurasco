@@ -10,7 +10,12 @@ export default function CardsScrollable({ children, buttonLink, buttonText }) {
   const handleScroll = (scrollOffset) => {
     const container = containerRef.current;
     if (container) {
-      const childWidth = container.firstChild.clientWidth;
+      const childWidth =
+        container.firstChild.clientWidth +
+        parseInt(getComputedStyle(container.firstChild).marginLeft) +
+        parseInt(getComputedStyle(container.firstChild).marginRight) +
+        parseInt(getComputedStyle(container.firstChild).paddingLeft) +
+        parseInt(getComputedStyle(container.firstChild).paddingRight);
       const maxScrollPosition = container.scrollWidth - container.clientWidth;
       const newPosition = Math.min(
         Math.max(scrollPosition + scrollOffset * childWidth, 0),
