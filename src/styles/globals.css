@@ -5,6 +5,9 @@
 @layer base {
   html {
     -webkit-tap-highlight-color: transparent;
+    max-width: 2160px;
+    margin: 0 auto;
+    position: relative; /* Fix for absolute positioning */
   }
 }
 

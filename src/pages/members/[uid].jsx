@@ -45,7 +45,7 @@ export default function MemberPage({
           width={295}
           height={66}
           alt="Member Logo"
-          className="z-20 max-w-[295px] max-h-[200px] mx-auto"
+          className="z-20 max-w-[295px] max-h-[200px] mx-auto object-contain"
         />
         <Image
           src={memberPage.data.imageHeader.url}
@@ -154,7 +154,7 @@ export default function MemberPage({
             <p className="font-mont text-center text-[17px] font-light uppercase text-opacity-80 text-darkGrey mb-8">
               No events to show yet
             </p>
-          ) : eventsOfCurrentMember.length > 1 ? (
+          ) : (
             <CardsScrollable
               buttonLink="/events"
               buttonText="discover all our events"
@@ -174,29 +174,6 @@ export default function MemberPage({
                 />
               ))}
             </CardsScrollable>
-          ) : (
-            <div className="">
-              <CardsScrollable
-                cartes={cartesEvents}
-                buttonLink="/events"
-                buttonText="discover all our events"
-              >
-                {eventsOfCurrentMember.map((cartesEvents, index) => (
-                  <EventNewsCard
-                    key={index}
-                    textIndex="EVENT"
-                    index={index + 1}
-                    linkToCard={`/events/${cartesEvents.uid}`}
-                    imageHeader={cartesEvents.data.imageHeader.url}
-                    title={cartesEvents.data.name}
-                    sizeTitle="2xl"
-                    leadingTitle="8"
-                    fromDate={formatDateEvents(cartesEvents.data.startDate)}
-                    toDate={formatDateEvents(cartesEvents.data.endDate)}
-                  />
-                ))}
-              </CardsScrollable>
-            </div>
           )}
         </div>
       </div>

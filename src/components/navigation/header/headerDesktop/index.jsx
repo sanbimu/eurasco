@@ -3,7 +3,7 @@ import { navLinks } from "../../navLinks";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-const HeaderDesktop = ({ current }) => {
+const HeaderDesktop = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [logoSize, setLogoSize] = useState({ width: 160, height: 100 });
   const currentPath =
@@ -33,13 +33,17 @@ const HeaderDesktop = ({ current }) => {
   }, []);
 
   return (
-    <div className="hidden lg:flex z-[100] w-screen">
+    <div className="hidden lg:flex z-[100] m-auto max-w-[2160px]">
       <div
-        className={`flex justify-between w-screen fixed top-0 z-[100] px-24 ${
+        className={`flex justify-between fixed top-0 z-[100] px-24 w-full m-auto max-w-[2160px] ${
           isScrolled
             ? "bg-darkGreen bg-opacity-80 backdrop-blur-md pt-1"
             : "pt-6"
         }`}
+        style={{
+          transform: "translateX(-50%)",
+          left: "50%",
+        }}
       >
         <Link href="/">
           <Image

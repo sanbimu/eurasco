@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }) {
     <>
       <Layout>
         <main
-          className={`${open.variable} font-open ${montserrat.variable} font-mont w-screen`}
+          className={`${open.variable} font-open ${montserrat.variable} font-mont w-full"`}
         >
           <Component {...pageProps} />
           <PrismicPreview repositoryName={repositoryName} />
