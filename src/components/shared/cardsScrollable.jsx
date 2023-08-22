@@ -48,7 +48,7 @@ export default function CardsScrollable({ children, buttonLink, buttonText }) {
           {showButtons && scrollPosition > 0 && (
             <div
               className="absolute flex bg-lightGrey/80 z-40 rounded-full h-[50px] w-[50px] justify-center left-4 cursor-pointer hover:bg-lightGreen/80 "
-              onClick={() => handleScroll(-1)}
+              onClick={() => handleScroll(-1.1)}
             >
               <Image
                 src="/icons/arrowLeftWhite.svg"
@@ -59,7 +59,7 @@ export default function CardsScrollable({ children, buttonLink, buttonText }) {
             </div>
           )}
           <div
-            className="flex flex-row gap-2 pl-2 md:pl-0 pr-2 md:pr-[70px] overflow-x-scroll scrollbar-hide"
+            className="flex flex-row gap-2 pl-8 md:pl-0 pr-8 md:pr-0 overflow-x-scroll snap-mandatory snap-x scrollbar-hide"
             ref={containerRef}
           >
             {children}
@@ -70,7 +70,7 @@ export default function CardsScrollable({ children, buttonLink, buttonText }) {
                 containerRef?.current?.clientWidth && (
               <div
                 className="absolute flex bg-lightGrey/80 z-40 rounded-full h-[50px] w-[50px] justify-center right-4 cursor-pointer hover:bg-lightGreen/80"
-                onClick={() => handleScroll(1)}
+                onClick={() => handleScroll(1.1)}
               >
                 <Image
                   src="/icons/arrowRightWhite.svg"
