@@ -26,7 +26,7 @@ export default function Home({
   //   const nextRandomMember = (randomMember + 2) % cartesMembres.length;
   //   setRandom([randomMember, nextRandomMember]);
   // }, []);
-  console.log(homePage.data.slices[5], "contact");
+  console.log(homePage.data.slices[5], "data");
   return (
     <main>
       <div className='flex flex-col w-full'>
@@ -104,7 +104,7 @@ export default function Home({
           alt='Image Contact'
           className='hidden md:flex md:pb-14 md:pt-14 lg:w-screen'
         />
-        <ContactCard />
+        <ContactCard slice={homePage.data.slices[5]} />
       </div>
     </main>
   );

@@ -9,20 +9,20 @@ import SectionTitle from "@/slices/SectionTitle";
 export default function News({ cartesBlog, homePage }) {
   return (
     <main>
-      <div className="flex flex-col md:h-auto">
-        <HeaderPages title="OUR LATEST NEWS" />
-        <div className="flex flex-col lg:mt-12">
+      <div className='flex flex-col md:h-auto'>
+        <HeaderPages title='OUR LATEST NEWS' />
+        <div className='flex flex-col lg:mt-12'>
           <SectionTitle slice={homePage.data.slices[3]} />
 
-          <div className="flex flex-col gap-5 mb-12 md:flex-wrap md:gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:mx-[60px] g:mx-[100px] ">
+          <div className='flex flex-col gap-5 mb-12 md:flex-wrap md:gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:mx-[60px] g:mx-[100px] '>
             {cartesBlog.slice(0, 2).map((carteBlog, index) => (
               <EventNewsCard
                 key={index}
-                textIndex="NEWS"
+                textIndex='NEWS'
                 index={index + 1}
                 title={carteBlog.data.title}
-                sizeTitle="xl"
-                leadingTitle="6"
+                sizeTitle='xl'
+                leadingTitle='6'
                 imageHeader={carteBlog.data.image.url}
                 date={formatDate(carteBlog.first_publication_date)}
                 linkToCard={`/news/${carteBlog.uid}`}
@@ -30,10 +30,10 @@ export default function News({ cartesBlog, homePage }) {
               />
             ))}
 
-            <div className="flex md:hidden">
+            <div className='flex md:hidden'>
               <CardAll
-                title="All of our events"
-                buttonText="see all"
+                title='All of our events'
+                buttonText='see all'
                 linkTo={"/events"}
               />
             </div>
@@ -41,11 +41,11 @@ export default function News({ cartesBlog, homePage }) {
             {cartesBlog.slice(2).map((carteBlog, index) => (
               <EventNewsCard
                 key={index + 2}
-                textIndex="NEWS"
+                textIndex='NEWS'
                 index={index + 3}
                 title={carteBlog.data.title}
-                sizeTitle="xl"
-                leadingTitle="6"
+                sizeTitle='xl'
+                leadingTitle='6'
                 imageHeader={carteBlog.data.image.url}
                 date={formatDate(carteBlog.first_publication_date)}
                 linkToCard={`/news/${carteBlog.uid}`}
@@ -56,8 +56,8 @@ export default function News({ cartesBlog, homePage }) {
           {/* <div className="mx-auto ">
             <Button buttonText="Voir plus" linkTo="/news" />
           </div> */}
-          <div className=" lg:mt-20 ">
-            <ContactCard />
+          <div className=' lg:mt-20 '>
+            <ContactCard slice={homePage.data.slices[5]} />
           </div>
         </div>
       </div>
