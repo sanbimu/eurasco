@@ -26,13 +26,13 @@ export const EventNewsCard = ({
           widthFull ? "w-[100%]" : "w-[80vw] md:w-[40vw] lg:w-[430px]"
         }`}
       >
-        <div className="flex flex-col px-[20px] w-full justify-between my-4 z-20">
+        <div className='flex flex-col px-[20px] w-full justify-between my-4 z-20'>
           {index && (
-            <p className="font-mont font-bold text-2xl text-white text-opacity-30">
+            <p className='font-mont font-bold text-2xl text-white text-opacity-30'>
               {` ${textIndex} ${index}`}
             </p>
           )}
-          <div className="flex flex-col">
+          <div className='flex flex-col'>
             <h1
               className={`font-mont text-white text-${sizeTitle} leading-${leadingTitle} pb-2 ${
                 textIndex == "NEWS" ? "font-bold" : ""
@@ -62,7 +62,7 @@ export const EventNewsCard = ({
                 {`${fromDate} - ${toDate}`}
               </p>
             )}
-            <div className="font-open text-lightGreen italic text-[15px] leading-[22px] ml-auto">
+            <div className='font-open text-lightGreen italic text-[15px] leading-[22px] ml-auto'>
               Read more →
             </div>
           </div>
@@ -72,10 +72,10 @@ export const EventNewsCard = ({
           src={imageHeader}
           width={343}
           height={360}
-          alt="Header Image"
-          className="absolute rounded-[10px] w-full h-[260px] lg:h-[320px] object-cover"
+          alt='Header Image'
+          className='absolute rounded-[10px] w-full h-[260px] lg:h-[320px] object-cover'
         />
-        <div className="absolute inset-0 gradient_News rounded-[10px]  z-10 "></div>
+        <div className='absolute inset-0 gradient_News rounded-[10px]  z-10 '></div>
       </div>
     </Link>
   );
