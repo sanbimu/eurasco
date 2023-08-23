@@ -383,7 +383,8 @@ interface HomeDocumentData {
 type HomeDocumentDataSlicesSlice =
   | HeroSlice
   | AboutEurascoSlice
-  | SectionTitleSlice;
+  | SectionTitleSlice
+  | ContactSectionSlice;
 /**
  * Home document from Prismic
  *
@@ -805,6 +806,82 @@ export type BlogSectionSlice = prismic.SharedSlice<
   BlogSectionSliceVariation
 >;
 /**
+ * Primary content in ContactSection → Primary
+ *
+ */
+interface ContactSectionSliceDefaultPrimary {
+  /**
+   * title field in *ContactSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.primary.title
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  title: prismic.KeyTextField;
+  /**
+   * subtitle field in *ContactSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  subtitle: prismic.KeyTextField;
+  /**
+   * description field in *ContactSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.primary.description
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  description: prismic.KeyTextField;
+  /**
+   * ButtonText field in *ContactSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.primary.buttontext
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  buttontext: prismic.KeyTextField;
+}
+/**
+ * Default variation for ContactSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ContactSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContactSectionSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *ContactSection*
+ *
+ */
+type ContactSectionSliceVariation = ContactSectionSliceDefault;
+/**
+ * ContactSection Shared Slice
+ *
+ * - **API ID**: `contact_section`
+ * - **Description**: `ContactSection`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ContactSectionSlice = prismic.SharedSlice<
+  "contact_section",
+  ContactSectionSliceVariation
+>;
+/**
  * Primary content in Hero → Primary
  *
  */
@@ -1003,6 +1080,10 @@ declare module "@prismicio/client" {
       BlogSectionSliceDefault,
       BlogSectionSliceVariation,
       BlogSectionSlice,
+      ContactSectionSliceDefaultPrimary,
+      ContactSectionSliceDefault,
+      ContactSectionSliceVariation,
+      ContactSectionSlice,
       HeroSliceDefaultPrimary,
       HeroSliceDefault,
       HeroSliceVariation,
