@@ -59,7 +59,6 @@ const HeaderDesktop = () => {
               router.pathname === link.path ||
               router.pathname.startsWith(`${link.path}/`);
             const isLast = index === navLinks.length - 1;
-            console.log(isActive);
             return (
               <Link
                 key={link.name}

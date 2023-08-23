@@ -93,23 +93,25 @@ export default function MemberPage({
             alt="About Image"
             className="rounded-[10px]  w-auto mt-[-70px]"
           />
-          <div className=" h-fit w-[267px] bg-lightGreen rounded-[10px] p-[10px] absolute left-[25px] bottom-[25px]">
-            <div className="border border-dashed border-white py-3 px-3">
-              {/* <Image
+          {memberPage.data.values && (
+            <div className=" h-fit w-[267px] bg-lightGreen rounded-[10px] p-[10px] absolute left-[25px] bottom-[25px]">
+              <div className="border border-dashed border-white py-3 px-3">
+                {/* <Image
                   src={slice.primary.iconGreenFrame.url}
                   width={50}
                   height={50}
                   alt="Medal"
                   className="pt-1"
                 /> */}
-              <p className="font-mont text-[18px] text-white font-bold leading-6 py-4">
-                {/* {slice.primary.titleGreenFrame} */} dchsdvdcf
-              </p>
-              <p className="font-open text-[14px] text-white leading-6 ">
-                {/* {slice.primary.textGreenFrame} */} aehdje
-              </p>
+                <p className="font-mont text-[18px] text-white font-bold leading-6 py-4">
+                  Our Values
+                </p>
+                <p className="font-open text-[14px] text-white leading-6 ">
+                  {memberPage.data.values}
+                </p>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
 

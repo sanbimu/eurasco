@@ -329,6 +329,46 @@ type EventDocumentDataSlicesSlice = never;
  */
 export type EventDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<EventDocumentData>, "event", Lang>;
+/** Content for Footer documents */
+interface FooterDocumentData {
+  /**
+   * Description Eurasco field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  description: prismic.KeyTextField;
+  /**
+   * Text Newsletter field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.textNewsletter
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  textNewsletter: prismic.KeyTextField;
+}
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<FooterDocumentData>,
+    "footer",
+    Lang
+  >;
 /** Content for Home documents */
 interface HomeDocumentData {
   /**
@@ -431,6 +471,17 @@ interface MemberDocumentData {
    *
    */
   description: prismic.RichTextField;
+  /**
+   * Values field in *Member*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: member.values
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  values: prismic.KeyTextField;
   /**
    * Country field in *Member*
    *
@@ -561,6 +612,7 @@ export type MemberDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | BlogDocument
   | EventDocument
+  | FooterDocument
   | HomeDocument
   | MemberDocument;
 /**
@@ -1065,6 +1117,8 @@ declare module "@prismicio/client" {
       EventDocumentData,
       EventDocumentDataSlicesSlice,
       EventDocument,
+      FooterDocumentData,
+      FooterDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
       HomeDocument,

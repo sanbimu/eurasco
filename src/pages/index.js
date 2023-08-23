@@ -1,16 +1,14 @@
 import * as prismic from "@prismicio/client";
+import { createClient } from "../prismicio";
 import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import { createClient } from "../prismicio";
 import HeroSlice from "@/slices/Hero";
 import { ContactCard } from "@/components/shared/contactCard";
 import { MemberCard } from "@/components/members/memberCard";
-import Button from "@/components/shared/button";
 import AboutEurasco from "@/slices/AboutEurasco";
 import SectionTitle from "@/slices/SectionTitle";
 import { formatDate, formatDateEvents } from "@/components/utils";
 import { EventNewsCard } from "@/components/shared/eventNewsCard";
-import Link from "next/link";
 import CardsScrollable from "@/components/shared/cardsScrollable";
 
 export default function Home({
@@ -26,30 +24,30 @@ export default function Home({
   //   const nextRandomMember = (randomMember + 2) % cartesMembres.length;
   //   setRandom([randomMember, nextRandomMember]);
   // }, []);
-  console.log(homePage.data.slices[5], "data");
+  console.log(homePage);
   return (
     <main>
-      <div className='flex flex-col w-full'>
+      <div className="flex flex-col w-full">
         <HeroSlice slice={homePage.data.slices[0]} />
         <AboutEurasco slice={homePage.data.slices[1]} />
 
         {/* EVENTS */}
-        <div className='flex flex-col lg:mx-24 md:mx-12 md:border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10 md:mb-12'>
+        <div className="flex flex-col lg:mx-24 md:mx-12 md:border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10 md:mb-12">
           <SectionTitle slice={homePage.data.slices[2]} />
           <CardsScrollable
-            buttonLink='/events'
-            buttonText='discover our events'
+            buttonLink="/events"
+            buttonText="discover our events"
           >
             {cartesEvents.slice(0, 5).map((cartesEvents, index) => (
               <EventNewsCard
                 key={index}
-                textIndex='EVENT'
+                textIndex="EVENT"
                 index={index + 1}
                 linkToCard={`/events/${cartesEvents.uid}`}
                 imageHeader={cartesEvents.data.imageHeader.url}
                 title={cartesEvents.data.name}
-                sizeTitle='xl'
-                leadingTitle='6'
+                sizeTitle="xl"
+                leadingTitle="6"
                 fromDate={formatDateEvents(cartesEvents.data.startDate)}
                 toDate={formatDateEvents(cartesEvents.data.endDate)}
               />
@@ -58,11 +56,11 @@ export default function Home({
         </div>
 
         {/* MEMBRES */}
-        <div className='flex flex-col lg:mx-24 md:mx-12 md:border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10 md:mb-12'>
+        <div className="flex flex-col lg:mx-24 md:mx-12 md:border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10 md:mb-12">
           <SectionTitle slice={homePage.data.slices[4]} />
           <CardsScrollable
-            buttonLink='/members'
-            buttonText='discover our members'
+            buttonLink="/members"
+            buttonText="discover our members"
           >
             {cartesMembres.slice(0, 5).map((cartesMembre, index) => (
               <MemberCard
@@ -78,17 +76,17 @@ export default function Home({
         </div>
 
         {/* NEWS */}
-        <div className='flex flex-col lg:mx-24 md:mx-12 md:border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10 md:mb-12'>
+        <div className="flex flex-col lg:mx-24 md:mx-12 md:border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10 md:mb-12">
           <SectionTitle slice={homePage.data.slices[3]} />
-          <CardsScrollable buttonLink='/news' buttonText='discover our news'>
+          <CardsScrollable buttonLink="/news" buttonText="discover our news">
             {cartesBlog.slice(0, 5).map((cartesBlog, index) => (
               <EventNewsCard
                 key={index}
-                textIndex='NEWS'
+                textIndex="NEWS"
                 index={index + 1}
                 title={cartesBlog.data.title}
-                sizeTitle='xl'
-                leadingTitle='6'
+                sizeTitle="xl"
+                leadingTitle="6"
                 imageHeader={cartesBlog.data.image.url}
                 date={formatDate(cartesBlog.first_publication_date)}
                 linkToCard={`/news/${cartesBlog.uid}`}
@@ -98,11 +96,11 @@ export default function Home({
         </div>
 
         <Image
-          src='/images/contactDesktop.jpg'
+          src="/images/contactDesktop.jpg"
           width={1920}
           height={600}
-          alt='Image Contact'
-          className='hidden md:flex md:pb-14 md:pt-14 lg:w-screen'
+          alt="Image Contact"
+          className="hidden md:flex md:pb-14 md:pt-14 lg:w-screen"
         />
         <ContactCard slice={homePage.data.slices[5]} />
       </div>

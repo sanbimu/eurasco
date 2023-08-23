@@ -24,6 +24,10 @@
           "single": "strong,em,list-item,o-list-item,paragraph"
         }
       },
+      "values": {
+        "type": "Text",
+        "config": { "label": "Values", "placeholder": "" }
+      },
       "country": {
         "type": "Text",
         "config": { "label": "Country", "placeholder": "" }

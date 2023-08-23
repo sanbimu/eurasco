@@ -1,0 +1,19 @@
+{
+  "id": "footer",
+  "label": "Footer",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "description": {
+        "type": "Text",
+        "config": { "label": "Description Eurasco", "placeholder": "" }
+      },
+      "textNewsletter": {
+        "type": "Text",
+        "config": { "label": "Text Newsletter", "placeholder": "" }
+      }
+    }
+  }
+}

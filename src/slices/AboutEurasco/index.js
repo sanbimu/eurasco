@@ -70,8 +70,8 @@ const AboutEurasco = ({ slice }) => {
               alt="About Image"
               className="rounded-[10px] h-[630px] w-auto mt-[-70px]"
             />
-            <div className=" h-[250px] w-[267px] bg-lightGreen rounded-[10px] p-[10px] absolute left-[25px] top-[280px]">
-              <div className="border border-dashed border-white py-3 px-3">
+            <div className=" min-h-[250px] w-[267px] bg-lightGreen rounded-[10px] p-[10px] absolute left-[25px] bottom-[25px]">
+              <div className="border border-dashed border-white py-3 px-3 ">
                 <Image
                   src={slice.primary.iconGreenFrame.url}
                   width={50}
