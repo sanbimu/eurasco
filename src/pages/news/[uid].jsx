@@ -38,6 +38,7 @@ export default function Blog({ page, carteBlog, homePage }) {
           src={page.data.image.url}
           width={394}
           height={850}
+          priority={true}
           alt="Event Image"
           className="h-[75vh] w-full absolute object-cover lg:max-h-[75vh]"
         />
@@ -58,13 +59,13 @@ export default function Blog({ page, carteBlog, homePage }) {
       {/* ----DESKTOP---- */}
 
       <div className="mb-24 font-open hidden lg:flex flex-col gap-12">
-        {updatedSlices.map((slice, i) => {
+        {updatedSlices.map((slice, sliceIndex) => {
           const reverse =
             slice.showOnRight && slice.primary.image
               ? "flex-row-reverse"
               : "flex-row";
           return (
-            <div className={`flex mx-24 gap-20 ${reverse}`} key={i}>
+            <div className={`flex mx-24 gap-20 ${reverse}`} key={sliceIndex}>
               <div className="flex flex-col gap-10 justify-center">
                 <h2 className="font-mont text-black font-bold text-2xl ">
                   {slice.primary.subtitle}

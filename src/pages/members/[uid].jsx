@@ -46,6 +46,7 @@ export default function MemberPage({
           src={memberPage.data.imageHeader.url}
           width={394}
           height={850}
+          priority={true}
           alt="Member Image"
           className="min-h-[75vh] absolute object-cover lg:max-h-[75vh] w-full"
         />

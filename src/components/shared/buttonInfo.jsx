@@ -8,6 +8,7 @@ export const ButtonInfo = ({
   linkTo,
   icon,
   iconHeight,
+  iconWidth,
   fontSize,
   text,
 }) => {
@@ -22,7 +23,7 @@ export const ButtonInfo = ({
         width={55}
         height={55}
         alt="Logo"
-        className={`w-[55px] h-${iconHeight}`}
+        className={`w-${iconWidth} h-${iconHeight}`}
       />
       <div className={`font-mont font-medium text-darkGreen text-${fontSize}`}>
         {text}

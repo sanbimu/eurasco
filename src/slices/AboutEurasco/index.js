@@ -77,7 +77,7 @@ const AboutEurasco = ({ slice }) => {
                   width={50}
                   height={50}
                   alt="Medal"
-                  className="pt-1"
+                  className="pt-1 h-[50px] w-auto"
                 />
                 <p className="font-mont text-[18px] text-white font-bold leading-6 py-4">
                   {slice.primary.titleGreenFrame}
