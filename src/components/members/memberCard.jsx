@@ -17,29 +17,29 @@ export const MemberCard = ({
       href={linkToCard}
     >
       <div
-        className={`relative flex flex-col rounded-[10px] h-[380px] md:h-[420px] shadow-card ${
+        className={`relative flex flex-col rounded-[10px] h-[380px] md:h-[420px] hover:shadow-card group overflow-hidden ${
           widthFull ? "w-[100%]" : "w-[80vw] md:w-[40vw] lg:w-[328px]"
         }`}
       >
-        <div className="relative flex items-center justify-center h-[380px] md:h-[420px]">
+        <div className='relative flex items-center justify-center h-[380px] md:h-[420px]'>
           <Image
             src={logo}
             width={295}
             height={66}
-            alt="Member logo Logo"
-            className="z-20 max-w-[295px] max-h-[150px] object-contain "
+            alt='Member logo Logo'
+            className='z-20 max-w-[295px] max-h-[150px] object-contain '
           />
         </div>
-        <div className="absolute inset-0 gradient_Membres rounded-[10px] z-10 shadow-card" />
+        <div className='absolute inset-0 gradient_Membres rounded-[10px] z-10 shadow-card' />
 
-        <div className="flex flex-col justify-end gap-2 z-20 w-full rounded-bl-[10px] px-6 pb-4 pt-6">
-          <h2 className="font-open font-bold text-[30px] leading-8 text-white">
+        <div className='flex flex-col justify-end gap-2 z-20 w-full rounded-bl-[10px] px-6 pb-4 pt-6'>
+          <h2 className='font-open font-bold text-[30px] leading-8 text-white'>
             {member}
           </h2>
-          <h2 className="font-open font-light text-[30px] leading-6 text-white">
+          <h2 className='font-open font-light text-[30px] leading-6 text-white'>
             {country}
           </h2>
-          <div className="font-open italic text-[15px] leading-[25px] text-white ml-auto">
+          <div className='font-open italic text-[15px] leading-[25px] text-white ml-auto'>
             Read more →
           </div>
         </div>
@@ -47,8 +47,8 @@ export const MemberCard = ({
           src={backgroundImage}
           width={343}
           height={450}
-          alt="Member Image"
-          className="absolute rounded-[10px] w-full min-h-[380px] md:min-h-[420px] object-cover"
+          alt='Member Image'
+          className='absolute rounded-[10px] w-full min-h-[380px] md:min-h-[420px] object-cover group-hover:scale-105 transition'
         />
       </div>
     </Link>
