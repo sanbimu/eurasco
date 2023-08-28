@@ -28,8 +28,8 @@ export const EventNewsCard = ({
       >
         <div className='flex flex-col px-[20px] w-full justify-between my-4 z-20'>
           {index && (
-            <p className='font-mont font-bold text-2xl text-white text-opacity-30'>
-              {` ${textIndex} ${index}`}
+            <p className='font-mont font-bold text-2xl text-white text-opacity-80'>
+              {` ${textIndex} `}
             </p>
           )}
           <div className='flex flex-col'>
