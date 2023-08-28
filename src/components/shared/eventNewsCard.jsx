@@ -22,7 +22,7 @@ export const EventNewsCard = ({
       href={linkToCard}
     >
       <div
-        className={`relative flex rounded-[10px] h-[260px] lg:h-[320px] shadow-card  ${
+        className={`relative flex rounded-[10px] h-[260px] lg:h-[320px] shadow-card group overflow-hidden  ${
           widthFull ? "w-[100%]" : "w-[80vw] md:w-[40vw] lg:w-[430px]"
         }`}
       >
@@ -73,7 +73,7 @@ export const EventNewsCard = ({
           width={343}
           height={360}
           alt='Header Image'
-          className='absolute rounded-[10px] w-full h-[260px] lg:h-[320px] object-cover'
+          className='absolute rounded-[10px] w-full h-[260px] lg:h-[320px] object-cover group-hover:scale-110  transition'
         />
         <div className='absolute inset-0 gradient_News rounded-[10px]  z-10 '></div>
       </div>
