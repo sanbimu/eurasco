@@ -55,7 +55,7 @@ export default function Home({
           </CardsScrollable>
         </div>
 
-        {/* CARD  MEMBRES */}
+        {/* MEMBRES */}
         <div className='flex flex-col lg:mx-24 md:mx-12 md:border md:border-lightGrey/10 md:rounded-[20px] md:bg-lightGrey md:bg-opacity-10 md:mb-12'>
           <SectionTitle slice={homePage.data.slices[4]} />
           <CardsScrollable
