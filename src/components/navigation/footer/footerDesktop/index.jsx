@@ -58,7 +58,7 @@ export default function FooterDesktop() {
                 placeholder='Your email address'
               ></input>
               <button
-                className=' bg-lightGreen w-[30%] rounded-r-[5px] text-white'
+                className=' bg-lightGreen min-w-[33%] rounded-r-[5px] text-white'
                 type='submit'
               >
                 SIGN UP

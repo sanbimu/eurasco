@@ -14,12 +14,12 @@ const HeroSlice = ({ slice }) => {
   return (
     <>
       <div className='flex flex-col'>
-        <div className='flex relative h-mobileFullScreen w-full'>
-          <div className='flex flex-col h-mobileFullScreen w-full justify-center z-10 font-open text-white px-[13px] md:pl-12 md:pr-24 lg:pl-36 lg:pr-72'>
-            <h2 className='uppercase font-semibold tracking-[10px] text-sm lg:text-base lg:leading-6 lg:pb-3 text-yellow'>
+        <div className='flex relative h-mobileFullScreen w-full '>
+          <div className='flex flex-col h-mobileFullScreen w-full justify-center z-20 font-open text-white px-[13px] md:pl-12 md:pr-24 lg:pl-36 lg:pr-72 mt-14 lg:mt-5'>
+            <h2 className='uppercase font-semibold tracking-[8px] text-sm lg:text-base lg:leading-6 pb-5 lg:pb-3 text-yellow'>
               {slice.primary.subtitle}
             </h2>
-            <h1 className='uppercase font-mont font-bold leading-[70px] text-5xl lg:text-6xl'>
+            <h1 className='uppercase font-mont font-bold lg:leading-[70px]  leading-8 text-[6vw] md:text-[5vw] md:leading-[45px] lg:text-6xl'>
               {slice.primary.title}
             </h1>
             <p className='text-lg leading-8 py-6 lg:w-[100vh]'>
@@ -34,7 +34,7 @@ const HeroSlice = ({ slice }) => {
           </div>
 
           <div
-            className='cursor-pointer absolute z-10 bottom-10 left-1/2 transform -translate-x-1/2 translate-y-1/2 '
+            className='cursor-pointer absolute z-20 bottom-10 left-1/2 transform -translate-x-1/2 translate-y-1/2 '
             onClick={scrollToAbout}
           >
             <Image
@@ -45,7 +45,7 @@ const HeroSlice = ({ slice }) => {
               className='animate-bounce'
             />
           </div>
-
+          <div className='bg-black/20 h-full w-full absolute z-10' />
           <Image
             src={slice.primary.imageMobile.url}
             width={394}

@@ -12,21 +12,21 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "title": {
-          "type": "Text",
-          "config": { "label": "Title", "placeholder": "" }
-        },
         "subtitle": {
           "type": "Text",
           "config": { "label": "Subtitle", "placeholder": "" }
         },
-        "button": {
+        "title": {
           "type": "Text",
-          "config": { "label": "Button", "placeholder": "" }
+          "config": { "label": "Title", "placeholder": "" }
         },
         "description": {
           "type": "Text",
           "config": { "label": "Description", "placeholder": "" }
+        },
+        "button": {
+          "type": "Text",
+          "config": { "label": "Button", "placeholder": "" }
         },
         "imageDesktop": {
           "type": "Image",
@@ -39,7 +39,7 @@
         "imageMobile": {
           "type": "Image",
           "config": {
-            "label": "Image Mobile",
+            "label": "Image Mobile ( 480 px / 720 px )",
             "constraint": {},
             "thumbnails": []
           }
@@ -47,7 +47,7 @@
         "imageMedium": {
           "type": "Image",
           "config": {
-            "label": "Image Medium",
+            "label": "Image Tablette ( 1133px / 1472px )",
             "constraint": {},
             "thumbnails": []
           }

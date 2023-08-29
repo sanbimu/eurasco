@@ -11,6 +11,14 @@
         "type": "Image",
         "config": { "label": "Logo", "constraint": {}, "thumbnails": [] }
       },
+      "imageHeader": {
+        "type": "Image",
+        "config": {
+          "label": "Image Banner",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "name": {
         "type": "Text",
         "config": { "label": "Name", "placeholder": "" }
@@ -24,13 +32,17 @@
           "single": "strong,em,list-item,o-list-item,paragraph"
         }
       },
+      "imageDesktop": {
+        "type": "Image",
+        "config": {
+          "label": "Image value (Desktop only)",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "values": {
         "type": "Text",
         "config": { "label": "Values", "placeholder": "" }
-      },
-      "country": {
-        "type": "Text",
-        "config": { "label": "Country", "placeholder": "" }
       },
       "website": {
         "type": "Link",
@@ -41,29 +53,17 @@
           "select": null
         }
       },
-      "phone": {
-        "type": "Text",
-        "config": { "label": "Telephone Number", "placeholder": "" }
-      },
       "email": {
         "type": "Text",
         "config": { "label": "E-mail address", "placeholder": "" }
       },
-      "imageDesktop": {
-        "type": "Image",
-        "config": {
-          "label": "Image Focus Desktop",
-          "constraint": {},
-          "thumbnails": []
-        }
+      "phone": {
+        "type": "Text",
+        "config": { "label": "Telephone Number", "placeholder": "" }
       },
-      "imageHeader": {
-        "type": "Image",
-        "config": {
-          "label": "Image Header & Card",
-          "constraint": {},
-          "thumbnails": []
-        }
+      "country": {
+        "type": "Text",
+        "config": { "label": "Country", "placeholder": "" }
       },
       "slices": {
         "type": "Slices",

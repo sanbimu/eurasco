@@ -20,7 +20,7 @@ export default function Events({ cartesEvents, homePage }) {
                 key={index}
                 linkToCard={`/events/${cartesEvents.uid}`}
                 imageHeader={cartesEvents.data.imageHeader.url}
-                textIndex='EVENT'
+                textIndex={cartesEvents.data.country}
                 index={index + 1}
                 title={cartesEvents.data.name}
                 sizeTitle='xl'

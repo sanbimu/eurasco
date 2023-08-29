@@ -7,6 +7,14 @@
   "json": {
     "Main": {
       "uid": { "config": { "label": "UID" }, "type": "UID" },
+      "imageHeader": {
+        "type": "Image",
+        "config": {
+          "label": "Image banner",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "member": {
         "type": "Link",
         "config": {
@@ -29,31 +37,23 @@
       },
       "logo": {
         "type": "Image",
-        "config": { "label": "Logo", "constraint": {}, "thumbnails": [] }
+        "config": { "label": "Logo event", "constraint": {}, "thumbnails": [] }
       },
       "imageEvent": {
         "type": "Image",
-        "config": { "label": "Event Image", "constraint": {}, "thumbnails": [] }
-      },
-      "imageHeader": {
-        "type": "Image",
-        "config": {
-          "label": "Image Header & Card",
-          "constraint": {},
-          "thumbnails": []
-        }
+        "config": { "label": "Image Event", "constraint": {}, "thumbnails": [] }
       },
       "name": {
         "type": "Text",
-        "config": { "label": "Name", "placeholder": "" }
+        "config": { "label": "Name Event", "placeholder": "" }
       },
       "description": {
         "type": "StructuredText",
         "config": {
-          "label": "Description",
+          "label": "Description Event",
           "placeholder": "(max 300 characters)",
           "allowTargetBlank": true,
-          "multi": "paragraph,em,hyperlink,list-item,o-list-item,strong"
+          "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
         }
       },
       "startDate": {

@@ -19,17 +19,6 @@ interface BlogDocumentData {
    */
   title: prismic.KeyTextField;
   /**
-   * Description field in *Blog*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog.description
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  description: prismic.KeyTextField;
-  /**
    * Image field in *Blog*
    *
    * - **Field Type**: Image
@@ -104,6 +93,17 @@ export type BlogDocument<Lang extends string = string> =
 /** Content for Event documents */
 interface EventDocumentData {
   /**
+   * Image banner field in *Event*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: event.imageHeader
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  imageHeader: prismic.ImageField<never>;
+  /**
    * Member field in *Event*
    *
    * - **Field Type**: Content Relationship
@@ -137,7 +137,7 @@ interface EventDocumentData {
    */
   memberThree: prismic.ContentRelationshipField;
   /**
-   * Logo field in *Event*
+   * Logo event field in *Event*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -148,7 +148,7 @@ interface EventDocumentData {
    */
   logo: prismic.ImageField<never>;
   /**
-   * Event Image field in *Event*
+   * Image Event field in *Event*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -159,18 +159,7 @@ interface EventDocumentData {
    */
   imageEvent: prismic.ImageField<never>;
   /**
-   * Image Header & Card field in *Event*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: event.imageHeader
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/image
-   *
-   */
-  imageHeader: prismic.ImageField<never>;
-  /**
-   * Name field in *Event*
+   * Name Event field in *Event*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -181,7 +170,7 @@ interface EventDocumentData {
    */
   name: prismic.KeyTextField;
   /**
-   * Description field in *Event*
+   * Description Event field in *Event*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: (max 300 characters)
@@ -450,6 +439,17 @@ interface MemberDocumentData {
    */
   logo: prismic.ImageField<never>;
   /**
+   * Image Banner field in *Member*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: member.imageHeader
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  imageHeader: prismic.ImageField<never>;
+  /**
    * Name field in *Member*
    *
    * - **Field Type**: Text
@@ -472,6 +472,17 @@ interface MemberDocumentData {
    */
   description: prismic.RichTextField;
   /**
+   * Image value (Desktop only) field in *Member*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: member.imageDesktop
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  imageDesktop: prismic.ImageField<never>;
+  /**
    * Values field in *Member*
    *
    * - **Field Type**: Text
@@ -482,17 +493,6 @@ interface MemberDocumentData {
    *
    */
   values: prismic.KeyTextField;
-  /**
-   * Country field in *Member*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: member.country
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  country: prismic.KeyTextField;
   /**
    * Website field in *Member*
    *
@@ -505,17 +505,6 @@ interface MemberDocumentData {
    */
   website: prismic.LinkField;
   /**
-   * Telephone Number field in *Member*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: member.phone
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  phone: prismic.KeyTextField;
-  /**
    * E-mail address field in *Member*
    *
    * - **Field Type**: Text
@@ -527,27 +516,27 @@ interface MemberDocumentData {
    */
   email: prismic.KeyTextField;
   /**
-   * Image Focus Desktop field in *Member*
+   * Telephone Number field in *Member*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: member.imageDesktop
+   * - **API ID Path**: member.phone
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  imageDesktop: prismic.ImageField<never>;
+  phone: prismic.KeyTextField;
   /**
-   * Image Header & Card field in *Member*
+   * Country field in *Member*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: member.imageHeader
+   * - **API ID Path**: member.country
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  imageHeader: prismic.ImageField<never>;
+  country: prismic.KeyTextField;
   /**
    * Slice Zone field in *Member*
    *
@@ -939,16 +928,6 @@ export type ContactSectionSlice = prismic.SharedSlice<
  */
 interface HeroSliceDefaultPrimary {
   /**
-   * Title field in *Hero → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.title
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  title: prismic.KeyTextField;
-  /**
    * Subtitle field in *Hero → Primary*
    *
    * - **Field Type**: Text
@@ -959,15 +938,15 @@ interface HeroSliceDefaultPrimary {
    */
   subtitle: prismic.KeyTextField;
   /**
-   * Button field in *Hero → Primary*
+   * Title field in *Hero → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.button
+   * - **API ID Path**: hero.primary.title
    * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  button: prismic.KeyTextField;
+  title: prismic.KeyTextField;
   /**
    * Description field in *Hero → Primary*
    *
@@ -979,6 +958,16 @@ interface HeroSliceDefaultPrimary {
    */
   description: prismic.KeyTextField;
   /**
+   * Button field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.button
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  button: prismic.KeyTextField;
+  /**
    * Image Desktop field in *Hero → Primary*
    *
    * - **Field Type**: Image
@@ -989,7 +978,7 @@ interface HeroSliceDefaultPrimary {
    */
   imageDesktop: prismic.ImageField<never>;
   /**
-   * Image Mobile field in *Hero → Primary*
+   * Image Mobile ( 480 px / 720 px ) field in *Hero → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -999,7 +988,7 @@ interface HeroSliceDefaultPrimary {
    */
   imageMobile: prismic.ImageField<never>;
   /**
-   * Image Medium field in *Hero → Primary*
+   * Image Tablette ( 1133px / 1472px ) field in *Hero → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
