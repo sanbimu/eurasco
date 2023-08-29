@@ -24,7 +24,10 @@ const FooterMobile = ({ current }) => {
           <Link href='/contact'>Contact</Link>
         </div>
         <div className='flex flex-col gap-2 '>
-          <Link href='https://www.linkedin.com/company/eurasco-aisbl/'>
+          <Link
+            href='https://www.linkedin.com/company/eurasco-aisbl/'
+            target='_blank'
+          >
             <Socials src='/icons/linkedin.svg' alt='linkedin' />
             {/* https://www.linkedin.com/company/spacerennes/ */}
           </Link>

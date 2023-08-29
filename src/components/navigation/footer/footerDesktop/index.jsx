@@ -20,7 +20,10 @@ export default function FooterDesktop() {
               source of food generating opportunities for the Farmers.
             </p>
             <div className='flex flex-row gap-4 pl-6'>
-              <Link href='https://www.linkedin.com/company/eurasco-aisbl/'>
+              <Link
+                href='https://www.linkedin.com/company/eurasco-aisbl/'
+                target='_blank'
+              >
                 <Socials src='/icons/linkedin.svg' alt='linkedin' />
                 {/* https://www.linkedin.com/company/spacerennes/ */}
               </Link>
