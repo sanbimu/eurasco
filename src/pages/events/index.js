@@ -7,10 +7,14 @@ import { formatDateEvents } from "@/components/utils";
 import { CardAll } from "@/components/shared/cardAll";
 
 export default function Events({ cartesEvents, homePage }) {
+  console.log("homappage prismic ", homePage.data.slices[0].primary);
   return (
     <main>
       <div className='flex flex-col md:h-auto'>
-        <HeaderPages title='ALL OF OUR EVENTS' />
+        <HeaderPages
+          title='ALL OF OUR EVENTS'
+          image={homePage.data.slices[0].primary}
+        />
         <div className='flex flex-col'>
           <SectionTitle slice={homePage.data.slices[2]} />
 

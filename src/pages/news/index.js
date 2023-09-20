@@ -10,7 +10,10 @@ export default function News({ cartesBlog, homePage }) {
   return (
     <main>
       <div className='flex flex-col md:h-auto'>
-        <HeaderPages title='OUR LATEST NEWS' />
+        <HeaderPages
+          title='OUR LATEST NEWS'
+          image={homePage.data.slices[0].primary}
+        />
         <div className='flex flex-col lg:mt-12'>
           <SectionTitle slice={homePage.data.slices[3]} />
 

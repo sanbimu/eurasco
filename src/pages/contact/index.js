@@ -66,7 +66,7 @@ export default function Contact({ homePage }) {
             <div
               className={`flex flex-row  px-6 font-mont font-medium text-darkGreen justify-center   `}
             >
-              {"Frédérique François"}
+              {"Frédéric François"}
             </div>{" "}
             <div
               className={`flex flex-row  px-6 font-mont font-medium text-darkGreen justify-center   `}

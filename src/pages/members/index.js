@@ -9,7 +9,10 @@ export default function Members({ cartesMembres, homePage }) {
   return (
     <main>
       <div className='flex flex-col md:h-auto'>
-        <HeaderPages title='Our members' />
+        <HeaderPages
+          title='Our members'
+          image={homePage.data.slices[0].primary}
+        />
         <div className='flex flex-col lg:mt-12'>
           <SectionTitle slice={homePage.data.slices[4]} />
 

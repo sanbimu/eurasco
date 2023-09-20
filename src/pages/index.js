@@ -17,13 +17,6 @@ export default function Home({
   cartesMembres,
   cartesEvents,
 }) {
-  // const [random, setRandom] = useState([0, 2]);
-
-  // useEffect(() => {
-  //   const randomMember = Math.floor(Math.random() * cartesMembres.length);
-  //   const nextRandomMember = (randomMember + 2) % cartesMembres.length;
-  //   setRandom([randomMember, nextRandomMember]);
-  // }, []);
   console.log(homePage);
   return (
     <main>
