@@ -1,38 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Eurasco website
 
-## Getting Started
+A new website made with Next.js 13 and Prismic.io for Eurasco, the European Federation of Agricultural Exhibitions and Show Organisers. Made during my internship at Listri.
 
-First, run the development server:
+<img width="280" alt="Screenshot 2023-11-07 at 17 35 27" src="https://github.com/sanbimu/eurasco/assets/119463187/9f28ee50-e7b1-499d-9b31-717c68300319"> 
+<img width="280" alt="Screenshot 2023-11-07 at 16 45 23" src="https://github.com/sanbimu/eurasco/assets/119463187/a8977dbd-b3c4-492b-a101-c5e71dd9ff92">
+<img width="280" alt="Screenshot 2023-11-07 at 17 21 21" src="https://github.com/sanbimu/eurasco/assets/119463187/7c9c95d0-2e3e-4a90-9157-748a1c05eaca">
+<img width="280" alt="Screenshot 2023-11-07 at 17 22 15" src="https://github.com/sanbimu/eurasco/assets/119463187/98a52fa0-cefe-4969-b1f7-9eb25bf9f75c">
+<img width="280" alt="Screenshot 2023-11-07 at 17 27 58" src="https://github.com/sanbimu/eurasco/assets/119463187/41e6da44-8a16-4e57-91c0-e330286878f2">
+<img width="280" alt="Screenshot 2023-11-07 at 17 28 47" src="https://github.com/sanbimu/eurasco/assets/119463187/17c09727-43b5-4ece-84a5-76f5303a1fdd">
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Technologies
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![Next](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white]) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
